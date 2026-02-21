@@ -14,7 +14,7 @@ from backend.agents.graph import compiled_graph
 from backend.agents.state import initial_state
 from backend.ingestion.yfinance_client import fetch_company_news, TICKER_MAP
 from backend.rag.pipeline import ingest_company
-from backend.rag.vector_store import get_supabase, get_ingestion_stats
+from backend.rag.vector_store import get_chroma, get_ingestion_stats
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api", tags=["analysis"])
@@ -98,8 +98,8 @@ async def get_news(company_name: str, max_items: int = 20):
 @router.get("/stats/{company_name}", response_model=StatsResponse)
 async def get_stats(company_name: str):
     """Return ingestion statistics for a company."""
-    supabase = get_supabase()
-    stats = await get_ingestion_stats(supabase, company_name)
+    chroma = get_chroma()
+    stats = await get_ingestion_stats(chroma, company_name)
     return StatsResponse(company_name=company_name, stats=stats)
 
 

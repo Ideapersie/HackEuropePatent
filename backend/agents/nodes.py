@@ -14,7 +14,7 @@ import google.generativeai as genai
 from backend.core.config import get_settings
 from backend.agents.state import AnalysisState, Contradiction
 from backend.rag.embeddings import embed_text
-from backend.rag.vector_store import get_supabase, similarity_search
+from backend.rag.vector_store import get_chroma, similarity_search
 
 logger = logging.getLogger(__name__)
 _settings = get_settings()
@@ -46,10 +46,10 @@ async def _retrieve(
     source_types: list[str],
     top_k: int = 8,
 ) -> list[dict]:
-    supabase = get_supabase()
+    chroma = get_chroma()
     query_emb = await embed_text(query)
     return await similarity_search(
-        supabase, query_emb, company, source_types=source_types, top_k=top_k
+        chroma, query_emb, company, source_types=source_types, top_k=top_k
     )
 
 

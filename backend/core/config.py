@@ -18,9 +18,8 @@ class Settings(BaseSettings):
     gemini_model: str = "gemini-1.5-pro"
     gemini_embedding_model: str = "models/embedding-001"
 
-    # Supabase
-    supabase_url: str = ""
-    supabase_service_key: str = ""
+    # Local ChromaDB vector store
+    chroma_path: str = "backend/data/chroma"
 
     # EPO Open Patent Services
     epo_consumer_key: str = ""

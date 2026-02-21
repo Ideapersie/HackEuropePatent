@@ -23,6 +23,9 @@ frontend/.next/
 frontend/out/
 frontend/node_modules/
 
+# ChromaDB local vector store
+backend/data/
+
 # OS
 .DS_Store
 Thumbs.db

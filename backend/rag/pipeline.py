@@ -12,7 +12,7 @@ from backend.ingestion.epo_client import get_epo_client, PatentRecord
 from backend.ingestion.web_scraper import scrape_company_products
 from backend.rag.chunker import chunk_patent, chunk_news_item, Chunk
 from backend.rag.embeddings import embed_text, embed_image_url
-from backend.rag.vector_store import get_supabase, bulk_upsert_documents, get_ingestion_stats
+from backend.rag.vector_store import get_chroma, bulk_upsert_documents, get_ingestion_stats
 
 logger = logging.getLogger(__name__)
 _settings = get_settings()
@@ -23,7 +23,7 @@ async def ingest_company(company_name: str) -> dict:
     Full ingestion pipeline for one company.
     Returns stats dict with counts per source type.
     """
-    supabase = get_supabase()
+    chroma = get_chroma()
     records_to_insert: list[dict] = []
 
     # 1. Fetch and embed news
@@ -80,7 +80,7 @@ async def ingest_company(company_name: str) -> dict:
         })
 
     # 4. Bulk insert
-    count = await bulk_upsert_documents(supabase, records_to_insert)
+    count = await bulk_upsert_documents(chroma, records_to_insert)
     logger.info("[pipeline] Inserted %d records for %s", count, company_name)
 
-    return await get_ingestion_stats(supabase, company_name)
+    return await get_ingestion_stats(chroma, company_name)
