@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 
 from backend.agents.graph import compiled_graph
 from backend.agents.state import initial_state
+from backend.ingestion.yfinance_client import fetch_company_news, TICKER_MAP
 from backend.rag.pipeline import ingest_company
 from backend.rag.vector_store import get_supabase, get_ingestion_stats
 
@@ -40,6 +41,17 @@ class StatsResponse(BaseModel):
     stats: dict[str, int]
 
 
+class NewsItemResponse(BaseModel):
+    title: str
+    publisher: str
+    link: str
+    published_at: str  # ISO-8601 string — datetime is not directly JSON-serializable
+    summary: str
+    ticker: str
+    company_name: str
+    source_type: str
+
+
 # ---------------------------------------------------------------------------
 # Endpoints
 # ---------------------------------------------------------------------------
@@ -47,8 +59,40 @@ class StatsResponse(BaseModel):
 @router.get("/companies")
 async def list_companies():
     """Return the list of supported companies."""
-    from backend.ingestion.yfinance_client import TICKER_MAP
     return {"companies": list(TICKER_MAP.keys())}
+
+
+@router.get("/news/{company_name}", response_model=list[NewsItemResponse])
+async def get_news(company_name: str, max_items: int = 20):
+    """
+    Fetch recent press releases and news filings for a company via yfinance.
+
+    Example: GET /api/news/Lockheed%20Martin?max_items=5
+    """
+    if company_name not in TICKER_MAP:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Unknown company '{company_name}'. Supported: {list(TICKER_MAP.keys())}",
+        )
+    try:
+        items = await fetch_company_news(company_name, max_items=max_items)
+    except Exception as exc:
+        logger.error("News fetch error for %s: %s", company_name, exc)
+        raise HTTPException(status_code=500, detail=str(exc))
+
+    return [
+        NewsItemResponse(
+            title=item.title,
+            publisher=item.publisher,
+            link=item.link,
+            published_at=item.published_at.isoformat(),
+            summary=item.summary,
+            ticker=item.ticker,
+            company_name=item.company_name,
+            source_type=item.source_type,
+        )
+        for item in items
+    ]
 
 
 @router.get("/stats/{company_name}", response_model=StatsResponse)
