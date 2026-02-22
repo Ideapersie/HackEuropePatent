@@ -1,0 +1,1322 @@
+[
+  {
+    "title": "Lockheed Martin, Korea Aerospace Industries & Red 6 Announce Initial Augmented Reality Integration Work for T-50 Platform",
+    "summary": "Lockheed Martin, Korea Aerospace Industries, and Red 6 have partnered to integrate Red 6's Advanced Tactical Augmented Reality System (ATARS) into the T-50 platform and its associated ground-based training systems. This initial integration work involves a T-50 demonstrator and the ATARS technology electronically networked with Lockheed Martin's Prepar3D software simulation suite. The collaboration aims to eventually apply the ATARS system to other Lockheed Martin operational platforms such as the F-16, F-22, and F-35.",
+    "date": "June 20, 2023",
+    "source": "Lockheed Martin",
+    "product": "Advanced Tactical Augmented Reality Systems (ATARS)",
+    "url": "https://news.lockheedmartin.com/2023-06-20-Lockheed-Martin,-Korea-Aerospace-Industries-Red-6-Announce-Initial-Augmented-Reality-Integration-Work-for-T-50-Platform"
+  },
+  {
+    "title": "US Air Force to add Red 6 augmented reality tech into F-16 cockpits",
+    "summary": "The U.S. Air Force plans to integrate Red 6's Advanced Tactical Augmented Reality System (ATARS) into some of its operational Lockheed Martin F-16 fighters. This helmet-mounted system projects virtual images onto a pilot's visor, enabling more realistic air combat training by simulating other aircraft or environmental conditions in real-time. This contract represents the first instance of Red 6's augmented reality technology being fielded to operational fighter units.",
+    "date": "August 15, 2025",
+    "source": "Flight Global",
+    "product": "Advanced Tactical Augmented Reality Systems (ATARS)",
+    "url": "https://www.flightglobal.com/fixed-wing/us-air-force-to-add-red-6-augmented-reality-tech-into-f-16-cockpits/164171.article"
+  },
+  {
+    "title": "JUST IN: Vendors Announce Partnership to Expand AR Flight Training Tech",
+    "summary": "Lockheed Martin, Korea Aerospace Industries, and Red 6 are partnering to integrate Red 6's Airborne Tactical Augmented Reality System (ATARS) into the TF-50 jet trainer aircraft. This initiative will allow pilots to train against virtual adversaries in a live flight environment. The accelerated integration is partly due to Lockheed Martin's submission of the TF-50A variant for the U.S. Air Force's Advanced Tactical Trainer program, which includes a requirement for an airborne augmented reality component.",
+    "date": "March 07, 2023",
+    "source": "National Defense",
+    "product": "Advanced Tactical Augmented Reality Systems (ATARS)",
+    "url": "https://www.airforce-technology.com/news/usaf-to-install-atars-training-system-into-f-16-fighting-falcon-fighters/"
+  },
+  {
+    "title": "Aurora Flight Services first for Lockheed's new multi-vehicle remote control software",
+    "summary": "Lockheed Martin announced that Aurora Flight Services is its first U.S. customer for the new Vehicle Control Station software, VCSi. This software allows simultaneous control of dozens of unmanned vehicles, a capability tested by Aurora Flight against their existing ground and flight software. VCSi builds on Lockheed Martin's decades of experience in unmanned vehicle control software, developed in collaboration with the U.S. Army.",
+    "date": "February 12 2026",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjZ2gVPkzyT1ymwe-IaEsj_J3vFCFW4xZT3nHmIOpkgNIEiDO2Grbqdtcmg5rIFmdjZ_T5MV1CCGiWKh_KOxNulW8rYAkkZNfycbxJKV0gMwwK0I2XpztLkLnn7GqXPBCK58-4Nf_E0Fs8WjfpKYw7vEe6IqeqSodrOFaA1j_jugfi3AELSN8NW8seyoaZwMx442ntbZO7aZ7fQn5z5gcEhDqUl6fVtW3tO4o3QLV17l65nOhSI-HV8CtU3w==",
+    "product": "VCSi (Vehicle Control Station software)",
+    "url": "https://homelandprepnews.com/stories/28274-aurora-flight-services-first-lockheeds-new-multi-vehicle-remote-control-software/?amp"
+  },
+  {
+    "title": "AETC Receives First T-7A Red Hawk for Pilot Training",
+    "summary": "The Air Education and Training Command (AETC) officially received the first T-7A Red Hawk from Boeing on January 9, 2026, marking a significant step in modernizing the U.S. Air Force's pilot training program. This new jet trainer replaces the aging T-38 Talon and is designed with advanced digital engineering and an open-systems architecture to adapt to evolving training requirements. The T-7A will enhance pilot training and better prepare airmen for fifth- and sixth-generation aircraft.",
+    "date": "January 13 2026",
+    "source": "ExecutiveGov",
+    "product": "T-7A Red Hawk Ground-Based Training System",
+    "url": "https://www.executivegov.com/articles/aetc-t7a-red-hawk-pilot-training"
+  },
+  {
+    "title": "USAF welcomes delivery of first operational T-7A Red Hawk",
+    "summary": "The U.S. Air Force has welcomed the delivery of its first operational T-7A Red Hawk, which includes an integrated holistic system of advanced simulators, specifically a Ground-Based Training System (GBTS) and Live-Virtual-Constructive (LVC) environments. This comprehensive training system aims to reduce costs while allowing for more complex flight training scenarios on the ground. The Red Hawk's advanced digital engineering and modern avionics, along with its integrated training system, are designed to prepare pilots for future fighter and bomber operations.",
+    "date": "January 13 2026",
+    "source": "Aerospace Global News",
+    "product": "T-7A Red Hawk Ground-Based Training System",
+    "url": "https://aerospaceglobalnews.com/news/usaf-welcomes-delivery-of-first-operational-t-7a-red-hawk/"
+  },
+  {
+    "title": "First T-7A Red Hawk advanced trainer inducted into service",
+    "summary": "Boeing announced the official induction of the first T-7A Red Hawk advanced trainer into U.S. Air Force Air Education and Training Command service on January 9, 2026. This delivery marks a new era in fighter and bomber training, replacing the nearly 65-year-old T-38 trainer. Significantly, companion ground-based training systems, featuring 8K projection resolution and live, virtual, and constructive capabilities, have also been delivered and are now operational.",
+    "date": "January 12 2026",
+    "source": "Boeing",
+    "product": "T-7A Red Hawk Ground-Based Training System",
+    "url": "https://www.boeing.com/features/2026/1/first-t-7a-red-hawk-advanced-trainer-inducted-into-service"
+  },
+  {
+    "title": "AI-powered ISR capability introduced by Lockheed Martin",
+    "summary": "Lockheed Martin Skunk Works, in partnership with the Air Force Test Pilot School, demonstrated an autonomous Intelligence, Surveillance and Reconnaissance (ISR) system. This AI-powered system, integrated into an F-16 via a Lockheed Martin-developed pod, was able to autonomously detect, identify, and route to a target, capturing an image for confirmation in a simulated denied communications environment. The system aims to enhance operational effectiveness and keep warfighters out of harm's way by gathering critical intelligence in contested environments.",
+    "date": "February 17, 2026",
+    "source": "Military Embedded Systems",
+    "product": "Global ISR Sensors and Software",
+    "url": "https://militaryembedded.com/ai/machine-learning/ai-powered-isr-capability-introduced-by-lockheed-martin"
+  },
+  {
+    "title": "Lockheed Martin to Modernize Air Force F-22 Raptor with Advanced Infrared Threat-Detection Sensors",
+    "summary": "Lockheed Martin secured a $270 million contract from the U.S. Air Force to integrate a new system of next-generation infrared defensive sensors on the F-22 Raptor. This system, known as the Infrared Defensive System (IRDS), consists of a distributed set of embedded TacIRST sensors designed to boost the aircraft's survivability and lethality. Lockheed Martin will manage the integration of IRDS on the F-22 and provide support for other platforms.",
+    "date": "January 22, 2025",
+    "source": "PR Newswire",
+    "product": "Global ISR Sensors and Software",
+    "url": "https://www.prnewswire.com/news-releases/lockheed-martin-to-modernize-air-force-f-22-raptor-with-advanced-infrared-threat-detection-sensors-302357444.html"
+  },
+  {
+    "title": "New Tactical ISR Satellites Provide Global, Persistent Support for Warfighters - Lockheed Martin",
+    "summary": "Lockheed Martin announced a new line of rapid, integrated, and affordable tactical Intelligence, Surveillance and Reconnaissance (ISR) satellites to address the demand for space-enabled warfighting capabilities. These satellites, built on Lockheed Martin's LM 400 mid-size bus, enable tactical warfighters to track moving targets at long ranges and operate in contested environments. They feature software-defined capabilities and support a wide range of sensor technologies for responsive mission capability deployment.",
+    "date": "April 13, 2021",
+    "source": "Lockheed Martin",
+    "product": "Global ISR Sensors and Software",
+    "url": "https://news.lockheedmartin.com/tactical-isr-satellites"
+  },
+  {
+    "title": "Upcoming GXP Events",
+    "summary": "BAE Systems Geospatial eXploitation Products (GXP) will be participating in the 2026 Global SOF Special Air Warfare Symposium (GSOF SAWS) from February 10-12, 2026, and the Esri Federal GIS Conference 2026. The company will showcase how its software solutions address the evolving needs of time-dominant missions in data-driven ISR environments, with focus on advancements in imagery, video, and MTI exploitation, AI/ML leverage, and containerized solutions.",
+    "date": "February 10-12, 2026 (for GSOF SAWS), and Esri FedGIS 2026 (for Esri Federal GIS Conference)",
+    "source": "Geospatial eXploitation Products",
+    "product": "Geospatial eXploitation Products\u2122 (GXP\u00ae)",
+    "url": "https://www.geospatialexploitationproducts.com/gxp-company-profile/"
+  },
+  {
+    "title": "Webinars | Advanced SAR exploitation at GEOINT mission speed",
+    "summary": "This webinar, held on December 16, 2025, focused on advanced exploitation of Synthetic Aperture Radar (SAR) imagery using BAE Systems' GXP\u00ae software. Attendees learned how GXP\u2019s GeoAI capabilities accelerate SAR exploitation for image exploitation, change detection, and activity analysis, combining rigorous sensor modeling, precision measurement, and AI-assisted workflows to generate mission-ready intelligence.",
+    "date": "December 16, 2025",
+    "source": "Geospatial eXploitation Products",
+    "product": "Geospatial eXploitation Products\u2122 (GXP\u00ae)",
+    "url": "https://www.britannica.com/summary/BAE-Systems"
+  },
+  {
+    "title": "BAE Systems GXP\u00ae expands St. Louis presence with move downtown to the Globe Building",
+    "summary": "On August 12, 2025, BAE Systems' Geospatial eXploitation Products\u2122 (GXP\u00ae) team relocated its St. Louis operations to the Globe Building, reinforcing its commitment to the region's geospatial intelligence (GEOINT) ecosystem. This move positions GXP's software solutions at the heart of St. Louis' rapidly expanding GEOINT sector, fostering closer collaboration with the National Geospatial-Intelligence Agency (NGA) and the broader defense and intelligence communities.",
+    "date": "August 12, 2025",
+    "source": "Geospatial eXploitation Products",
+    "product": "Geospatial eXploitation Products\u2122 (GXP\u00ae)",
+    "url": "https://www.baesystems.com/en/article/bae-systems-merges-multiple-geospatial-technologies-into-a-single-product-to-improve-analysis-and-increase-productivity"
+  },
+  {
+    "title": "Lockheed Martin contracted for Advanced Apache Sensors for Poland - HeliHub.com",
+    "summary": "Lockheed Martin Missiles and Fire Control has secured a contract from the U.S. Government to produce Generation 4 Target Acquisition Designation Sight/Pilot Night Vision Sensor (Gen 4 TADS/PNVS) systems. This contract supports Poland's acquisition of AH-64E Apache helicopters, marking the first time the Common Sensor Electronic Unit (CSEU) and Generation 2 Turret (Gen 2 Turret) will be baseline for these sensors. These advanced systems provide pilots with long-range, precision engagement and pilotage capabilities for various missions.",
+    "date": "June 18 2025",
+    "source": "HeliHub.com",
+    "product": "AH-64 Apache (with Arrowhead sensor system)",
+    "url": "https://www.helihub.com/2025/06/18/lockheed-martin-secures-contract-for-advanced-apache-sensors-for-poland/"
+  },
+  {
+    "title": "Egypt's Apache helicopter fleet to undergo sensor system upgrades",
+    "summary": "Lockheed Martin was awarded a $102 million contract to upgrade 25 of Egypt's AH-64D Apaches to the E-model version, which includes the Gen III Target Acquisition Designation Sight/Pilot Night Vision Sensor (Gen III TADS/PNVS) and the Gen III Day Sensor Assembly (Gen III DSA). These upgrades aim to provide pilots with enhanced long-range precision, improved designation and ranging capabilities, and high-resolution imagery for safer flight and coordinated ground operations.",
+    "date": "February 17 2026",
+    "source": "Military Embedded Systems",
+    "product": "AH-64 Apache (with Arrowhead sensor system)",
+    "url": "https://militaryembedded.com/avionics/displays/egypts-apache-helicopter-fleet-to-undergo-sensor-system-upgrades"
+  },
+  {
+    "title": "Lockheed Martin to Upgrade U.S. Army's Apache Helicopters with New Electronic Warfare Capability - The Aviationist",
+    "summary": "Lockheed Martin is set to upgrade the U.S. Army's AH-64 Apache helicopters with a new enhanced electronic warfare capability, powered by advanced microelectronics and microchips developed in partnership with Intel. This involves the development and delivery of the Gen 3 RFI/RWR (Radar Frequency Interferometer/Radar Warning Receiver) APR-48B system. The upgrade aims to provide significant capability enhancements and improved sensor performance in a smaller, lighter package.",
+    "date": "October 18 2024",
+    "source": "The Aviationist",
+    "product": "AH-64 Apache (with Arrowhead sensor system)",
+    "url": "https://theaviationist.com/2024/10/18/apache-new-electronic-warfare-capability/"
+  },
+  {
+    "title": "Danish Defence contracts Raytheon for ELCAN Specter DR sights",
+    "summary": "The Danish Defence Armed Forces has awarded an additional contract to Raytheon, an RTX business, for the supply of ELCAN Specter DR dual role sights. These advanced optical sights will replace the Danish forces' existing ELCAN C79 fixed 3.4x sights, enabling soldiers to seamlessly switch between magnifications for enhanced target acquisition. The procurement was facilitated by the NATO Support and Procurement Agency.",
+    "date": "February 24, 2025",
+    "source": "Army Technology",
+    "product": "ELCAN Specter\u00ae Sights",
+    "url": "https://www.army-technology.com/news/denmark-elcan-specter-dr-sights/"
+  },
+  {
+    "title": "Evolution of ELCAN SpecterDR sights",
+    "summary": "ELCAN introduced upgraded variants of its SpecterDR family of sights for 2024, featuring integrated Picatinny rails, ambidextrous magnification throw levers, and improved battery covers. These enhancements also include hard-wearing CERAKOTE\u00ae performance finishes, aiming to meet the evolving demands of modern warfare. The updates apply to both the 1x/4x and 1.5x/6x models, maintaining their dual field-of-view capabilities.",
+    "date": "January 21, 2024",
+    "source": "Frag Out! Magazine",
+    "product": "ELCAN Specter\u00ae Sights",
+    "url": "https://www.rtx.com/news/news-center/2025/02/24/nspa-awards-rtx-additional-contract-for-optical-day-sights"
+  },
+  {
+    "title": "Lockheed Receives $191M NGA Strata IDIQ Contract",
+    "summary": "Lockheed Martin secured a potential five-year, $191 million contract from the National Geospatial-Intelligence Agency (NGA) to provide services. These services will facilitate online, on-demand access for users to GEOINT data and products, and include additional technologies and utilities to aid in visualization. This Strata indefinite-delivery/indefinite-quantity contract is a follow-on to the GEOINT Core Services program.",
+    "date": "August 09 2024",
+    "source": "GovCon Wire",
+    "product": "Full Motion Video (FMV) and Geospatial Intelligence (GEOINT) analysis services",
+    "url": "https://www.govconwire.com/articles/lockheed-receives-191m-nga-strata-idiq-contract"
+  },
+  {
+    "title": "Lockheed Martin wins $615M NGA GEOINT Collection NeXt (GCX) IDIQ contract",
+    "summary": "Lockheed Martin has been awarded a $615 million GEOINT Collection NeXt (GCX) IDIQ contract by the National Geospatial-Intelligence Agency (NGA). This contract is designed to ensure the continued sustainment and modernization of the legacy GEOINT Information Management Services (GIMS) baseline. GIMS provides critical capabilities for efficient and timely GEOINT management across multiple provider types for NGA and the Intelligence Community.",
+    "date": "May 19 2025",
+    "source": "OrangeSlices AI",
+    "product": "Full Motion Video (FMV) and Geospatial Intelligence (GEOINT) analysis services",
+    "url": "https://orangeslices.ai/lockheed-martin-wins-615m-geoint-collection-next-gcx-idiq-contract/"
+  },
+  {
+    "title": "Geospatial Intelligence",
+    "summary": "Lockheed Martin's Geospatial Technology team has over two decades of experience creating solutions for customers in both commercial and defense markets. Their expertise includes precision targeting, cloud architectures, terrain analytics, workflow automation, and 3D processing, transforming geospatial data into actionable intelligence. Key products like Rosetta3D\u00ae and OpenRosetta3D\u00ae provide powerful geospatial processing and production management capabilities.",
+    "date": "",
+    "source": "Lockheed Martin",
+    "product": "Full Motion Video (FMV) and Geospatial Intelligence (GEOINT) analysis services",
+    "url": "https://www.lockheedmartin.com/en-us/products/geospatial-technology.html"
+  },
+  {
+    "title": "Lockheed's Unit Wins a $131M Contract to Aid Integrated Combat System",
+    "summary": "Lockheed Martin's Rotary and Mission Systems business unit secured a $131.4 million modification contract for the Integrated Combat System (ICS). This contract funds Systems Engineering and Software Integration (SE/SI) work for the Navy and Coast Guard fleet, with most work to be completed by September 2026. The ICS is described as a modern naval combat management system designed to connect sensors, networks, and weapons across a distributed naval force, offering flexibility and easy upgrades through shared software and technology.",
+    "date": "October 07, 2025",
+    "source": "Zacks.com",
+    "product": "Integrated Combat Solution (ICS)",
+    "url": "https://www.zacks.com/stock/news/2763866/lockheeds-unit-wins-a-131m-contract-to-aid-integrated-combat-system"
+  },
+  {
+    "title": "Navy Gets Upgrade for Protection Against Missiles and Cyber",
+    "summary": "Lockheed Martin, in collaboration with the U.S. Navy and industry partners, successfully demonstrated the virtualization of the Ship Self-Defense System (SSDS), which is a key component of the broader Integrated Combat System (ICS) solution. This achievement enhances the Navy's combat capabilities against advanced missiles and cyber-attacks by providing operability and readiness data to operators. The ICS encompasses Heritage, Software Factory, and Hardware Factory components, aiming to deliver continuous upgrades to keep pace with emerging threats.",
+    "date": "October 08, 2025",
+    "source": "Lockheed Martin",
+    "product": "Integrated Combat Solution (ICS)",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2025/navy-gets-much-needed-upgrade-for-protection-against-missiles-and-cyber-threats.html"
+  },
+  {
+    "title": "Lockheed Martin successfully demos Navy combat system on hardware destined for ICS",
+    "summary": "Lockheed Martin, along with industry partners and the US Navy, successfully demonstrated the ability to run a virtualized version of the Ship Self-Defense System (SSDS) on hardware intended for the Navy's future Integrated Combat System (ICS). This demonstration is a crucial step towards the ICS's goal of enabling independent hardware and software upgrades for rapid, over-the-air updates to warships. The company had previously received a $1 billion contract in October 2023 for the systems engineering and software integration of ICS.",
+    "date": "October 30, 2024",
+    "source": "Breaking Defense",
+    "product": "Integrated Combat Solution (ICS)",
+    "url": "https://breakingdefense.com/2024/10/lockheed-martin-successfully-demos-navy-combat-system-on-hardware-destined-for-ics/"
+  },
+  {
+    "title": "Developments in Sights - European Security & Defence",
+    "summary": "This article discusses the developments in fire control systems, highlighting Raytheon ELCAN's SPECTER Digital Fire Control Sight (DFCS). It details how the DFCS incorporates a 1-8x optic linked to a fire control computer to enhance accuracy by considering various environmental and ballistic factors. The article suggests that while integrated fire control systems like the DFCS are crucial for the future, ELCAN is also making progress with its optical sighting systems in Europe.",
+    "date": "March 02 2022",
+    "source": "European Security & Defence",
+    "product": "ELCAN Specter\u00ae Digital Fire Control System (DFCS)",
+    "url": "https://euro-sd.com/2022/03/articles/exclusive/25276/developments-in-sights/"
+  },
+  {
+    "title": "Arquimea and Lockheed Martin develop advanced AI surveillance and reconnaissance (ISR) systems",
+    "summary": "Lockheed Martin Skunk Works and Arquimea have successfully developed an enhanced anomaly detection capability for Intelligence, Surveillance and Reconnaissance (ISR) platforms, such as drones. This technology uses AI and neural networks to identify changes in terrain and detect critical irregularities, improving mission area scanning. It allows AI platforms to operate with greater autonomy in unfamiliar environments and generate early warnings for defense and civil applications.",
+    "date": "April 22, 2025",
+    "source": "Arquimea",
+    "product": "Intelligence Surveillance Target Acquisition and Reconnaissance (ISTAR)",
+    "url": "https://www.arquimea.com/news/arquimea-lockheedmartin-sistemas-isr-ia/"
+  },
+  {
+    "title": "ISR demonstrator from Lockheed Martin ready to launch in 2025",
+    "summary": "Lockheed Martin is preparing to launch TacSat, an intelligence, surveillance and reconnaissance (ISR) spacecraft demonstrator, in 2025. This satellite will prove specialized sensing and communications capabilities in orbit, featuring an infrared sensor and Lockheed Martin's first 5G.MIL payload. TacSat aims to enhance space-enhanced Combined Joint All-Domain Command and Control (CJADC2) and will be available for exercises related to Find, Fix, Track, Target, Engage, Assess (F2T2EA) missions.",
+    "date": "December 09, 2024",
+    "source": "Lockheed Martin (via vertexaisearch.cloud.google.com)",
+    "product": "Intelligence Surveillance Target Acquisition and Reconnaissance (ISTAR)",
+    "url": "https://www.prnewswire.com/news-releases/skunk-works-and-arquimea-develop-ai-capable-isr-platforms-302425968.html"
+  },
+  {
+    "title": "Lockheed Martin Revolutionizes Maritime Surveillance with AI-Powered Technology",
+    "summary": "Lockheed Martin has achieved a significant breakthrough in AI and airborne surveillance, demonstrating technology that automatically recognizes and tracks maritime targets using AI-powered Synthetic Aperture Radar (SAR). This capability, developed by the Lockheed Martin AI Center, Skunk Works, and Rotary Mission Systems, enhances situational awareness by enabling faster and more accurate automated image analysis. It allows warfighters to quickly differentiate between combatant and civilian vessels, improving threat identification across various conditions.",
+    "date": "July 16, 2025",
+    "source": "Lockheed Martin",
+    "product": "Intelligence Surveillance Target Acquisition and Reconnaissance (ISTAR)",
+    "url": "https://militaryembedded.com/unmanned/isr/isr-demonstrator-from-lockheed-martin-ready-to-launch-in-2025"
+  },
+  {
+    "title": "Project Tiquila tests portable mini drones at RNAS Predannack in Cornwall",
+    "summary": "Project Tiquila is assessing two small Uncrewed Air Systems (sUAS), the Stalker VXE30 and the Indago 4, in a series of trials known as Reiver at RNAS Predannack in Cornwall. Both sUAS are expected to be operational on the front line by the end of 2024. These initial flight trials are crucial for capability acceptance and to demonstrate value for money for the UK taxpayer.",
+    "date": "August 11 2024",
+    "source": "AGN",
+    "product": "TIQUILA Unmanned Aerial System (SUAS)",
+    "url": "https://aerospaceglobalnews.com/news/project-tiquila-tests-portable-mini-drones-at-rnas-predannack-in-cornwall/"
+  },
+  {
+    "title": "Mini drones tested under Project TIQUILA for UK Armed Forces",
+    "summary": "Portable mini drones designed to enhance UK Armed Forces capabilities underwent trials at Royal Naval Air Station (RNAS) Predannack as part of Project TIQUILA. The trials included testing Lockheed Martin's Stalker VXE30 mini drone for over 20 hours in challenging weather conditions to assess its operational limits. Project TIQUILA aims to rapidly deliver sUAS to UK Forces, with Lockheed Martin UK having secured a contract in December 2022 to deliver over 250 mini drones.",
+    "date": "August 09 2024",
+    "source": "Military Embedded Systems",
+    "product": "TIQUILA Unmanned Aerial System (SUAS)",
+    "url": "https://militaryembedded.com/unmanned/test/mini-drones-tested-under-project-tiquila-for-uk-armed-forces"
+  },
+  {
+    "title": "Cutting-edge Stalker mini drone undertakes rigorous trials",
+    "summary": "The Stalker VXE30, a portable mini drone under Project TIQUILA, underwent rigorous trials at RNAS Predannack in Cornwall, enduring nearly 20 hours of testing in challenging weather. This project, which also assesses the Indago 4, is designed to deliver advanced small Uncrewed Air Systems (sUAS) to UK Forces swiftly, offering spiral capability development over its 10-year lifespan. Both platforms are intended to provide superior Intelligence, Surveillance, Target Acquisition, and Reconnaissance (ISTAR) capabilities.",
+    "date": "August 15 2024",
+    "source": "sUAS News",
+    "product": "TIQUILA Unmanned Aerial System (SUAS)",
+    "url": "https://www.suasnews.com/2024/08/cutting-edge-stalker-mini-drone-undertakes-rigorous-trials/"
+  },
+  {
+    "title": "Lockheed Martin Awarded $328.5 Million Contract to Deliver Legion-ES Systems",
+    "summary": "Lockheed Martin has been awarded a $328.5 million Foreign Military Sales (FMS) contract to produce IRST21\u00ae Legion-ES\u00ae sensor systems. This contract supports an agreement for the Taiwan Air Force, marking Taiwan as the first international ally to receive this advanced passive sensing capability. The IRST21 is Lockheed Martin's next-generation infrared search-and-track sensor, a long-wave infrared system designed to passively detect and track airborne targets at extended ranges.",
+    "date": "February 02, 2026",
+    "source": "Lockheed Martin Releases",
+    "product": "Thermal Imaging Sensors",
+    "url": "https://news.lockheedmartin.com/lockheed-martin-awarded-328-5-million-contract-to-deliver-legion-es-systems"
+  },
+  {
+    "title": "Sensor systems for fighter jets gets Lockheed Martin $233 million U.S. Navy contract",
+    "summary": "Lockheed Martin secured a $233 million contract to provide IRST21 Block II systems to the U.S. Navy and Air National Guard. These systems are passive, long-range infrared sensors used on fighter jets to detect and track airborne threats. The Block II variant incorporates advanced optics, processors, and algorithms to significantly increase threat-detection range and support beyond-visual-range missile engagements.",
+    "date": "February 17, 2026",
+    "source": "Military & Aerospace Electronics",
+    "product": "Thermal Imaging Sensors",
+    "url": "https://militaryembedded.com/radar-ew/sensors/sensor-systems-for-fighter-jets-gets-lockheed-martin-233-million-us-navy-contract"
+  },
+  {
+    "title": "Lockheed Martin Test Flies Gen III TacIRST Sensor",
+    "summary": "Lockheed Martin has completed the first flight of its Gen III TacIRST sensor, a distributed infrared threat-warning system intended for the F-22 Raptor, with evaluations planned for 2026. This system is designed to provide 360-degree situational awareness, passively detecting and tracking both surface-to-air and air-to-air threats with weapon-quality accuracy. The company aims to demonstrate capability readiness before the scheduled customer evaluation window.",
+    "date": "November 18, 2025",
+    "source": "The Aviationist",
+    "product": "Thermal Imaging Sensors",
+    "url": "https://theaviationist.com/2025/11/18/lockheed-martin-test-flies-gen-iii-tacirst-sensor/"
+  },
+  {
+    "title": "Lockheed Martin Rolls Out In-House GenAI Platform to US Workforce; Mike Baylor Quoted",
+    "summary": "Lockheed Martin has deployed its internally developed generative AI platform, LMText Navigator, to its U.S. workforce. This platform, created by the company's AI Factory in collaboration with the 1LMX program, is powered by NVIDIA DGX SuperPOD AI infrastructure. It will be used for various applications such as generating and testing software code, extracting information from documentation, and accelerating post-mission analytics.",
+    "date": "October 09, 2024",
+    "source": "ExecutiveBiz",
+    "product": "Lockheed Martin Text Navigator",
+    "url": "https://www.executivebiz.com/articles/lockheed-martin-rolls-out-in-house-genai-platform-to-us-workforce-mike-baylor-quoted"
+  },
+  {
+    "title": "Lockheed Martin Deploys Powerful, Secure Generative AI Tools Across the Enterprise",
+    "summary": "Lockheed Martin has introduced Lockheed Martin Text Navigator (LMText Navigator), a generative AI tool, to its U.S.-based employees to enhance efficiency across the enterprise. This platform aims to scale code generation, analyze data, and streamline business processes. Mike Baylor, Chief Digital and AI Officer, emphasized that the internal GenAI platform accelerates the company's ability to develop and deploy AI-enabled solutions rapidly and securely.",
+    "date": "October 08, 2024",
+    "source": "Lockheed Martin",
+    "product": "Lockheed Martin Text Navigator",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2024/empowering-innovation-with-secure-generative-ai-across-enterprise.html"
+  },
+  {
+    "title": "Lockheed Martin, Meta Collaborate on Large Language Models for National Security Applications",
+    "summary": "Lockheed Martin and Meta are collaborating to integrate Meta's Llama Large Language Model into Lockheed Martin's AI Factory for national security applications. As an initial use case, Llama has been incorporated into LMText Navigator, a generative AI tool designed to securely process large amounts of data on-premises. This collaboration aims to more efficiently generate code, analyze data, and enhance business processes, with over 40,000 Lockheed Martin employees in the U.S. already utilizing the capability.",
+    "date": "November 04, 2024",
+    "source": "Lockheed Martin",
+    "product": "Lockheed Martin Text Navigator",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2024/Lockheed-Martin-Meta-Collaborate-on-Large-Language-Models-for-National-Security-Applications.html"
+  },
+  {
+    "title": "Air Force Now Denies Receiving F-35s Without Radars",
+    "summary": "The article discusses the F-35's Block 4 upgrade package, which is set to include replacements for the Electro-Optical Targeting System (EOTS) and Distributed Aperture System (DAS). This Block 4 upgrade aims to introduce new capabilities and is slated for initial fielding with Lot 17 F-35 deliveries, beginning in 2025 and continuing through September 2026.",
+    "date": "February 12, 2026",
+    "source": "The War Zone",
+    "product": "Electro-Optical Targeting System (EOTS)",
+    "url": "https://www.twz.com/air/air-force-now-denies-receiving-f-35s-without-radars"
+  },
+  {
+    "title": "Specialized Window Production Continues to Decrease Cost for F-35 Customers",
+    "summary": "This article from Lockheed Martin highlights efforts to reduce costs for F-35 customers through specialized window production, which is a component of the Electro-Optical Targeting System (EOTS). The EOTS is crucial for the F-35, providing precision air-to-air and air-to-surface targeting capabilities. This initiative contributes to the overall affordability of the F-35 program.",
+    "date": "May 17, 2021",
+    "source": "Lockheed Martin",
+    "product": "Electro-Optical Targeting System (EOTS)",
+    "url": "https://www.lockheedmartin.com/en-us/products/f-35-lightning-ii-eots.html"
+  },
+  {
+    "title": "Lockheed Martin Unveils Lamprey MMAUV Unmanned Underwater Vehicle",
+    "summary": "Lockheed Martin has unveiled the Lamprey Multi-Mission Autonomous Undersea Vehicle (MMAUV), a new undersea drone designed for covert reconnaissance and combat missions. The Lamprey features a modular payload bay capable of carrying various sensors and effectors, including intelligence, surveillance, and reconnaissance (ISR) sensors. This versatile platform can be deployed from surface vessels or submarines and is designed to attach to a host vessel's hull for extended range and battery recharging.",
+    "date": "February 09, 2026",
+    "source": "MILMAG",
+    "product": "Integrated Intelligence Surveillance Reconnaissance Systems",
+    "url": "https://milmag.pl/en/lockheed-martin-unveils-lamprey-mmauv-unmanned-underwater-vehicle/"
+  },
+  {
+    "title": "BAE Systems to develop AI-powered software to improve battlefield medical care for warfighters",
+    "summary": "The Air Force Research Laboratory (AFRL) has selected BAE Systems to continue the development and deployment of the Battlefield Assisted Trauma Distributed Operations Kit (BATDOK\u00ae) through the new FORGE-IT program. This initiative aims to enhance and modernize capabilities for warfighters to provide medical care for wounded servicemembers on the battlefield, ensuring proper treatment from the point of injury through long-term care. FORGE-IT will build upon BATDOK\u00ae mobile technology, improving remote patient monitoring and battlefield medical care through embedded artificial intelligence capabilities.",
+    "date": "July 03 2025",
+    "source": "PR Newswire",
+    "product": "BATDOK\u00ae (Battlefield Assisted Trauma Distributed Operations Kit)",
+    "url": "https://www.prnewswire.com/news-releases/bae-systems-to-develop-ai-powered-software-to-improve-battlefield-medical-care-for-warfighters-302497188.html"
+  },
+  {
+    "title": "AFRL invention deployed by Maryland State Police",
+    "summary": "A mobile medical documentation tool, BATDOK\u00ae, developed by Air Force Research Laboratory (AFRL) researchers, is being deployed and tested on Maryland State Police medevac helicopters. This marks the first time BATDOK\u00ae is used by medical providers to document and transfer civilian patients in the U.S., streamlining patient care and optimizing delivery to medical facilities. The tool, which helps medics monitor patients, complete documentation, and offers decision-support capabilities, is a direct result of collaboration within AFRL's 711th Human Performance Wing.",
+    "date": "December 05 2025",
+    "source": "WIN THE FUTURE (U.S. Air Force)",
+    "product": "BATDOK\u00ae (Battlefield Assisted Trauma Distributed Operations Kit)",
+    "url": "https://www.afrl.af.mil/News/Article-Display/Article/4350895/afrl-invention-deployed-by-maryland-state-police/"
+  },
+  {
+    "title": "BATDOK\u00ae",
+    "summary": "BATDOK\u00ae, developed by BAE Systems and the Air Force Research Laboratory (AFRL), electronically records medical care information to ensure patient injury details and field treatments are securely transferred to Electronic Health Record (EHR) systems. This system captures critical patient care information, such as injuries, treatments, and procedures, providing actionable data for medical providers. Designed with user-friendly touch buttons, BATDOK\u00ae allows for rapid and efficient documentation of observations and actions, supporting secure, encrypted data exchange even in challenging environments.",
+    "date": "December 27 2025",
+    "source": "BAE Systems",
+    "product": "BATDOK\u00ae (Battlefield Assisted Trauma Distributed Operations Kit)",
+    "url": "https://www.baesystems.com/en-us/product/batdok"
+  },
+  {
+    "title": "Lockheed Martin to Deliver Advanced C-130J Training Devices to the Royal Australian Air Force",
+    "summary": "Lockheed Martin has secured a foreign military sale contract to provide the Royal Australian Air Force (RAAF) with C-130J training devices and upgrades. These advanced simulators will enhance the RAAF's training capacity for its expanding C-130J fleet, leveraging Lockheed Martin's expertise as the original equipment manufacturer. Deliveries are expected to begin in 2029 and will include Weapon Systems Trainers, an Enhanced Integrated Cockpit Systems Trainer, a Loadmaster Part-Task Trainer, and upgrades to existing virtual simulation systems.",
+    "date": "February 18, 2026",
+    "source": "Lockheed Martin Newsroom",
+    "product": "Warfare training systems",
+    "url": "https://news.lockheedmartin.com/news-releases"
+  },
+  {
+    "title": "Lockheed Martin wins RAAF C-130J training systems contract",
+    "summary": "Lockheed Martin has been awarded a US government contract to supply training devices and upgrades for the Royal Australian Air Force's (RAAF) C-130J tactical transport aircraft fleet. The contract encompasses various training systems, including a cockpit systems trainer and enhancements to the RAAF's virtual simulation and maintenance trainers. These new devices will feature advanced graphics, motion cueing, and high-fidelity cockpit replication, designed for concurrency with the RAAF's upcoming C-130J-30 acquisitions.",
+    "date": "February 19, 2026",
+    "source": "Flight Global",
+    "product": "Warfare training systems",
+    "url": "https://news.lockheedmartin.com/2026-02-18-Lockheed-Martin-to-Deliver-Advanced-C-130J-Training-Devices-to-the-Royal-Australian-Air-Force"
+  },
+  {
+    "title": "Lockheed Martin to provide C-130J training devices and upgrades to RAAF",
+    "summary": "Lockheed Martin will supply the Royal Australian Air Force (RAAF) with C-130J training devices and upgrades, a contract secured through Wright-Patterson Air Force Base. The agreement includes two Weapon Systems Trainers, an Enhanced Integrated Cockpit Systems Trainer (EICS), and updates to the RAAF's existing virtual simulation and virtual maintenance trainers. These state-of-the-art training solutions are intended to support the RAAF's forthcoming C-130J-30 aircraft acquisitions, with deliveries commencing in 2029.",
+    "date": "February 19, 2026",
+    "source": "Australian Defence Magazine",
+    "product": "Warfare training systems",
+    "url": "https://www.flightglobal.com/fixed-wing/lockheed-wins-raaf-c-130j-training-systems-upgrade-contract/166370.article"
+  },
+  {
+    "title": "Cyber Warfare Market Set to Surpass Valuation of US$ 136.44 - GlobeNewswire",
+    "summary": "This article highlights RTX's Raytheon business as a leader in the cyber warfare market, securing a significant follow-on contract from the U.S. Army Futures Command for its Rapid Campaign Analysis and Demonstration Environment (RCADE). RCADE is showcased for its expertise in advanced defense analysis solutions and its role in establishing a continuous experimentation environment. Raytheon's financial performance and growth strategy, emphasizing innovation and strategic partnerships, are also discussed.",
+    "date": "March 31, 2025",
+    "source": "GlobeNewswire",
+    "product": "RCADE (Rapid Campaign Analysis and Demonstration Environment)",
+    "url": "https://www.globenewswire.com/news-release/2025/03/31/3052460/0/en/Cyber-Warfare-Market-Set-to-Surpass-Valuation-of-US-136-44-Billion-By-2033-Astute-Analytica.html"
+  },
+  {
+    "title": "CONTRACT NEWS IN BRIEF - BATTLESPACE Updates",
+    "summary": "This news brief reports on Raytheon's contract to establish a continuous experimentation environment using its Rapid Campaign Analysis and Demonstration Environment (RCADE) modeling and simulation capability. The purpose of this effort is to support the U.S. Army's concept developers and Battle Labs in making strategic force design decisions. The article explicitly identifies RCADE as a Raytheon product.",
+    "date": "March 28, 2025",
+    "source": "BATTLESPACE Updates",
+    "product": "RCADE (Rapid Campaign Analysis and Demonstration Environment)",
+    "url": "https://battle-updates.com/update/contract-news-in-brief-1091/"
+  },
+  {
+    "title": "Modeling & simulation environment garners Raytheon follow-on Army contract - News",
+    "summary": "This article announces that Raytheon has won a follow-on contract from the U.S. Army Futures Command, Futures and Concepts Center. The contract ensures the Army Futures Command will continue to utilize Raytheon's Rapid Campaign Analysis and Demonstration Environment (RCADE) modeling and simulation capability. The piece reinforces RCADE's role as a key simulation tool for the U.S. Army.",
+    "date": "March 26, 2025",
+    "source": "Military Embedded Systems",
+    "product": "RCADE (Rapid Campaign Analysis and Demonstration Environment)",
+    "url": "https://militaryembedded.com/news?page=50"
+  },
+  {
+    "title": "Lockheed Martin Advanced Technology Center Demonstrates Versatile Advanced Monitoring System (VAMS) for Perimeter Security",
+    "summary": "Lockheed Martin's Advanced Technology Center demonstrated an innovative perimeter security system called VAMS for government and commercial applications. The system utilizes commercial hardware and software with proprietary Lockheed Martin elements to detect intrusions, including stationary objects, multiple intruders, and air-dropped items. VAMS is designed to be difficult to spoof compared to traditional security technologies and can also be used indoors.",
+    "date": "August 16, 2010",
+    "source": "Lockheed Martin (via vertexaisearch.cloud.google.com)",
+    "product": "Versatile Advanced Monitoring System (VAMS)",
+    "url": "https://news.lockheedmartin.com/2010-08-16-Lockheed-Martin-Advanced-Technology-Center-Demonstrates-Versatile-Advanced-Monitoring-System-VAMS-for-Perimeter-Security"
+  },
+  {
+    "title": "Lockheed Martin demonstrates Versatile Advanced Monitoring System (VAMS) | Bus Ex",
+    "summary": "Scientists and engineers at Lockheed Martin Space Systems Company's Advanced Technology Center showcased VAMS, a perimeter security system for government and commercial use. This system integrates commercial off-the-shelf components with Lockheed Martin's proprietary technology to offer an affordable and robust solution for new perimeter security challenges. VAMS can detect various types of intrusions, including those designed to bypass conventional security measures, and can pinpoint both moving and stationary objects.",
+    "date": "",
+    "source": "Bus Ex",
+    "product": "Versatile Advanced Monitoring System (VAMS)",
+    "url": "https://investors.lockheedmartin.com/news-releases/news-release-details/lockheed-martin-advanced-technology-center-demonstrates"
+  },
+  {
+    "title": "Project OdySSEy: Single Synthetic Environment",
+    "summary": "Project OdySSEy brings together experts in simulation, supercomputing, data analytics, and augmented and virtual reality to create a single synthetic environment. This environment enables air, land, sea, space, and cyber forces to plug in and train together, offering a more affordable and sustainable way of military training.",
+    "date": "April 10 2025",
+    "source": "BAE Systems",
+    "product": "Project OdySSEy: Single Synthetic Environment",
+    "url": "https://www.baesystems.com/en-uk/product/project-odyssey"
+  },
+  {
+    "title": "Vertex Solutions Wins Major Contract with BAE Systems for Project OdySSEy Simulators",
+    "summary": "Vertex Solutions, in partnership with RYAN AEROSPACE and SASimulations, has won a major contract with BAE Systems for Project OdySSEy. This team will deliver cutting-edge simulation technology for the program, which focuses on developing a single synthetic environment for multi-domain military training.",
+    "date": "December 10 2024",
+    "source": "Vertex Solutions",
+    "product": "Project OdySSEy: Single Synthetic Environment",
+    "url": "https://www.baesystems.com/en/product/project-odyssey"
+  },
+  {
+    "title": "Military Simulation, Modelling and Virtual Training Market Research Report 2026-2036: Multi-Domain Operations and Joint Readiness Requirements Are Forcing LVC Convergence at Scale",
+    "summary": "This report discusses the military simulation, modelling, and virtual training market, highlighting industry responses to joint readiness requirements. It mentions BAE Systems' Project OdySSEy ecosystem initiatives as an example of expanded work on joint synthetic environments to achieve joint interoperability in training.",
+    "date": "February 18 2026",
+    "source": "GlobeNewswire",
+    "product": "Project OdySSEy: Single Synthetic Environment",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlH5rINzIvB_tUTh73mkXcN_44e-d7_II_l2n4UyspstC_fq_gpGcpG7g1gJbYkI14Fh4MuclorcDLDbidPPIjpNRBtcmR_AisqerJq2RLgo2U1mx_jaza7ZLvhtzdG9hfz41vMij_hEUbb71adwoYNlWO1cUkVmVOb7YQ0h_CrGk55IcQP3WeEfgrdjD044ghsKoi8_oP8f52LyZ3vkwd_KfW_ldbH1VyTjtBmS7vrA0AIjp6TaXhh9YfKnQhBT9UQLURy9c="
+  },
+  {
+    "title": "Collins Aerospace completes MS-110 flight integration on F-16 aircraft",
+    "summary": "Collins Aerospace announced the completion of flight testing for the MS-110 Multispectral Airborne Reconnaissance System, preparing it for operational service. The system underwent extensive flight tests on an F-16 for an international customer to confirm its readiness for deployment. Existing DB-110 operators can upgrade to the MS-110 configuration, which enhances intelligence analysts' ability to extract vital information from diverse target sets.",
+    "date": "July 17, 2023",
+    "source": "AGN",
+    "product": "MS-110 Multispectral Imagery System",
+    "url": "https://aerospaceglobalnews.com/news/collins-aerospace-completes-ms-110-flight-integration-on-f-16-aircraft/"
+  },
+  {
+    "title": "RTX: Raytheon wins $197 million contract to deliver MS-110 multispectral reconnaissance system to Poland",
+    "summary": "Raytheon, an RTX business, secured a $197 million contract from the U.S. Air Force to provide the MS-110 Multispectral Reconnaissance System to the Polish Air Force. This agreement makes Poland the first NATO member and fourth air force globally to acquire this advanced capability. The system includes seven reconnaissance pods with AI and machine learning for processing day and night, wide-area, and long-range imagery, significantly improving intelligence performance over older systems.",
+    "date": "January 28, 2026",
+    "source": "Defence Industry Europe",
+    "product": "MS-110 Multispectral Imagery System",
+    "url": "https://defence-industry.eu/rtx-raytheon-wins-197-million-contract-to-deliver-ms-110-multispectral-reconnaissance-system-to-poland/"
+  },
+  {
+    "title": "Poland orders MS-110 recce pod from Raytheon",
+    "summary": "Poland has placed an order for seven MS-110 airborne multispectral reconnaissance pods from Raytheon, with deliveries and integration expected to conclude by August 2031. This $197 million procurement marks Poland as the first NATO nation and fourth country worldwide to obtain the system. The MS-110 is a next-generation system designed for long-range, wide-area imagery collection in multiple visual and infrared bands, improving target detection and combating camouflage.",
+    "date": "January 30, 2026",
+    "source": "Calibre Defence",
+    "product": "MS-110 Multispectral Imagery System",
+    "url": "https://www.rtx.com/news/news-center/2026/01/28/rtxs-raytheon-awarded-197-million-contract-for-poland-airborne-reconnaissance-s"
+  },
+  {
+    "title": "Noctis Dual IR Payload for Indago 4 UAV",
+    "summary": "The Noctis Dual IR Payload, developed by Lockheed Martin, is designed for the Indago 4 UAV. It features dual Forward-Looking Infrared (FLIR) cameras, providing capabilities such as object tracking, real-time geo-location, and geo-pointing. This payload is integrated with ATAK and VCSi Touch systems, enhancing situational awareness for users.",
+    "date": "",
+    "source": "Lockheed Martin",
+    "product": "Noctis payload",
+    "url": "https://www.lockheedmartin.com/en-us/products/indago-vtol-uav.html"
+  },
+  {
+    "title": "Lockheed Martin Develops Advanced Visualization Training Tool for Apache Flight Line Maintainers",
+    "summary": "Lockheed Martin launched the latest version of RELY3D\u00ae, an advanced visualization and training tool designed for maintainers of Apache AH-64 sensor systems. This tool originated from an employee suggestion and leverages commercial gaming technology to create interactive training modules, which can reduce training time by up to 60 percent.",
+    "date": "June 11, 2019",
+    "source": "PR Newswire / Lockheed Martin",
+    "product": "RELY3D\u00ae",
+    "url": "https://www.prnewswire.com/news-releases/lockheed-martin-develops-advanced-visualization-training-tool-for-apache-flight-line-maintainers-300865189.html"
+  },
+  {
+    "title": "Lockheed Martin to Deliver Advanced C-130J Training Devices to the Royal Australian Air Force",
+    "summary": "Lockheed Martin has secured a foreign military sale contract to provide C-130J training devices and upgrades to the Royal Australian Air Force (RAAF). These new training devices will feature advanced graphics, motion cueing, and high-fidelity cockpit replication to match the operational C-130J. Deliveries are scheduled to begin in 2029 and will enhance the RAAF's training capabilities for its expanding C-130J fleet.",
+    "date": "February 18, 2026",
+    "source": "Lockheed Martin Newsroom",
+    "product": "Immersive Training Devices (ITDs)",
+    "url": "https://in.investing.com/news/stock-market-news/lockheed-martin-to-deliver-c130j-training-devices-to-royal-australian-air-force-93CH-5246061"
+  },
+  {
+    "title": "Lockheed Martin delivers flight training devices to the RAAF - Australian Defence Magazine",
+    "summary": "Lockheed Martin Australia has delivered the first of two new flight training devices for the PC-21 aircraft to the Royal Australian Air Force (RAAF) at RAAF Base Pearce. This delivery is part of the Air 5428 Phase 1 Pilot Training System, aiming to increase the pipeline of qualified Australian Defence Force pilots. The devices replicate the PC-21 aircraft's form, fit, and function, offering an authentic training experience for pilots.",
+    "date": "November 12, 2025",
+    "source": "Australian Defence Magazine",
+    "product": "Immersive Training Devices (ITDs)",
+    "url": "https://www.manmonthly.com.au/lockheed-martin-to-deliver-advanced-training-devices-to-the-air-force/"
+  },
+  {
+    "title": "Air Force, Army Battle Labs work with DARPA on ASTARTE, new C2 capability",
+    "summary": "This article details a joint experiment at Nellis Air Force Base where the Air Force and Army, in collaboration with DARPA, tested the ASTARTE system. It highlights ASTARTE's role in providing a real-time common operational picture of airspace and its ability to integrate with existing command and control systems, including those from Lockheed Martin.",
+    "date": "August 30, 2023",
+    "source": "Nellis Air Force Base",
+    "product": "Air Space Total Awareness for Rapid Tactical Execution (ASTARTE)",
+    "url": "https://www.nellis.af.mil/News/Article/3511565/air-force-army-battle-labs-work-with-darpa-on-astarte-new-c2-capability/"
+  },
+  {
+    "title": "Raytheon showcases ASTARTE system at military exercise - Investing.com",
+    "summary": "Raytheon Technologies Corporation successfully integrated its ASTARTE system with multiple military command and control frameworks during a demonstration at Project Convergence Capstone 5. The system, developed by Raytheon Advanced Technology, is designed to enhance airspace operations and deconfliction by automating real-time operational views and improving decision-making speed in congested battle areas.",
+    "date": "May 06, 2025",
+    "source": "Investing.com",
+    "product": "Air Space Total Awareness for Rapid Tactical Execution (ASTARTE)",
+    "url": "https://www.investing.com/news/company-news/raytheon-showcases-astarte-system-at-military-exercise-93CH-4024590"
+  },
+  {
+    "title": "Raytheon Demonstrates ASTARTE Critical Software for Airspace Awareness to the Defense",
+    "summary": "Raytheon, an RTX business, successfully demonstrated ASTARTE, a software platform that integrates with various military command and control systems during Project Convergence Capstone 5. Developed by Raytheon Advanced Technology, ASTARTE aims to enhance airspace operations and deconfliction in highly congested battlespaces by automating a real-time common operational picture.",
+    "date": "May 15, 2025",
+    "source": "RF Cafe",
+    "product": "Air Space Total Awareness for Rapid Tactical Execution (ASTARTE)",
+    "url": "https://www.everythingrf.com/news/details/20153-raytheon-demonstrates-astarte-critical-software-for-airspace-awareness-to-the-defense"
+  },
+  {
+    "title": "British-built Azalea satellites launched - Air Force Technology",
+    "summary": "Three British-built Azalea satellites, developed by BAE Systems, successfully launched into low Earth orbit on November 28, 2025, as part of SpaceX's Transporter-15 rideshare mission. This four-satellite cluster, accompanied by a SAR satellite from Iceye, is designed to provide intelligence, surveillance, and reconnaissance data to UK defence, security, and civil sectors. The satellites utilize RF monitoring technology and onboard AI for data processing, enabling direct transmission of intelligence to decision-makers.",
+    "date": "December 04 2025",
+    "source": "Air Force Technology",
+    "product": "Azalea\u2122: Low Earth Orbit satellite cluster",
+    "url": "https://www.airforce-technology.com/news/uk-azalea-satellites-launch/"
+  },
+  {
+    "title": "BAE Systems Eyes 2025 Launch For Azalea LEO Satellite Cluster | Aviation Week Network",
+    "summary": "BAE Systems is planning to launch its Azalea low-Earth-orbit satellite cluster in October 2025, following the system's critical design review. The launch is slated to take place on a SpaceX Falcon 9X. This system involves multiple satellites, as confirmed by BAE Systems' Director of Space Doug Liddle.",
+    "date": "September 24 2024",
+    "source": "Aviation Week Network",
+    "product": "Azalea\u2122: Low Earth Orbit satellite cluster",
+    "url": "https://aviationweek.com/space/satellites/bae-systems-eyes-2025-launch-azalea-leo-satellite-cluster"
+  },
+  {
+    "title": "BAE Systems: Low Earth Orbit Satellite Cluster to provide Secure Digital Military Intelligence From 2024 - EDR Magazine",
+    "summary": "BAE Systems announced its plan to launch the Azalea multi-sensor satellite cluster into low Earth orbit in 2024 to deliver real-time intelligence to military customers. The cluster, comprising four reconfigurable satellites, will collect and analyze visual, radar, and radio frequency data using on-board machine learning. This initiative aims to enhance the UK's sovereign space capability and provide timely, actionable intelligence for military operations and disaster response.",
+    "date": "September 07 2022",
+    "source": "EDR Magazine",
+    "product": "Azalea\u2122: Low Earth Orbit satellite cluster",
+    "url": "https://www.edrmagazine.eu/bae-systems-low-earth-orbit-satellite-cluster-to-provide-secure-digital-military-intelligence-from-2024"
+  },
+  {
+    "title": "Lockheed Martin Revolutionizes Maritime Surveillance with AI-Powered Technology",
+    "summary": "Lockheed Martin has achieved a significant breakthrough in AI and airborne surveillance, demonstrating technology to automatically recognize maritime targets using an AI-powered Synthetic Aperture Radar (SAR). This innovation allows for unprecedented accuracy in detecting and tracking maritime targets. The capability was showcased in a recent flight test on the west coast of the United States, utilizing embedded sensor control autonomy.",
+    "date": "July 16, 2025",
+    "source": "Lockheed Martin Newsroom",
+    "product": "Airborne Wide-Area Persistent Surveillance System (AWAPSS)",
+    "url": "https://canadiandefencereview.com/lockheed-martin-revolutionizes-maritime-surveillance-with-ai-powered-technology/"
+  },
+  {
+    "title": "Lockheed Martin Joins Forces With BAE Systems On New Ultra-Adaptable Drone",
+    "summary": "Lockheed Martin and BAE Systems have partnered to develop a new range of uncrewed air systems (UAS) based on a common design. This collaboration aims to create more affordable and expendable drones and munitions for various missions, including intelligence, reconnaissance, and surveillance (ISR). The partnership was announced at the DSEI exhibition in London, involving Lockheed Martin Skunk Works and BAE Systems' FalconWorks.",
+    "date": "September 09, 2025",
+    "source": "The Drive (The War Zone)",
+    "product": "Airborne Wide-Area Persistent Surveillance System (AWAPSS)",
+    "url": "https://news.lockheedmartin.com/2025-07-16-Lockheed-Martin-Revolutionizes-Maritime-Surveillance-with-AI-Powered-Technology"
+  },
+  {
+    "title": "Lockheed Martin Unveils Scalable Counter-Unmanned Aerial System Solution",
+    "summary": "Lockheed Martin is demonstrating a new, scalable, and layered defense system designed to counter the evolving threat of small Unmanned Aerial Systems (UAS). This modular, open-architecture solution combines combat-proven command and control with AI-enabled detection and track software, low-cost sensors, and various effectors. A recent field event marked the first in a series of showcases for this system, highlighting its rapid deployment and integration capabilities.",
+    "date": "February 27, 2025",
+    "source": "Seapower",
+    "product": "Airborne Wide-Area Persistent Surveillance System (AWAPSS)",
+    "url": "https://www.twz.com/air/lockheed-martin-joins-forces-with-bae-systems-on-new-ultra-adaptable-drone"
+  },
+  {
+    "title": "Multi-Sensor Exploitation for Tactical Autonomy (META) - GovTribe",
+    "summary": "This article describes a Broad Agency Announcement (BAA) from the Department of the Air Force Materiel Command Research Laboratory for the Multi-Sensor Exploitation for Tactical Autonomy (META) program. The solicitation seeks research proposals for sensing autonomy technologies, including modeling, simulation, multi-domain data collection, and learning algorithms. Awards for this Air Force program are expected in late 2024, with anticipated funding of $96 million for multiple projects.",
+    "date": "May 09 2019 (Solicitation initially posted, proposals due through August 2024, awards expected late 2024)",
+    "source": "GovTribe",
+    "product": "Multi-Sensor Exploitation for Tactical Autonomy (META) program",
+    "url": "https://govtribe.com/opportunity/federal-contract-opportunity/multi-sensor-exploitation-for-tactical-autonomy-meta-fa865019s1943"
+  },
+  {
+    "title": "Lockheed Martin and Google Public Sector to Bring Generative AI to On-Premise Infrastructure for National Security",
+    "summary": "This strategic collaboration between Lockheed Martin and Google Public Sector aims to integrate Google's advanced generative AI, including Gemini models, into Lockheed Martin's AI Factory. The initiative focuses on empowering Lockheed Martin's teams to utilize advanced data-driven solutions for national security, including accelerated multi-modal data analysis to rapidly identify patterns, anomalies, and critical insights from vast datasets.",
+    "date": "October 29, 2025",
+    "source": "Lockheed Martin",
+    "product": "Multi-INT Analytics for Pattern Learning & Exploitation (MAPLE)",
+    "url": "https://news.lockheedmartin.com/2025-10-29-Lockheed-Martin-and-Google-Public-Sector-to-Bring-Generative-AI-to-On-Premise-Infrastructure-for-National-Security"
+  },
+  {
+    "title": "Lockheed Martin and Google Cloud Announce Collaboration to Advance Generative AI For National Security",
+    "summary": "Lockheed Martin and Google Public Sector announced their intent to integrate Google's generative AI into Lockheed Martin's AI Factory ecosystem to accelerate AI-driven capabilities for national security. This collaboration will enhance critical areas such as advanced intelligence analysis and real-time decision-making by rapidly processing and analyzing vast datasets to identify patterns, anomalies, and critical insights.",
+    "date": "March 27, 2025",
+    "source": "Nasdaq",
+    "product": "Multi-INT Analytics for Pattern Learning & Exploitation (MAPLE)",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4Kg5WBVg5dpfytOzJSkdcxkXvemnYc-fmjNs4VVEl32HZVDY3a_iu6JprfOwrC8HWoW4sn4SZywOO6qEvFJ71IzormiLOMFWzTMdo58TwubfYe8UAZMoWbHmIBbjBr9SgjMNbp7eQ-6t0kmSjEHhTVSOQ1_MK-XMdlorWJVGBKVtGH6YLZbPICYcEG47ZLtMQfL2xFmIfljFFrLJlxKlXnXfmt4yy1gtpdUDP"
+  },
+  {
+    "title": "Lockheed Martin Leverages AI and Machine Learning",
+    "summary": "This article details Lockheed Martin's significant investment in artificial intelligence and machine learning as key tenets of its 21st Century Security vision. The company is demonstrating how AI can analyze multiple, diverse data streams to enhance situational awareness, exemplified by creating a prototype Earth and Space Observing Digital Twin for NOAA.",
+    "date": "July 29, 2024",
+    "source": "Lockheed Martin",
+    "product": "Multi-INT Analytics for Pattern Learning & Exploitation (MAPLE)",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2024/lockheed-martin-leverages-ai-and-machine-learning-to-revolutionize-defense-and-space-technology.html"
+  },
+  {
+    "title": "Case Study: Lockheed Martin at Valiant Shield 2024",
+    "summary": "This case study highlights Lockheed Martin's participation in Valiant Shield 2024, emphasizing their role as a Mission Integrator. The company showcased innovative technologies and rapid capabilities, including seamless integration of digital command and control with the Joint Fires Network. They also utilized a Space Kit for autonomous ISR missions and demonstrated advanced technologies in sensor fusion, data analytics, and artificial intelligence.",
+    "date": "",
+    "source": "Lockheed Martin",
+    "product": "Valiant Angel system",
+    "url": "https://www.lockheedmartin.com/en-us/capabilities/mission-integration/case-study-lockheed-martin-at-valiant-shield-2024.html"
+  },
+  {
+    "title": "Lockheed Martin Integrates C2 Capabilities with 1st Joint Fires Network Prototype - ASDNews",
+    "summary": "Lockheed Martin successfully integrated digital command and control (C2) capabilities with the first version of the Department of Defense's Joint Fires Network during the U.S. Indo-Pacific Command's (INDOPACOM) Valiant Shield exercise in June 2024. This achievement marked the first test of the initial Joint Fires Network prototype, enhancing joint fires planning and execution. The company improved C2 Planning Software, streamlining operator workflows and enabling real-time monitoring.",
+    "date": "June 19, 2024",
+    "source": "ASDNews",
+    "product": "Valiant Angel system",
+    "url": "https://www.asdnews.com/news/defense/2024/06/19/lockheed-martin-integrates-c2-capabilities-with-1st-joint-fires-network-prototype"
+  },
+  {
+    "title": "Astris AI for Government\u2122 Solutions to Accelerate Secure AI Adoption Across the Public Sector",
+    "summary": "Lockheed Martin subsidiary Astris AI has launched a new initiative to advance trustworthy and secure artificial intelligence (AI) across high-assurance applications for government agencies. This solution provides an integrated, turnkey AI platform that enables government entities to build, deploy, and sustain trusted AI to meet ambitious innovation and efficiency goals. The initiative leverages Lockheed Martin's substantial AI investments and collaborations with partners like Oracle, NVIDIA, and Meta.",
+    "date": "December 11, 2025",
+    "source": "Lockheed Martin (via PRNewswire / Investor Relations)",
+    "product": "Intelligence Solutions",
+    "url": "https://news.lockheedmartin.com/2025-12-11-Astris-AI-for-Government-TM-Solutions-to-Accelerate-Secure-AI-Adoption-Across-the-Public-Sector"
+  },
+  {
+    "title": "Lockheed Martin Revolutionizes AI Integration with STAR.OS",
+    "summary": "Lockheed Martin has introduced STAR.OS\u2122, a new solution designed to enable seamless integration and collaboration between different artificial intelligence (AI) systems. This groundbreaking tool addresses a long-standing challenge in AI by providing a common framework for combining various AI systems and services to achieve common goals in national security. Early applications of STAR.OS\u2122 are supporting government customers in areas such as threat detection and missile warning.",
+    "date": "November 06, 2025",
+    "source": "Lockheed Martin Newsroom",
+    "product": "Intelligence Solutions",
+    "url": "https://investors.lockheedmartin.com/news-releases/news-release-details/astris-ai-governmenttm-solutions-accelerate-secure-ai-adoption"
+  },
+  {
+    "title": "Lockheed Martin Completes Acquisition of Amentum's Rapid Solutions Portfolio",
+    "summary": "Lockheed Martin has finalized its acquisition of Amentum's Rapid Solutions business, enhancing its space and airborne mission capabilities, including intelligence, surveillance, and reconnaissance (ISR) technologies. This acquisition strengthens Lockheed Martin's ability to address evolving threats and provides customers with critical awareness and decision-making advantages. The Rapid Solutions team will be integrated into Lockheed Martin's Space business area, bolstering the company's national security infrastructure.",
+    "date": "June 26, 2025",
+    "source": "Lockheed Martin Newsroom",
+    "product": "Intelligence Solutions",
+    "url": "https://news.lockheedmartin.com/2025-11-06-Lockheed-Martin-Revolutionizes-AI-Integration-with-STAR-OS"
+  },
+  {
+    "title": "Next Generation Infrared Sensing (NGIS)",
+    "summary": "Next Generation Infrared Sensing (NGIS) is a multi-spectral, highly configurable imaging focal plane array (FPA) developed by Lockheed Martin. It provides broad-spectrum capabilities for diverse applications such as infrared search and track (IRST) and missile warning. The technology incorporates innovative processing methods to achieve a significantly increased charge storage capacity and dynamic range.",
+    "date": "2025-02-24",
+    "source": "Lockheed Martin",
+    "product": "Next Generation Infrared Sensing (NGIS)",
+    "url": "https://www.lockheedmartin.com/en-us/products/next-generation-infrared-sensing-ngis.html"
+  },
+  {
+    "title": "Lockheed Martin to Modernize Air Force F-22 Raptor with Advanced Infrared Threat-Detection Sensors",
+    "summary": "Lockheed Martin has secured a $270 million contract from the U.S. Air Force to integrate a system of next-generation infrared defensive sensors on the F-22 Raptor. This system, known as the Infrared Defensive System (IRDS) and utilizing embedded TacIRST sensors, aims to enhance the F-22's survivability and lethality against current and future adversaries. The company will also extend support for integrating this system on other platforms.",
+    "date": "January 22, 2025",
+    "source": "PR Newswire",
+    "product": "Next Generation Infrared Sensing (NGIS)",
+    "url": "https://www.lockheedmartin.com/en-us/capabilities/sensors.html"
+  },
+  {
+    "title": "F-22 Raptor to Get Next-Gen Infrared Sensor From Lockheed",
+    "summary": "Lockheed Martin is under contract to integrate a next-generation infrared search and track (IRST) system onto the F-22 Raptor. This Infrared Defensive System (IRDS) will allow the aircraft to passively detect and track airborne threats by their infrared signatures, improving its ability to engage stealthy targets while being immune to electronic warfare. The integration of these distributed TacIRST sensors is part of a broader upgrade initiative for the F-22.",
+    "date": "January 25, 2025",
+    "source": "NextGen Defense",
+    "product": "Next Generation Infrared Sensing (NGIS)",
+    "url": "https://www.lockheedmartin.com/en-us/who-we-are/business-areas/missiles-and-fire-control/products.html"
+  },
+  {
+    "title": "Lockheed Martin introduces STAR.OS to improve integration of AI systems for defence applications",
+    "summary": "Lockheed Martin has launched STAR.OS, a new AI integration framework designed to unify multiple artificial intelligence systems for national security operations. The technology enables different AI services to work together in real-time, with early uses supporting maritime threat detection and missile warning systems. This framework aims to provide more effective solutions to customers, helping them make informed decisions and stay ahead of emerging threats.",
+    "date": "November 06 2025",
+    "source": "Defence Industry Europe",
+    "product": "AI-powered Threat Detection Systems",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN05Lz8IZ8vgEtHfvLQIWaqf19sjDbWv3kmJpKDn_jlFhgO3Cj-aovdEntMWp0KLAa97m_50U3Zqupj9shbAJCWK-OknAlKAuTvFdiKHqpcc7R3NuL7qKle437sWe8jgHV0YfBu6Grwp-O7kwObPThbW8aNcUZJN1QyS9kPcoCB5-iZPHMiM0bkq3pGBWJTjdjiBovNS0Z8hN1seWbjB7itUatzjwPIrwIykjR5hnma1A8-PFmS8U9"
+  },
+  {
+    "title": "AI will make drone threats a nightmare - it could also save us - Breaking Defense",
+    "summary": "This article discusses Lockheed Martin's Counter-UAS system, Sanctum\u2122, which utilizes AI to enhance drone defenses. Sanctum\u2122 is designed to detect drones in cluttered environments, track them, and identify their threat level. The system then recommends ideal weapon-target pairings for rapid and safe neutralization.",
+    "date": "September 29 2025",
+    "source": "Breaking Defense",
+    "product": "AI-powered Threat Detection Systems",
+    "url": "https://www.edrmagazine.eu/lockheed-martin-revolutionizes-ai-integration-with-star-os"
+  },
+  {
+    "title": "Lockheed Martin Revolutionizes Maritime Surveillance with AI-Powered Technology",
+    "summary": "Lockheed Martin has achieved a breakthrough in AI and airborne surveillance with a new AI-powered Synthetic Aperture Radar (SAR) capable of detecting and tracking maritime targets with high accuracy. This technology, demonstrated in a recent flight test, automatically recognizes targets and enables warfighters to quickly differentiate between combatant and civilian vessels. This advancement significantly enhances situational awareness and decision-making capabilities in maritime environments.",
+    "date": "July 16 2025",
+    "source": "Lockheed Martin Newsroom",
+    "product": "AI-powered Threat Detection Systems",
+    "url": "https://breakingdefense.com/2025/09/ai-will-make-drone-threats-a-nightmare-it-could-also-save-us/"
+  },
+  {
+    "title": "BAE Systems selected to advance autonomous technology for automatic target recognition",
+    "summary": "The Air Force Research Laboratory (AFRL) awarded BAE Systems a $7.8 million contract as part of the Multi-Sensor Exploitation for Tactical Autonomy (META) program. This contract focuses on developing tightly integrated machine learning software for advanced situational awareness and automatic target recognition. BAE Systems' FAST Labs\u2122 research and development organization will provide an innovative suite of machine learning and fusion algorithms called Environmentally Adaptive Geospatial Learning and Exploitation.",
+    "date": "June 23, 2022",
+    "source": "BAE Systems",
+    "product": "Multi-Sensor Exploitation for Tactical Autonomy (META) Program",
+    "url": "https://www.baesystems.com/en-us/article/bae-systems-selected-to-advance-autonomous-technology-for-automatic-target-recognition"
+  },
+  {
+    "title": "Multi-Sensor Exploitation for Tactical Autonomy (META) 11",
+    "summary": "This entry from HigherGov reports that a contract under the Multi-Sensor Exploitation for Tactical Autonomy (META) program, solicitation number FA8650-19-S-1943, was awarded to Atmospheric & Environmental Research by the Department of the Air Force. The scope of work includes analyzing current challenges in autonomous and automated reasoning, implementing improvements to research and development environments, and investigating data storage, management, and recall capabilities to enhance AI and autonomy algorithm development.",
+    "date": "May 04, 2023",
+    "source": "HigherGov",
+    "product": "Multi-Sensor Exploitation for Tactical Autonomy (META) Program",
+    "url": "https://www.highergov.com/contract-opportunity/multi-sensor-exploit-fa8650-19-s-1943-award-fa8650-23-c-1090-atmospheric-and-environmental-research-inc-71f56/"
+  },
+  {
+    "title": "Multi-Sensor Exploitation Tactical Autonomy (META)",
+    "summary": "This HigherGov article announces that a contract under the Multi-Sensor Exploitation for Tactical Autonomy (META) program, identified by solicitation FA8650-19-S-1943, was awarded to Parallax Advanced Research by the Air Force Research Laboratory. The awarded work involves research and development activities focused on \"Rapid Battlespace Identification,\" which centers on the quick identification of elements within the battlespace through multi-sensor exploitation to support tactical autonomy.",
+    "date": "June 08, 2021",
+    "source": "HigherGov",
+    "product": "Multi-Sensor Exploitation for Tactical Autonomy (META) Program",
+    "url": "https://www.highergov.com/contract-opportunity/multi-sensor-exploit-fa8650-19-s-1943-award-fa8650-21-c-1164-parallax-advanced-research-corporation-e551a/"
+  },
+  {
+    "title": "Lockheed Martin advances PAC-3 MSE interceptor using artificial intelligence and machine learning",
+    "summary": "Lockheed Martin has integrated artificial intelligence and machine learning into its PAC-3 MSE interceptor system to enhance decision speed and precision against air and missile threats. The PAC-3 MSE already incorporates embedded AI software, and these upgrades aim to improve its ability to detect, track, and engage targets in real time. This investment in AI extends to broader layered defense systems to improve mission performance and situational awareness.",
+    "date": "October 18, 2025",
+    "source": "Defence-industry.eu",
+    "product": "Artificial Intelligence and Machine Learning",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjDFMFA24wnByBGlIILCfXagDAbLeS6ePcO0YxI63CE20x4hoiYh5yYRPHMVfFufWK0cLoa7BfX7SQoR42nIknDeAlsHXFAP0pS9pgnL_ns40TLQnIY4QmTEQAIq-m3smCj4CHAjGSa1vr3ktWTbAnDZRLdT-jZJFQswtZ-PXt48AFkFwLw7Y6JgQ5F6_jBLe-p_YfcdHv-BVgQTTioSguULTwCMSokKL23ScM4QKhOOByo3cccm_e"
+  },
+  {
+    "title": "Lockheed Martin Leverages AI and Machine Learning to Revolutionize Defense and Space Technology",
+    "summary": "Lockheed Martin is heavily investing in AI and ML as a core part of its 21st Century Security vision, aiming to scale these technologies for critical missions. A key project is the DARPA Artificial Intelligence Reinforcements (AIR) program, for which Lockheed Martin was awarded a contract to develop AI tools for dynamic airborne missions. The company's ARISE\u2122 capability, which standardizes modeling and simulation using AI, aims to deliver faster, more accurate results and significant cost savings for the Department of Defense.",
+    "date": "July 29, 2024",
+    "source": "Lockheed Martin",
+    "product": "Artificial Intelligence and Machine Learning",
+    "url": "https://finviz.com/news/193343/lockheed-martin-uses-ai-to-strengthen-pac-3-defense-system"
+  },
+  {
+    "title": "Skunk Works\u00ae and Arquimea Develop AI Capable ISR Platforms",
+    "summary": "Lockheed Martin Skunk Works\u00ae, in collaboration with Arquimea, has demonstrated an anomaly detection capability for Intelligence, Surveillance, and Reconnaissance (ISR) platforms. This cutting-edge technology reduces the number of scans needed by sensors to identify unusual patterns or deviations, specifically in electro-optical and infrared spectra, dramatically improving the detection of changes in physical features. The capability has wide-ranging applications, including enhancing security, disaster response, environmental monitoring, and safety, by helping detect hidden threats, wildfires, pollution, and equipment failures.",
+    "date": "April 14 2025",
+    "source": "Lockheed Martin Corp",
+    "product": "AI-based Anomaly Detection Capability",
+    "url": "https://investors.lockheedmartin.com/news-releases/news-release-details/skunk-worksr-and-arquimea-develop-ai-capable-isr-platforms/"
+  },
+  {
+    "title": "Lockheed Martin and Arquimea demonstrate advanced anomaly detection for ISR platforms",
+    "summary": "Lockheed Martin's Skunk Works, in partnership with Spanish technology firm Arquimea, has unveiled a new AI-based anomaly detection capability that significantly enhances how Intelligence, Surveillance, and Reconnaissance (ISR) platforms detect changes in electro-optical and infrared imagery. By identifying deviations from expected patterns, the system reduces the number of scans required and improves the detection of irregularities. This advancement has important implications for security, disaster response, environmental monitoring, and operational safety, as it allows ISR systems to identify subtle changes using stored visual memories and machine learning algorithms.",
+    "date": "April 14 2025",
+    "source": "Defence Industry Europe",
+    "product": "AI-based Anomaly Detection Capability",
+    "url": "https://investors.lockheedmartin.com/news-releases/news-release-details/skunk-worksr-and-arquimea-develop-ai-capable-isr-platforms"
+  },
+  {
+    "title": "HercFusion: Transforming C-130 Maintenance with AI Tech",
+    "summary": "Lockheed Martin, in partnership with SAS Industries, developed HercFusion, a suite of AI-powered tools revolutionizing C-130J Super Hercules maintenance. HercFusion utilizes data from millions of flight hours to predict part replacement requirements, shifting operators from unscheduled to scheduled maintenance practices. This initiative aims to optimize aircraft performance and ensure the readiness of the C-130J fleet worldwide.",
+    "date": "May 22, 2024",
+    "source": "Lockheed Martin",
+    "product": "Predictive Maintenance (e.g., NeAR, HercFusion)",
+    "url": "https://mrobusinesstoday.com/lockheed-martin-and-sas-industries-to-integrate-ai-for-c-130-jet-mro/"
+  },
+  {
+    "title": "Lockheed and ManTech to Modernize U.S. Military Aircraft Maintenance Using AI",
+    "summary": "Lockheed Martin and ManTech have formed a strategic partnership to modernize U.S. military aircraft maintenance through artificial intelligence. This collaboration will implement real-time aircraft performance monitoring, advanced predictive maintenance capabilities, and streamlined logistics management. The goal is to minimize downtime, extend the operational lifespan of military aircraft, and enhance overall mission readiness.",
+    "date": "December 29, 2025",
+    "source": "ePlaneAI",
+    "product": "Predictive Maintenance (e.g., NeAR, HercFusion)",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2024/HercFusion.html"
+  },
+  {
+    "title": "Lockheed Martin Demonstrates Scalable, Portable Maintenance Capabilities on 5G Network",
+    "summary": "Lockheed Martin successfully demonstrated analytics-driven maintenance capabilities compatible with the Department of Defense's 5G flight-line ecosystem through its Network-enabled Analytics for Readiness 5G initiative (NeAR). The NeAR application provides maintainers and technical experts with comprehensive flight data recordings and AI-driven predictive maintenance and sensor-data analytics. This technology, integrated with portable devices, aims to improve aircraft readiness and reduce costs by facilitating faster decision-making on the flight line.",
+    "date": "April 03, 2023",
+    "source": "Lockheed Martin",
+    "product": "Predictive Maintenance (e.g., NeAR, HercFusion)",
+    "url": "https://www.eplaneai.com/news/lockheed-and-mantech-to-modernize-us-military-aircraft-maintenance-using-ai"
+  },
+  {
+    "title": "SOCET GXP and GXP InMotion Desktop release enhancements",
+    "summary": "This article details enhancements to SOCET GXP\u00ae and GXP InMotion Desktop software, including updates released in December 2024, March 2025, and June 2025. Key improvements encompass added support for Microsoft Windows\u00ae 11, Java 11, PostgreSQL, and .NET 8, along with integrated OAuth2.0 authentication. The updates also introduce new functionalities such as the ability to set camera parameters in the 3D MultiportTM and improved epipolar rectification for oblique viewing.",
+    "date": "July 21, 2025 (latest approved public release date for some content) / September 30, 2025 (latest approved public release date for some content)",
+    "source": "BAE Systems GXP\u00ae software solutions | Geospatial eXploitation Products",
+    "product": "SOCET GXP\u00ae",
+    "url": "https://www.geospatialexploitationproducts.com/wp-content/uploads/2025/09/SOCET-GXP-v.4.6.0.3__Release-Enhancements.pdf"
+  },
+  {
+    "title": "2026 GXP360\u00b0 Professional Exchange and Workshop",
+    "summary": "BAE Systems is set to host the 2026 GXP360\u00b0 Professional Exchange and Workshop from May 18-20, where they will introduce SOCET GXP\u00ae v5.0 and the GXP Xplorer\u00ae Platform v3.0. This event will highlight how these major releases enhance the integration of artificial intelligence within the GXP Ecosystem. Attendees will learn about automated workflows for operational efficiency, enhanced data analysis leveraging AI for actionable insights, and seamless collaboration features.",
+    "date": "May 18-20, 2026 (event date)",
+    "source": "Geospatial eXploitation Products",
+    "product": "SOCET GXP\u00ae",
+    "url": "https://www.geospatialexploitationproducts.com/wp-content/uploads/2025/07/SOCET-GXP-v.4.6.0.2__Release-Enhancements.pdf"
+  },
+  {
+    "title": "Lockheed Martin Rolls Out In-House GenAI Platform to US Workforce; Mike Baylor Quoted",
+    "summary": "Lockheed Martin deployed its in-house generative AI platform, LMText Navigator, to its U.S. workforce, developed by the company's AI Factory. This platform, powered by NVIDIA DGX SuperPOD AI, is intended for use in accelerating post-mission analytics, generating and testing software code, and extracting information from production line documentation.",
+    "date": "October 09, 2024",
+    "source": "ExecutiveBiz",
+    "product": "LMText Navigator",
+    "url": "https://industry.ausa.org/article/166400/lockheed-martin-deploys-powerful-secure-generative-ai-tools-across-the-enterprise"
+  },
+  {
+    "title": "MDA awards Lockheed Martin $4.1B contract to upgrade its battle command system",
+    "summary": "The U.S. Missile Defense Agency has awarded Lockheed Martin a contract up to $4.1 billion to upgrade its Command and Control, Battle Management and Communications (C2BMC) system. This upgrade will enhance the global missile defense architecture with 21st Century Security technology, enabling faster, multi-domain coordinated responses to threats, including greater Space Domain Awareness and global integration with allies.",
+    "date": "April 11, 2024",
+    "source": "Defense News, Breaking Defense",
+    "product": "Battlespace Management and Intelligence System",
+    "url": "https://www.defensenews.com/pentagon/2024/04/11/mda-awards-lockheed-41b-contract-to-upgrade-battle-command-system/"
+  },
+  {
+    "title": "Lockheed Martin demos AI system that replans drone missions in seconds",
+    "summary": "Lockheed Martin's Skunk Works division successfully demonstrated an AI system capable of autonomously managing unmanned drone missions. This technology rapidly replans tasks and redirects aircraft in response to unexpected events, enabling operators to maintain focus on broader mission priorities while coordinating dispersed air and ground drone networks.",
+    "date": "December 04, 2025",
+    "source": "Seeking Alpha",
+    "product": "Battlespace Management and Intelligence System",
+    "url": "https://breakingdefense.com/2024/04/mda-launches-missile-defense-battle-management-upgrade-with-847m-order-to-lockheed-martin/"
+  },
+  {
+    "title": "Lockheed Martin's battlespace management impresses at AWE 20",
+    "summary": "Lockheed Martin UK showcased its SkyKeeper and THEIA systems at the British Army's Army Warfighting Experiment 20 (AWE 20). SkyKeeper is a Battle Management Command, Control, Communications, Computers and Intelligence (BMC4I) solution, while THEIA provides Intelligence, Surveillance, Target Acquisition and Reconnaissance (ISTAR) and Situational Awareness, both demonstrating their potential to integrate into the army's future 'digital backbone'.",
+    "date": "November 16, 2020",
+    "source": "Army Technology",
+    "product": "Battlespace Management and Intelligence System",
+    "url": "https://seekingalpha.com/news/4528589-lockheed-martin-demos-ai-system-that-replans-drone-missions-in-seconds"
+  },
+  {
+    "title": "Lockheed Martin to Enhance F-16 Training Programs with Rockwell Collins Display Systems",
+    "summary": "Lockheed Martin has selected Rockwell Collins (now Collins Aerospace) to provide display systems for two international F-16 training program customers. These solutions include customized configurations of Rockwell Collins' Griffin rear-projection dome and SpectraView display systems. The aim is to deliver modern, high-fidelity training tailored to their specific environments, incorporating features such as expanded ingress/egress for the F-16 cockpit and enhanced night vision goggle (NVG) usage for realistic nighttime training operations.",
+    "date": "January 26, 2026",
+    "source": "Industry News / Press Release",
+    "product": "Advanced Avionics and Simulation Display Systems (Collins Aerospace)",
+    "url": "https://iconnect007.com/article/107663/lockheed-martin-to-enhance-f16-training-programs-with-rockwell-collins-display-systems/107666/milaero"
+  },
+  {
+    "title": "RTX's Collins Aerospace announces avionics modernization program for King Air and Hawker aircraft",
+    "summary": "Collins Aerospace, an RTX business, has launched a comprehensive avionics upgrade and modernization program for Beechcraft King Air and Hawker aircraft. This initiative utilizes Collins' Pro Line Fusion\u00ae and Pro Line 21\u2122 advanced avionics systems to enhance aircraft performance, safety, and operational efficiency. The program includes upgrading Pro Line 21-equipped King Airs to Pro Line Fusion and providing extensive system upgrades for existing Pro Line Fusion and Pro Line 21 aircraft.",
+    "date": "December 16, 2024",
+    "source": "Raytheon / PR Newswire",
+    "product": "Advanced Avionics and Simulation Display Systems (Collins Aerospace)",
+    "url": "https://raytheon.mediaroom.com/2024-12-16-RTXs-Collins-Aerospace-announces-avionics-modernization-program-for-King-Air-and-Hawker-aircraft"
+  },
+  {
+    "title": "Collins Aerospace and Thomas Global Systems Team for Long-Term Pro Line 4 Display Support",
+    "summary": "Collins Aerospace and Thomas Global Systems have established a strategic partnership to provide long-term product support for Collins' Pro Line 4 Electronic Flight Displays (EFD). Under this agreement, Collins will transfer maintenance and repair responsibilities for EFD-4076 and EFD-4077 to Thomas Global Systems, which will also make its LCD upgrades available to Collins customers. This collaboration addresses cathode ray tube (CRT) obsolescence and aims to extend the service life of legacy avionics systems in various regional and business jets.",
+    "date": "April 23, 2025",
+    "source": "Business Wire",
+    "product": "Advanced Avionics and Simulation Display Systems (Collins Aerospace)",
+    "url": "https://www.designdevelopmenttoday.com/industries/aerospace/news/22928961/rtxs-collins-aerospace-announces-avionics-modernization-for-king-air-and-hawker-aircraft"
+  },
+  {
+    "title": "Lockheed Martin, XTEND integrate drone control systems for military use",
+    "summary": "Lockheed Martin Skunk Works and XTEND have successfully integrated their drone control systems, enabling a single operator to command multiple types of unmanned aerial systems (UAS) simultaneously. This integration aims to enhance operational flexibility and improve pilot safety by optimizing piloted and drone teaming for Joint All-Domain Command and Control (JADC2) missions. The control systems manage various aspects of drone operation, including data feeds from integrated camera systems crucial for military applications.",
+    "date": "December 18 2025",
+    "source": "Investing.com",
+    "product": "Camera systems (as part of Integrated Vehicle Electronics / Vetronics Systems)",
+    "url": "https://www.investing.com/news/company-news/lockheed-martin-xtend-integrate-drone-control-systems-for-military-use-93CH-4414473"
+  },
+  {
+    "title": "Lockheed's Skunk Works reveals Vectis stealth drone, eyeing first flight in 2027",
+    "summary": "Lockheed Martin's Skunk Works has unveiled Vectis, a new stealthy autonomous drone designed for various mission sets including Intelligence, Surveillance, and Reconnaissance (ISR). Expected to fly by the end of 2027, Vectis features an open systems architecture for interfacing with diverse platforms and mission systems. As an ISR-capable drone, its integrated electronics will heavily rely on advanced camera systems for critical data collection and situational awareness.",
+    "date": "September 21 2025",
+    "source": "Breaking Defense",
+    "product": "Camera systems (as part of Integrated Vehicle Electronics / Vetronics Systems)",
+    "url": "https://breakingdefense.com/2025/09/lockheeds-skunk-works-reveals-vectis-stealth-drone-eyeing-first-flight-in-2027/"
+  },
+  {
+    "title": "Lockheed's AI Factory: Turning a \u201cDigital Thread\u201d Into a Battle-Ready Advantage",
+    "summary": "Lockheed Martin's subsidiary, Astris AI, has launched a new AI platform called AI Factory, which offers defense-grade security across various environments. This platform provides access to Lockheed Martin's comprehensive suite of AI components, allowing users to process vast amounts of data securely and enabling real-time insights for decision-makers. It aims to fill a critical security gap in defense, aerospace, finance, healthcare, energy, and manufacturing industries by extending AI capabilities to tactical and industrial environments where connectivity is often limited.",
+    "date": "February 02 2026",
+    "source": "Lockheed Martin (via Breaking Defense, referencing AIAA SciTech Forum 2026)",
+    "product": "Astris AI",
+    "url": "https://aerospaceamerica.aiaa.org/institute/lockheeds-ai-factory-turning-a-digital-thread-into-a-battle-ready-advantage/"
+  },
+  {
+    "title": "Astris AI and Albany Engineered Composites Team Up to Transform Defense Supply Chain with AI",
+    "summary": "Astris AI, a Lockheed Martin company, announced a partnership with Albany Engineered Composites (AEC) to integrate AI into AEC's advanced aerospace manufacturing operations. This collaboration marks AEC as the first supplier to undertake a structured AI modernization journey with Astris AI, establishing a blueprint for enhancing the broader defense supply chain. Astris AI will deploy its defense-grade AI Factory platform within AEC, developing an AI roadmap, secure governance frameworks, and operationalizing AI models to predict composite material properties.",
+    "date": "January 13 2026",
+    "source": "Astris AI (Press Release)",
+    "product": "Astris AI",
+    "url": "https://investors.albint.com/news-releases/news-release-details/astris-ai-and-albany-engineered-composites-team-transform"
+  },
+  {
+    "title": "Astris AI Announces New Defense-Grade AI Platform to Accelerate Secure On-Premises and Edge Deployments running on HPE Infrastructure",
+    "summary": "Astris AI, a Lockheed Martin company, launched a new defense-grade AI platform designed to accelerate secure on-premises and edge deployments utilizing HPE infrastructure. This mission-ready platform enables government, defense, and other regulated industries to securely deploy AI in various environments, including disconnected edge locations. The platform improves operational decision-making, streamlines accreditation, and ensures compliant, predictable performance by extending AI capabilities to tactical and industrial settings.",
+    "date": "January 12 2026",
+    "source": "Astris AI (Press Release)",
+    "product": "Astris AI",
+    "url": "https://astrisai.com/press-release/astris-ai-announces-new-defense-grade-ai-platform-to-accelerate-secure-on-premises-and-edge-deployments-running-on-hpe-infrastructure"
+  },
+  {
+    "title": "Accelerating Integration: How Open Architecture, AI and Interoperability Are Redefining Air Power",
+    "summary": "This article discusses Lockheed Martin's strategic focus on achieving warfighting integration across domains, platforms, and partner nations through open architecture, AI, and interoperability. It emphasizes the necessity of open standards over proprietary architectures and showcases an example of an F-35 utilizing a Skunk Works' open architecture gateway to transmit classified targeting data.",
+    "date": "June 20, 2025",
+    "source": "Lockheed Martin",
+    "product": "Open Architecture Processor (OAP)",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2025/Accelerating-Integration-How-Open-Architecture-AI-and-Interoperability-Are-Redefining-Coalition-Air-Power.html"
+  },
+  {
+    "title": "Lockheed Martin, Juniper Networks Demonstrate Mission-Aware Routing Technology for Department of Defense",
+    "summary": "Lockheed Martin and Juniper Networks successfully demonstrated a mission-aware routing technology designed to streamline and prioritize the flow of critical information from contested environments to commanders. This was achieved using secure 5G.MIL distributed open system gateway connectivity, aiming to enhance communication performance and resilience in military operations.",
+    "date": "February 22, 2023",
+    "source": "Lockheed Martin Newsroom",
+    "product": "Open Architecture Processor (OAP)",
+    "url": "https://newsroom.juniper.net/news/news-details/2023/Lockheed-Martin-Juniper-Networks-Demonstrate--Mission-Aware-Routing-Technology--for-Department-of-Defense/default.aspx"
+  },
+  {
+    "title": "Navy Integrated Submarine Imaging System (ISIS) Program Combines Digital and Visual Imaging for Periscopes",
+    "summary": "The U.S. Navy awarded Lockheed Martin a $126.3 million contract modification on September 6, 2025, to support the Integrated Submarine Imaging System (ISIS) program. This program enhances submarine surveillance capabilities by integrating digital and visual imaging into periscopes, providing high-resolution, all-weather imagery for various submarine classes. The system is designed to allow for future upgrades.",
+    "date": "September 06 2025",
+    "source": "DSIAC",
+    "product": "AN/BVY-1 Integrated Submarine Imaging System (ISIS)",
+    "url": "https://dsiac.dtic.mil/articles/navy-integrated-submarine-imaging-system-isis-program-combines-digital-and-visual-imaging-for-periscopes/"
+  },
+  {
+    "title": "BVY-1 ISIS TI-26 TI-28 TI-30 Solicitation - GovTribe",
+    "summary": "Naval Sea Systems Command (NAVSEA) issued a solicitation on April 8, 2024, for the procurement of program management, engineering, software development, and integration services for the AN/BVY-1 Integrated Submarine Imaging System (ISIS) technology insertion baselines TI-26, TI-28, and TI-30. This solicitation applies to both in-service and new construction submarines, with a proposal due date of May 31, 2024.",
+    "date": "April 08 2024",
+    "source": "GovTribe",
+    "product": "AN/BVY-1 Integrated Submarine Imaging System (ISIS)",
+    "url": "https://govtribe.com/opportunity/federal-contract-opportunity/n00024-24-r-6203-bvy-1-isis-ti-26-ti-28-ti-30-solicitation-n0002424r6203"
+  },
+  {
+    "title": "Engineering for Submarine Imaging System (ISIS) TI 20-24 (N0002418C6258) - HigherGov",
+    "summary": "Lockheed Martin Rotary and Mission Systems was awarded an $11,000,175 cost-plus-incentive-fee modification in February 2025, for engineering support, components, and other direct costs related to the Integrated Submarine Imaging System. This work is expected to be completed by February 2026, building upon a previously awarded contract for ISIS Technical Insertion 20-24.",
+    "date": "February 2025",
+    "source": "HigherGov",
+    "product": "AN/BVY-1 Integrated Submarine Imaging System (ISIS)",
+    "url": "https://www.highergov.com/contract/N0002418C6258/"
+  },
+  {
+    "title": "Lockheed Martin extends partnership with Guardtime Federal - CISO Mag",
+    "summary": "Lockheed Martin has announced an extension of its partnership with Guardtime Federal to integrate enhanced cyber-related capabilities into its aircraft products and systems. This collaboration focuses on strengthening cybersecurity for the information supply chain around operational aircraft network systems, building on their work since 2015 to address data manipulation threats in cyber-physical systems. The objective is to provide confidence to military personnel that their information and equipment have not been manipulated by external forces.",
+    "date": "February 20 2026",
+    "source": "CISO Mag",
+    "product": "Cybersecurity Solutions",
+    "url": "https://cisomag.com/lockheed-martin-extends-partnership-with-guardtime-federal/"
+  },
+  {
+    "title": "Lockheed Martin Pushes Suppliers Toward Urgent Cybersecurity Compliance - Summit 7",
+    "summary": "Lockheed Martin has issued a new announcement emphasizing that Cybersecurity Maturity Model Certification (CMMC) compliance is an immediate requirement for its suppliers. As of June 30, 2025, suppliers handling Federal Contract Information (FCI) or Controlled Unclassified Information (CUI) must demonstrate their cybersecurity practices to maintain their place in Lockheed Martin's supply chain. This initiative aims to secure the U.S. defense infrastructure against sophisticated nation-state cyber threats by enforcing CMMC standards across the entire supply chain.",
+    "date": "July 01 2025",
+    "source": "Summit 7",
+    "product": "Cybersecurity Solutions",
+    "url": "https://www.summit7.us/blog/lockheed-martin-pushes-suppliers-toward-urgent-cybersecurity-compliance"
+  },
+  {
+    "title": "How Lockheed Martin is using AI to transform cybersecurity",
+    "summary": "Lockheed Martin is leveraging artificial intelligence (AI) and machine learning (ML) to enhance cybersecurity and stay ahead of evolving cyber threats in the digital age. By embracing cloud computing and AI/ML technologies, the company aims to improve efficiency and develop more agile and adaptive military forces. Its Advanced Innovation Center is developing AI-powered threat detection systems that can identify and respond to emerging threats in real-time, thereby reducing the risk of cyberattacks and data breaches.",
+    "date": "May 05 2025",
+    "source": "Lockheed Martin",
+    "product": "Cybersecurity Solutions",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2025/pioneering-Innovation-how-lockheed-martin-is-using-ai-to-transform-cybersecurity.html"
+  },
+  {
+    "title": "Lockheed, Arquimea Advance Tactical ISR With AI-Powered Anomaly Detection",
+    "summary": "Lockheed Martin's Skunk Works and Arquimea have introduced an AI-driven anomaly detection system for tactical Intelligence, Surveillance, and Reconnaissance (ISR), designed to improve visual intelligence. This technology enhances electro-optical/infrared sensors by identifying subtle changes in physical features and predicting image characteristics to reduce sensor scanning frequency. The system's ability to pull from 'memory' and build fresh perspectives, even when flying blind, was demonstrated in a dense jungle simulation with a small uncrewed aerial system.",
+    "date": "April 21 2025",
+    "source": "Vertex AI Search",
+    "product": "AI-powered Anomaly Detection capability for Intelligence, Surveillance and Reconnaissance (ISR) platforms",
+    "url": "https://defensemirror.com/news/39292"
+  },
+  {
+    "title": "Lockheed Martin chosen to supply air surveillance radars for Denmark and the Faroe Islands",
+    "summary": "The Danish Ministry of Defence has selected Lockheed Martin to provide new air surveillance radars for Denmark and the Faroe Islands, aiming to strengthen air surveillance in both Denmark and the North Atlantic. These modern radars are crucial for detecting, understanding, and responding swiftly to deviations and threats, significantly improving the situational picture and bolstering security across the Kingdom and NATO's integrated air defense. The contract includes the delivery and service activation of three radars in the coming years, with an option for a fourth radar in Greenland.",
+    "date": "December 14, 2025",
+    "source": "Defence-industry.eu",
+    "product": "Highly integrated traffic surveillance systems",
+    "url": "https://defence-industry.eu/lockheed-martin-chosen-to-supply-air-surveillance-radars-for-denmark-and-the-faroe-islands/"
+  },
+  {
+    "title": "Lockheed Martin delivers new Sentinel 4 air defence/C-UAS radars to the US Army",
+    "summary": "Lockheed Martin has delivered the first Sentinel A4 radar from Low-Rate Initial Production (LRIP) 2 to the U.S. Army, marking a significant step towards full-rate production of this next-generation radar. The Sentinel A4 expands battlespace awareness and enhances layered defense against various threats, including cruise missiles, unmanned aerial systems, and rotary- and fixed-wing aircraft. This radar, replacing the Sentinel A3, features a modern 360-degree Active Electronically Scanned Array (AESA) sensor designed for complex environments and has demonstrated interoperability with existing command-and-control networks.",
+    "date": "February 04, 2026",
+    "source": "Unmanned Airspace",
+    "product": "Highly integrated traffic surveillance systems",
+    "url": "https://www.unmannedairspace.info/counter-uas-systems-and-policies/lockheed-martin-delivers-new-sentinel-4-air-defence-c-uas-radars-to-the-us-army/"
+  },
+  {
+    "title": "British designed satellites successfully launched - - Industry & Member News - ADS Group",
+    "summary": "Three BAE Systems-designed Azalea radio frequency (RF) satellites, along with an ICEYE Synthetic Aperture Radar (SAR) satellite, were successfully launched into low Earth orbit on November 28, 2025, as part of the Transporter-15 mission. This cluster aims to deliver actionable intelligence by processing RF and SAR data in space, supporting defence, security, and civil sectors. BAE Systems will trial the fusion of RF and SAR data with customers for intelligence gathering and disaster relief.",
+    "date": "December 03 2025",
+    "source": "ADS Group",
+    "product": "Azalea satellite cluster",
+    "url": "https://www.adsgroup.org.uk/knowledge/industry-member-news/british-designed-satellites-successfully-launched/"
+  },
+  {
+    "title": "British space comms tech heads into orbit | Computer Weekly",
+    "summary": "BAE Systems' cluster of British-designed and built Azalea radio frequency (RF) satellites was successfully launched into low Earth orbit on November 28, 2025, via SpaceX's Transporter-15 mission. The launch is a significant step for the UK's space sector, increasing the availability of advanced information from space for civil, national security, and defence customers. The satellites use AI to convert raw data into actionable intelligence and can be reconfigured remotely in orbit.",
+    "date": "December 03 2025",
+    "source": "Computer Weekly",
+    "product": "Azalea satellite cluster",
+    "url": "https://www.computerweekly.com/news/366635642/British-space-comms-tech-heads-into-orbit"
+  },
+  {
+    "title": "Lockheed, Arquimea Advance Tactical ISR With AI-Powered Anomaly Detection",
+    "summary": "Lockheed Martin's Skunk Works and Spanish firm Arquimea have developed an AI-driven anomaly detection system for tactical Intelligence, Surveillance, and Reconnaissance (ISR). This system enhances electro-optical/infrared sensors to spot subtle changes in threats and flag anomalies that human eyes might miss. The technology uses AI and machine learning to predict unseeable image characteristics, reducing sensor scan frequency and enabling faster detection of hidden threats, environmental changes, or mechanical failures.",
+    "date": "April 21 2025",
+    "source": "Aerospace & Defense Review",
+    "product": "AI-driven Anomaly Detection System (Skunk Works & Arquimea)",
+    "url": "https://nextgendefense.com/lockheed-arquimea-anomaly-detection/"
+  },
+  {
+    "title": "Skunk works show off AI powered surveillance tech - UK Defence Journal",
+    "summary": "Lockheed Martin's Skunk Works and Arquimea have demonstrated a new AI-based anomaly detection capability for ISR platforms, working within electro-optical and infrared spectra. This system significantly reduces the number of sensor scans needed to identify deviations from expected behavior, improving efficiency and early warning potential. A demonstration involved a small uncrewed air system using neural networks and \"episodic memories\" to detect anomalies in a simulated jungle environment.",
+    "date": "April 20 2025",
+    "source": "UK Defence Journal",
+    "product": "AI-driven Anomaly Detection System (Skunk Works & Arquimea)",
+    "url": "https://ukdefencejournal.org.uk/skunk-works-show-off-ai-powered-surveillance-tech/"
+  },
+  {
+    "title": "Undersea Drone That Attaches Itself To Other Vessels Unveiled By Lockheed",
+    "summary": "Lockheed Martin has unveiled Lamprey, a new undersea drone capable of silently attaching to ships or submarines. This drone is equipped with advanced sensors and communication systems, making it suitable for intelligence, surveillance, and reconnaissance (ISR) missions, covert payload delivery, underwater communications relay, mine countermeasures, and protection of naval assets. Its stealth, versatility, and cost-effectiveness signify a notable advancement in maritime capabilities.",
+    "date": "February 22, 2026",
+    "source": "SA TV News",
+    "product": "Intelligence, Surveillance, and Reconnaissance (ISR) Solutions",
+    "url": "https://www.southland-tv-appliance.com/undersea-drone-that-attaches-itself-to-other-vessels-unveiled-by-lockheed-2/"
+  },
+  {
+    "title": "Skunk Works\u00ae and Arquimea Develop AI Capable ISR Platforms",
+    "summary": "Lockheed Martin Skunk Works\u00ae, in collaboration with Arquimea, has developed an enhanced anomaly detection capability for Intelligence, Surveillance, and Reconnaissance (ISR) platforms, such as drones. This technology significantly reduces the number of scans needed by sensors to identify unusual patterns in electro-optical and infrared spectra, dramatically improving the detection of changes in physical features. This advancement aims to provide AI with greater autonomy in unfamiliar environments and generate early warnings for defense, environmental monitoring, and disaster response.",
+    "date": "April 14, 2025",
+    "source": "Lockheed Martin (via PRNewswire)",
+    "product": "Intelligence, Surveillance, and Reconnaissance (ISR) Solutions",
+    "url": "https://news.lockheedmartin.com/2025-04-14-Skunk-Works-R-and-Arquimea-Develop-AI-Capable-ISR-Platforms"
+  },
+  {
+    "title": "Once unthinkable: Canada may choose a non-US fighter | The Strategist",
+    "summary": "This article discusses Canada's potential fighter jet choices and mentions that RTX's new Electro-Optical Distributed Aperture System (EO-DAS) for the F-35 has not completed its tests, indicating ongoing development or issues. It highlights performance and availability concerns with the F-35 program, which are relevant to its integrated systems like EODAS. The article was published by The Strategist on February 13, 2026.",
+    "date": "February 13, 2026",
+    "source": "The Strategist",
+    "product": "Electro-Optical Distributed Aperture System (EODAS)",
+    "url": "https://www.aspistrategist.org.au/once-unthinkable-canada-may-choose-a-non-us-fighter/"
+  },
+  {
+    "title": "Reports Suggest F-35s Are Being Delivered Without Radar Amid APG-85 Delays",
+    "summary": "This report details issues with F-35 deliveries, noting that the Block 4 upgrade, which includes a next-generation Distributed Aperture System (DAS), has experienced severe delays, mainly due to software problems. The article points out that F-35s are being delivered to accommodate the advanced radar and other Block 4 enhancements, including the new DAS, which are facing significant challenges. This news article from February 12, 2026, provides insight into the ongoing development and integration challenges for key F-35 systems, including DAS.",
+    "date": "February 12, 2026",
+    "source": "The Aviationist",
+    "product": "Electro-Optical Distributed Aperture System (EODAS)",
+    "url": "https://theaviationist.com/2026/02/12/reports-suggest-f-35s-delivered-without-radar/"
+  },
+  {
+    "title": "How Does The F-35's Distributed Aperture System Improve Pilot Situational Awareness?",
+    "summary": "This article explains how the F-35's Distributed Aperture System (DAS) enhances pilot situational awareness by providing a 360-degree sensor suite. It elaborates on Raytheon's EODAS, which collects real-time, high-resolution imagery from six infrared cameras for the pilot's helmet-mounted display, and mentions how Lockheed Martin's Electro-Optical Targeting System (EOTS) complements EODAS. The piece emphasizes the system's role in threat detection, navigation, and overall combat effectiveness.",
+    "date": "August 29, 2024",
+    "source": "Simple Flying",
+    "product": "Electro-Optical Distributed Aperture System (EODAS)",
+    "url": "https://simpleflying.com/how-does-the-f-35s-das-improve-pilot-situational-awareness/"
+  },
+  {
+    "title": "Lockheed Martin Unveils Sniper Networked Targeting Pod - The Aviationist",
+    "summary": "Lockheed Martin has introduced the Sniper Networked Targeting Pod (NTP), an evolution of its Sniper Advanced Targeting Pod (ATP). This new system integrates a multi-datalink, multi-processor Hybrid Base Station (HBS) to transform the pod into an airborne communications and edge-computing node. The Sniper NTP aims to enhance interoperability and data sharing among 4th and 5th generation aircraft, as well as ground systems.",
+    "date": "November 17, 2025",
+    "source": "The Aviationist",
+    "product": "Sniper Advanced Targeting Pod (ATP)",
+    "url": "https://theaviationist.com/2025/11/17/lockheed-martin-unveils-sniper-networked-targeting-pod/"
+  },
+  {
+    "title": "Sniper Advanced Targeting Pods to be delivered to Poland for new FA-50 fighter jets",
+    "summary": "Lockheed Martin will deliver Sniper Advanced Targeting Pods (ATP) to Poland as part of a $90.68 million U.S. Foreign Military Sale. These targeting systems, which include two-way datalinks, system support, and spare parts, will be integrated into Poland's new FA-50 fighter jets to enhance their ability to identify, track, and engage targets at a distance. The deal is also intended to improve interoperability with U.S. and NATO forces.",
+    "date": "February 17, 2026",
+    "source": "Military & Aerospace Electronics",
+    "product": "Sniper Advanced Targeting Pod (ATP)",
+    "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfeS2DtflKB7V1a8HOUZyPIKX-_JTP30MVIZZobmA3qR2ATRk9lFCdY4rY4SK2jqRBvIvfHVy1j8lz0m2PUbYCjIPWgFjWQ-lH4iHjjQc89DhLt0NUuDjolmTnxR-X2fqnldybjTxcMbqmmzSo8rnvNi1R94yslfSzRU8g83yuxpBVPt-ITqiYX9fndX2JGvrd1BtVjaG1exSJtfku0mCQZqN3ZfX2an_uih6ovdySIxsF1Q=="
+  },
+  {
+    "title": "USAF signs $961 million contract to upgrade, sustain Sniper targeting pods",
+    "summary": "The U.S. Air Force has awarded Lockheed Martin a five-year, indefinite delivery/indefinite quantity contract, valued at up to $961 million, for the sustainment and upgrades of its 683 Sniper Advanced Targeting Pods (ATP). This contract allows the Air Force to order logistics, spares, software, and sensor enhancements for the pods. The Sniper ATP is used by the U.S. Air Force and 25 international customers across various aircraft platforms.",
+    "date": "February 17, 2026",
+    "source": "Military Embedded Systems",
+    "product": "Sniper Advanced Targeting Pod (ATP)",
+    "url": "https://www.itiger.com/news/2583686124"
+  },
+  {
+    "title": "Merlin Mk2 Crowsnest Reaches Full Operational Capability (FOC) | Lockheed Martin UK",
+    "summary": "The Royal Navy's Crowsnest Airborne Surveillance and Control (ASaC) capability, integrated into Merlin Mk2 helicopters, has achieved Full Operational Capability (FOC) status. This significant milestone underscores its readiness as a vital airborne surveillance system, providing advanced early warning, air defense, and maritime detection for carrier strike groups. Lockheed Martin UK emphasizes its crucial role in delivering this capability, bolstering the Royal Navy's preparedness for an evolving global security landscape.",
+    "date": "April 30, 2025",
+    "source": "Lockheed Martin UK",
+    "product": "CROWSNEST",
+    "url": "https://www.lockheedmartin.com/en-gb/features/2025/merlin-mk2-crowsnest-reaches-full-operational-capability-foc.html"
+  },
+  {
+    "title": "Royal Navy helicopters with Crowsnest early warning capability make their entrance for global mission - Defence Equipment & Support",
+    "summary": "Nine Royal Navy Merlin Mk2 helicopters, including three equipped with the Crowsnest Airborne Surveillance and Control (ASaC) system, have embarked on HMS Prince of Wales for deployment with Carrier Strike Group 25. Having achieved Full Operating Capability at the end of March, Crowsnest will provide critical airborne surveillance and control, safeguarding the task force by detecting threats up to 100 miles away. This accomplishment represents a major advancement for the UK's carrier strike capabilities.",
+    "date": "April 25, 2025",
+    "source": "Defence Equipment & Support",
+    "product": "CROWSNEST",
+    "url": "https://des.mod.uk/royal-navy-helicopters-with-crowsnest-early-warning-capability-make-their-entrance-for-global-mission/"
+  },
+  {
+    "title": "New Govt keeps plan to scrap Crowsnest after four years - UK Defence Journal",
+    "summary": "The UK Ministry of Defence has affirmed that the Royal Navy's Crowsnest airborne early warning system will be decommissioned as planned on December 31, 2029, despite recently achieving full operating capability. This decision remains consistent with the 2021 Integrated Review, which projects the replacement of the Merlin-based Crowsnest with fixed-wing \"Vixen\" drones for carrier-based Airborne Early Warning by 2030. The article highlights the ongoing discussion surrounding the system's relatively short operational lifespan.",
+    "date": "January 28, 2025",
+    "source": "UK Defence Journal",
+    "product": "CROWSNEST",
+    "url": "https://ukdefencejournal.org.uk/new-govt-keeps-plan-to-scrap-crowsnest-after-four-years/"
+  },
+  {
+    "title": "Apache Fire Control: Enhancing Precision and Survivability with TADS/PNVS Modernization",
+    "summary": "This article highlights Lockheed Martin's ongoing advancements to the Target Acquisition Designation Sensor/Pilot Night Vision Sensor (TADS/PNVS) system, including the Generation 3 Day Sensor Assembly (Gen 3 DSA) and Generation 2 Turret (G2T). These modernizations aim to enhance performance, mitigate obsolescence, and improve reliability and maintainability for AH-64D/E Apache helicopter pilots globally.",
+    "date": "February 17, 2025",
+    "source": "Lockheed Martin",
+    "product": "Gen 3 TADS/PNVS",
+    "url": "https://www.lockheedmartin.com/en-us/news/features/2025/apache-fire-control-enhancing-precision-and-survivability-with-tads-pnvs-modernization.html"
+  },
+  {
+    "title": "Lockheed Martin Secures Contract for Generation 4 TADS/PNVS Systems to Support Polish Ministry of Defence's Acquisition of AH-64E Apache Attack Helicopters",
+    "summary": "Lockheed Martin Missiles and Fire Control has secured a contract from the U.S. government for the production of Generation 4 Target Acquisition Designation Sight/Pilot Night Vision Sensor (TADS/PNVS) systems for Poland's AH-64E Apache attack helicopters. This contract marks the first time the Common Sensor Electronic Unit (CSEU) and Generation 2 Turret (G2T) will be included as baseline components for Apache sensors, enhancing long-range target acquisition, precision engagement, and pilot vision capabilities. Additionally, Lockheed Martin will collaborate with Poland to establish a TADS/PNVS Special Repair Activity (SRA) facility to support local maintenance and repair.",
+    "date": "June 16, 2025",
+    "source": "Lockheed Martin",
+    "product": "Gen 3 TADS/PNVS",
+    "url": "https://www.lockheedmartin.com/en-us/products/gen3-tads-pnvs.html"
+  },
+  {
+    "title": "Lockheed Martin Upgrades Sensor Systems On Egypt's Apache Fleet Under New Contract",
+    "summary": "Lockheed Martin received a $102 million contract to upgrade 25 of Egypt's AH-64D Apaches to the E-model version, which includes their Gen III Target Acquisition Designation Sight/Pilot Night Vision Sensor (Gen III TADS/PNVS) and the Gen III Day Sensor Assembly (Gen III DSA). This modernization provides pilots with long-range precision engagement and pilotage capabilities for day, night, and adverse weather missions, and increases designation and ranging capabilities.",
+    "date": "January 07, 2022",
+    "source": "Lockheed Martin",
+    "product": "Gen 3 TADS/PNVS",
+    "url": "https://www.defenceconnect.com.au/air/16237-lockheed-martin-to-provide-advanced-targeting-sensors-to-polands-apache-fleet"
+  },
+  {
+    "title": "Lockheed Martin and Insta sign cooperation agreement to expand defence innovation and transatlantic industrial ties",
+    "summary": "Lockheed Martin and Finnish company Insta have signed a Memorandum of Understanding to enhance defense innovation and industrial resilience. The agreement focuses on joint development and exploration of opportunities in mission-critical areas such as command and control, sensor integration, and sustainment, which are key components of C4ISR.",
+    "date": "February 19, 2026",
+    "source": "Defence Industry Europe",
+    "product": "C4ISR",
+    "url": "https://defence-industry.eu/lockheed-martin-and-insta-sign-cooperation-agreement-to-expand-defence-innovation-and-transatlantic-industrial-ties/"
+  },
+  {
+    "title": "Lockheed Martin Awarded C2BMC-Next Contract to Enhance Global Interoperability",
+    "summary": "Lockheed Martin has been awarded the C2BMC-Next contract, continuing its role as the lead for the C2BMC National Team. This contract focuses on improving global interoperability and integrating advanced 21st Century Security technology into the nation's battle management system, which is a critical C4ISR function.",
+    "date": "April 11, 2024",
+    "source": "Lockheed Martin",
+    "product": "C4ISR",
+    "url": "https://news.lockheedmartin.com/news-releases?keywords=c4isr&l=50"
+  },
+  {
+    "title": "Deep Learning Model Speeds Up, Automates Satellite Image Analysis",
+    "summary": "This article details how Lockheed Martin's Global Automated Target Recognition (GATR) system uses open-source deep learning to identify and classify objects in satellite imagery, saving analysts significant time. GATR operates in the cloud, leveraging Maxar's Geospatial Big Data platform and its extensive imagery library for efficient algorithm training and high accuracy.",
+    "date": "2026",
+    "source": "Lockheed Martin",
+    "product": "Global Automated Target Recognition (GATR)",
+    "url": "https://news.lockheedmartin.com/news-releases?item=128745"
+  },
+  {
+    "title": "Lockheed Martin automates satellite image analysis",
+    "summary": "This article reports on Lockheed Martin's development of GATR, an AI-powered satellite imagery recognition system. It explains how GATR uses deep learning and Maxar's GBDX platform to quickly identify and classify objects, significantly reducing the manual effort in image analysis. The system boasts over 90% accuracy and can scan vast areas rapidly.",
+    "date": "June 06, 2019",
+    "source": "Airport Technology",
+    "product": "Global Automated Target Recognition (GATR)",
+    "url": "https://www.airport-technology.com/news/lockheed-martin-satellite-image-analysis/"
+  },
+  {
+    "title": "Lockheed Martin develops AI model for satellite imagery analysis",
+    "summary": "This piece highlights Lockheed Martin's Global Automated Target Recognition (GATR) as a cloud-based AI model that streamlines satellite imagery analysis. It leverages Maxar's platform to access a massive imagery library, enabling rapid identification and classification of various objects with high accuracy, thus freeing analysts for more complex tasks. A public demo at GEOINT 2019 showcased its ability to search vast areas efficiently.",
+    "date": "January 15, 2019",
+    "source": "Geoawesome",
+    "product": "Global Automated Target Recognition (GATR)",
+    "url": "https://geoawesome.com/eo-hub/lockheed-martin-artificial-intelligence-model-satellite-imagery-analysis/"
+  },
+  {
+    "title": "HercFusion: AI Tech Revolutionizing C-130 Maintenance and Performance - YouTube",
+    "summary": "This YouTube video from Lockheed Martin highlights HercFusion as an AI technology that is transforming C-130 maintenance and performance. It explains that HercFusion, developed with SAS, is a tool suite that allows maintenance and flight operations teams to monitor the health of an aircraft down to the part level. By predicting part replacements, it significantly increases fleet readiness and reduces aircraft downtime, ensuring the C-130J is consistently prepared for missions.",
+    "date": "May 23, 2024",
+    "source": "YouTube (Lockheed Martin)",
+    "product": "HercFusion",
+    "url": "https://www.youtube.com/watch?v=5S3bSjBUai0"
+  },
+  {
+    "title": "RTX Partners With Shield AI To Bolster Uncrewed Capabilities",
+    "summary": "RTX has formed a new partnership with Shield AI to integrate Shield AI's Hivemind autonomy software into select RTX defense products, including loitering munitions and sensors. This collaboration aims to deliver advanced, autonomous capabilities to U.S. and allied defense forces, enabling the deployment of the first operational weapon powered by Networked Collaborative Autonomy.",
+    "date": "July 02, 2025",
+    "source": "Defence Leaders",
+    "product": "RTX AI enhanced technologies",
+    "url": "https://defenceleaders.com/news/rtx-partners-with-shield-ai-to-bolster-uncrewed-capabilities/"
+  },
+  {
+    "title": "RTX, Shield AI picked to give Collaborative Combat Aircraft autonomous capabilities",
+    "summary": "The U.S. Air Force has selected defense giant RTX and Shield AI to provide autonomy capabilities for its first round of Collaborative Combat Aircraft (CCA), which are drone wingmen. RTX will supply the autonomy software for General Atomics' YFQ-42A, contributing to intelligent, collaborative operations for the warfighter.",
+    "date": "September 23, 2025",
+    "source": "Breaking Defense",
+    "product": "RTX AI enhanced technologies",
+    "url": "https://www.executivebiz.com/articles/rtx-shield-ai-partnership-hivemind-networked-collaborative-autonomy-defense"
+  },
+  {
+    "title": "Lockheed Martin Uses AI to Strengthen PAC-3 Defense System",
+    "summary": "Lockheed Martin is enhancing its PAC-3 Missile Segment Enhancement (MSE) system through the integration of artificial intelligence and machine learning. This initiative aims to improve the system's speed, intelligence, and effectiveness against modern threats, enabling quicker detection, tracking, and response to targets and real-time adaptation to changing threat patterns.",
+    "date": "October 15, 2025",
+    "source": "Finviz",
+    "product": "Lockheed Martin PAC-3 Defense System (AI enhanced)",
+    "url": "https://breakingdefense.com/2025/09/rtx-shield-ai-picked-to-give-collaborative-combat-aircraft-autonomous-capabilities/"
+  },
+  {
+    "title": "Boeing, RAAF Achieve CCA Missile Fire from MQ-28 Ghost Bat",
+    "summary": "In a historic achievement on December 9, 2025, Boeing and the Royal Australian Air Force (RAAF) successfully demonstrated a force integrated air-to-air autonomous weapon engagement with an MQ-28 Ghost Bat. The MQ-28 teamed with an E-7A Wedgetail and an F/A-18F Super Hornet to destroy a fighter-class target drone using an AIM-120 AMRAAM missile. This event marks the first time an autonomous aircraft has completed such an air-to-air weapon engagement.",
+    "date": "December 09 2025",
+    "source": "PR Newswire",
+    "product": "MQ-28 Ghost Bat",
+    "url": "https://www.prnewswire.com/news-releases/boeing-raaf-achieve-cca-missile-fire-from-mq-28-ghost-bat-302636144.html"
+  },
+  {
+    "title": "Boeing Australia Details New Features for Ghost Bat",
+    "summary": "Boeing Australia's MQ-28 Ghost Bat stealth drone is receiving a Block 3 upgrade, which includes internal weapons bays, a lengthened wingspan for improved aerodynamic efficiency, and increased operational autonomy. These enhancements aim to bring the aircraft closer to its intended mission capabilities, with an expected entry into service in 2028. A recent test demonstrated the drone's ability to launch an air-to-air missile at a target drone with minimal commands while controlled by a Boeing E-7 aircraft.",
+    "date": "February 09 2026",
+    "source": "FLYING Magazine",
+    "product": "MQ-28 Ghost Bat",
+    "url": "https://boeing.mediaroom.com/2025-12-09-Boeing,-RAAF-Achieve-CCA-Missile-Fire-from-MQ-28-Ghost-Bat"
+  },
+  {
+    "title": "Boeing wins new deal for Australian Ghost Bats",
+    "summary": "The Australian Government has awarded Boeing Defence Australia an AUD$754 million contract to deliver, develop, and support a third tranche of MQ-28 Ghost Bats over the next three years. This contract falls under the AIR6015 Autonomous Collaborative Platforms \u2013 Air Program and will provide additional Block 2 and Block 3 aircraft to support the development of an operational capability by 2028. The goal is to supplement the Royal Australian Air Force's existing crewed fleet with integrated Collaborative Combat Aircraft.",
+    "date": "December 09 2025",
+    "source": "APDR - Asia Pacific Defence Reporter",
+    "product": "MQ-28 Ghost Bat",
+    "url": "https://www.flyingmag.com/boeing-australia-details-new-features-for-ghost-bat/"
+  },
+  {
+    "title": "Advanced-Surface Movement Guidance and Control System - ReAnIn",
+    "summary": "The Advanced-Surface Movement Guidance and Control System (A-SMGCS) Market is experiencing steady growth due to increased focus on safe and efficient aircraft movement at airports. This system integrates surveillance, guidance, and control to enhance situational awareness and operational coordination. Over 60% of modernized airports have adopted A-SMGCS technologies to manage complex ground traffic patterns effectively.",
+    "date": "February 15 2026",
+    "source": "ReAnIn",
+    "product": "Advanced Surface Movement Guidance and Control (A-SMGCS)",
+    "url": "https://www.reanin.com/reports/advanced-surface-movement-guidance-and-control-system-market"
+  },
+  {
+    "title": "Advanced-Surface Movement Guidance & Control System (a-SMGCS) Market Outlook 2026-2030 - GlobeNewswire",
+    "summary": "The A-SMGCS market is projected to grow from $5.58 billion in 2025 to $5.93 billion in 2026, driven by increased deployment of surveillance radars, integration of vehicle tracking systems, and airport modernization. This growth is expected to continue, reaching $7.34 billion by 2030, spurred by investments in advanced surveillance and multilateration technologies, and automation adoption for optimizing ground traffic flow.",
+    "date": "January 26 2026",
+    "source": "GlobeNewswire",
+    "product": "Advanced Surface Movement Guidance and Control (A-SMGCS)",
+    "url": "https://www.globenewswire.com/news-release/2026/01/26/3225417/0/en/Advanced-Surface-Movement-Guidance-Control-System-a-SMGCS-Market-Outlook-2026-2030.html"
+  },
+  {
+    "title": "Analysis and Application of Advanced Surface Movement Guidance and Control System (A-Smgcs) Technology - Oreate AI Blog",
+    "summary": "The International Civil Aviation Organization's (ICAO) DOC 9830 document forms the core regulatory framework for A-SMGCS, detailing system architecture, functional modules, and performance indicators. A-SMGCS is categorized into five technical levels, evolving from basic monitoring to autonomous operation, with higher levels offering advanced features like real-time conflict detection and automated guidance.",
+    "date": "January 07 2026",
+    "source": "Oreate AI Blog",
+    "product": "Advanced Surface Movement Guidance and Control (A-SMGCS)",
+    "url": "https://www.oreateai.com/blog/analysis-and-application-of-advanced-surface-movement-guidance-and-control-system-asmgcs-technology/252cdaa8d3d2c4de8a8e7e0fe7deaaa1"
+  },
+  {
+    "title": "Top 10 Remote Towers Companies Dominating the Market in 2024",
+    "summary": "Lockheed Martin is identified as a leading provider in the remote tower solutions market, offering its 'SkyGuardian' system. This solution incorporates advanced sensor technology, AI-powered automation, and cyber resilience, with recent integrations of machine learning algorithms to enhance air traffic flow prediction and management.",
+    "date": "August 06, 2024",
+    "source": "Kings Research",
+    "product": "Digital Tower Solutions",
+    "url": "https://www.kingsresearch.com/blog/top-10-remote-towers-companies-2024"
+  },
+  {
+    "title": "The Power of Digital Twins",
+    "summary": "Lockheed Martin engineers are leveraging digital twin technology to transform the design, development, and operation of complex systems for their customers. This involves creating virtual models to simulate behavior, monitor operations, and ultimately enhance performance, safety, and accelerate product development.",
+    "date": "January 15, 2025",
+    "source": "Lockheed Martin",
+    "product": "Digital Tower Solutions",
+    "url": "https://www.edrmagazine.eu/lockheed-martin-unveils-scalable-counter-unmanned-aerial-system-solution"
+  },
+  {
+    "title": "Assessing F-35 latest purchase and future order of battle by variants and blocks",
+    "summary": "This article describes the use of an 'INSIGHT terminal' or 'INSIGHT system' by Lockheed Martin to assess the US Air Force F-35 fleet's order of battle for the year 2029. The system leverages DoD announcements and procurement plans to provide detailed analysis of aircraft configurations and quantities. It highlights Lockheed Martin's use of this internal analytical tool in managing and understanding their F-35 program.",
+    "date": "Late 2024 / Early 2025",
+    "source": "Unspecified (context suggests a defense or aerospace publication)",
+    "product": "Insight system",
+    "url": "https://karindustry.com/assessing-f-35-latest-purchase-and-future-order-of-battle-by-variants-and-blocks/"
+  },
+  {
+    "title": "Air Force Research Laboratory awards BAE Systems $48 million to advance military intelligence analysis capabilities.",
+    "summary": "BAE Systems secured a $48 million contract from the Air Force Research Laboratory to further develop its 'Insight system'. This system is a next-generation Intelligence, Surveillance, and Reconnaissance (ISR) exploitation and resource management tool. It utilizes machine learning, autonomy, and predictive analytics to enhance military intelligence analysis.",
+    "date": "August 2024",
+    "source": "IMARC Group / SNS Insider / BAE Systems (Press Release)",
+    "product": "Insight system",
+    "url": "https://www.baesystems.com/en-us/product/f-35-lightning-ii---programme-overview?searchPageNo=2&componentId=contentListing-350bf3bc-9341-485d-93c9-405139250767"
+  },
+  {
+    "title": "AN/ASQ-239 F-35 EW countermeasure system | Next Generation Electronic Warfare: Aircraft Protection",
+    "summary": "This article, from BAE Systems, discusses the AN/ASQ-239 electronic warfare system for the Lockheed Martin F-35 aircraft. It mentions that the 'Insight system' (developed by BAE Systems) leverages machine learning and autonomy to help intelligence analysts process vast amounts of data for actionable intelligence related to the F-35. This showcases how the Insight system is applied to enhance the capabilities and analysis surrounding Lockheed Martin's F-35.",
+    "date": "December 2, 2025",
+    "source": "BAE Systems",
+    "product": "Insight system",
+    "url": "https://www.imarcgroup.com/airborne-isr-market"
+  },
+  {
+    "title": "Lockheed Martin Hydra Fusion Tools",
+    "summary": "This article introduces Hydra Fusion Tools as Lockheed Martin's solution for managing big data generated by unmanned systems. It explains that the tool fuses various data, such as maps, images, video, and intelligence, into a common, immersive 3D operational picture. Key features include real-time structure from motion and applications in site mapping, agriculture, and infrastructure inspection.",
+    "date": "August 15, 2016",
+    "source": "sUAS News",
+    "product": "Hydra Fusion Tools\u2122",
+    "url": "https://www.suasnews.com/2016/08/lockheed-martin-hydra-fusion-tools/"
+  },
+  {
+    "title": "Hydra Fusion Tools\u2122 - Lockheed Martin",
+    "summary": "This capabilities guide details Hydra Fusion Tools\u2122 as a real-time Geospatial Information System (GIS) designed to transform large quantities of disparate data from unmanned aircraft systems into actionable intelligence. It highlights the system's ability to simultaneously localize and map (SLAM) incoming video or still image feeds to create immediate and immersive 3D reconstructions. The tool is versatile, supporting various mobile hardware and cameras, and operates locally without needing an internet connection.",
+    "date": "",
+    "source": "Lockheed Martin",
+    "product": "Hydra Fusion Tools\u2122",
+    "url": "https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/cdl/Hydra-Capabilities-Guide.pdf"
+  },
+  {
+    "title": "HYDRA FUSION TOOLS\u2122 - Lockheed Martin",
+    "summary": "This Lockheed Martin document describes Hydra Fusion Tools\u2122 as a real-time Geospatial Information System that addresses the challenges of big data by fusing diverse information into a scalable 3D world presentation. A standout feature is its Simultaneous Localization and Mapping (SLAM) capability, which stitches together image feeds from aircraft to create geo-registered 3D reconstructions. It lists applications such as real-time structure from motion, construction progress monitoring, surveying, and infrastructure inspection.",
+    "date": "",
+    "source": "Lockheed Martin",
+    "product": "Hydra Fusion Tools\u2122",
+    "url": "https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cdl/Hydra-Fusion-Tools-brochure.pdf"
+  },
+  {
+    "title": "Border Security Technologies Market Size, Share & Growth Report 2033",
+    "summary": "Lockheed Martin recently showcased an artificial intelligence-enhanced surveillance platform, previewing its 2025 model. This platform features real-time threat detection, advanced radar integration, and autonomous monitoring capabilities designed for complex border environments.",
+    "date": "May 15 2025",
+    "source": "SNS Insider",
+    "product": "Advanced Surveillance Technologies",
+    "url": "https://www.snsinsider.com/reports/border-security-technologies-market-7252"
+  },
+  {
+    "title": "Coast Defence Radar Market Outlook 2026-2034",
+    "summary": "Lockheed Martin is a dominant player in the coast defense radar market, offering innovative radar solutions for coastal monitoring. The company is heavily investing in multi-function radar systems that integrate surveillance, tracking, and threat assessment capabilities. These advanced systems are crucial for modern coastal surveillance operations and contribute to the market's expansion due to heightened demand for advanced surveillance technologies.",
+    "date": "February 18 2026",
+    "source": "Coast Defence Radar Market Outlook 2026-2034",
+    "product": "Advanced Surveillance Technologies",
+    "url": "https://www.intelmarketresearch.com/coast-defence-radar-market-30556"
+  },
+  {
+    "title": "Airborne Radar Market Size, Share | Industry Report [2032]",
+    "summary": "Lockheed Martin made significant strides in airborne radar technology, with the January 2024 launch of the Legion Pod featuring IRST21 radar for F-15s, enhancing long-range detection capabilities. Additionally, its SPEAR EW-Radar Pod entered production, selected for the U.S. Army's FTUAS program. The company also introduced Skynode, a modular SDR for F-35s, enabling in-flight waveform updates via 5G links.",
+    "date": "August 15 2024",
+    "source": "Fortune Business Insights",
+    "product": "Advanced Surveillance Technologies",
+    "url": "https://www.fortunebusinessinsights.com/airborne-radar-market-113126"
+  },
+  {
+    "title": "DCS 2018: Lockheed Martin develops dual-band IR camera core",
+    "summary": "Lockheed Martin debuted its new \u00b5LAD dual-band IR camera core at SPIE's Defense + Commercial Sensing in 2018, featuring high-definition short-wave (SW) and mid-wave (MW) IR imagery at 1280x1024 pixels. This compact and portable camera core is designed for military applications such as pilotage, threat warning, targeting, and can be integrated into UAVs and other platforms. It utilizes nBn detector technology and offers a high frame rate of 360Hz for capabilities like bullet tracking.",
+    "date": "April 19, 2018",
+    "source": "Optics.org",
+    "product": "SWIR InGaAs cameras and components",
+    "url": "https://optics.org/news/9/4/32"
+  }
+]
