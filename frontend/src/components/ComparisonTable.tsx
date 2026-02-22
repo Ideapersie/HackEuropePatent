@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Loader2, CheckCircle, XCircle, ChevronDown, ChevronUp } from "lucide-react";
 import clsx from "clsx";
-import type { CompanyData, MetricRow } from "@/types/analysis";
+import type { CompanyData, MetricRow, RankingResult, Grade } from "@/types/analysis";
 import { METRIC_ROWS } from "@/types/analysis";
 
 interface Props {
   companies: string[];
   data: Record<string, CompanyData>;
+  rankings: Record<string, RankingResult>;
   onSelectCompany: (company: string) => void;
 }
 
@@ -14,40 +15,29 @@ interface Props {
 
 const COMPANY_META: Record<string, { flag: string }> = {
   "Lockheed Martin": { flag: "🇺🇸" },
-  "RTX CORP":        { flag: "🇺🇸" },
+  "RTX":             { flag: "🇺🇸" },
   "BAE Systems":     { flag: "🇬🇧" },
-  "BOEING CO":       { flag: "🇺🇸" },
-  "SAAB AB":         { flag: "🇸🇪" },
+  "Boeing":          { flag: "🇺🇸" },
+  "SAAB":            { flag: "🇸🇪" },
 };
 
-// ── Filler placeholder data ─────────────────────────────────────────────────
-
-const FILLER: Record<string, Record<string, number>> = {
-  "Lockheed Martin": { transparency: 22, risk_mitigation: 17, safety: 29, cost: 14 },
-  "RTX CORP":        { transparency: 35, risk_mitigation: 28, safety: 41, cost: 26 },
-  "BAE Systems":     { transparency: 51, risk_mitigation: 49, safety: 47, cost: 43 },
-  "BOEING CO":       { transparency: 31, risk_mitigation: 24, safety: 36, cost: 21 },
-  "SAAB AB":         { transparency: 68, risk_mitigation: 63, safety: 71, cost: 55 },
-};
-
+// ── Grade styling ────────────────────────────────────────────────────────────
 
 type GradeInfo = { grade: string; textColor: string; bgColor: string };
 
-function pctToGrade(pct: number): GradeInfo {
-  if (pct >= 80) return { grade: "A", textColor: "text-green-400",  bgColor: "bg-green-500/15"  };
-  if (pct >= 60) return { grade: "B", textColor: "text-lime-400",   bgColor: "bg-lime-500/15"   };
-  if (pct >= 40) return { grade: "C", textColor: "text-amber-400",  bgColor: "bg-amber-500/15"  };
-  if (pct >= 20) return { grade: "D", textColor: "text-orange-400", bgColor: "bg-orange-500/15" };
-  return                { grade: "F", textColor: "text-red-400",    bgColor: "bg-red-500/15"    };
+function gradeToStyle(grade: Grade): GradeInfo {
+  switch (grade) {
+    case "A": return { grade, textColor: "text-green-400",  bgColor: "bg-green-500/15"  };
+    case "B": return { grade, textColor: "text-lime-400",   bgColor: "bg-lime-500/15"   };
+    case "C": return { grade, textColor: "text-amber-400",  bgColor: "bg-amber-500/15"  };
+    case "D": return { grade, textColor: "text-orange-400", bgColor: "bg-orange-500/15" };
+    case "E": return { grade, textColor: "text-red-300",    bgColor: "bg-red-500/10"    };
+    case "F": return { grade, textColor: "text-red-400",    bgColor: "bg-red-500/15"    };
+    default:  return { grade: "—", textColor: "text-gray-600", bgColor: "bg-[#1f2937]" };
+  }
 }
 
-function companyAvgGrade(company: string): GradeInfo {
-  const vals = Object.values(FILLER[company] ?? {});
-  const avg = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
-  return pctToGrade(avg);
-}
-
-// ── Helpers ─────────────────────────────────────────────────────────────────
+// ── Helpers ──────────────────────────────────────────────────────────────────
 
 function AgentPip({ label, status }: { label: string; status: "idle" | "running" | "done" | "error" }) {
   return (
@@ -66,9 +56,17 @@ function AgentPip({ label, status }: { label: string; status: "idle" | "running"
   );
 }
 
-// ── Cell renderer ────────────────────────────────────────────────────────────
+// ── Cell renderer ─────────────────────────────────────────────────────────────
 
-function MetricCell({ metricKey, company, cd }: { metricKey: string; company: string; cd: CompanyData }) {
+function MetricCell({
+  metricKey,
+  cd,
+  ranking,
+}: {
+  metricKey: string;
+  cd: CompanyData;
+  ranking: RankingResult | undefined;
+}) {
   if (cd.status === "error") {
     return (
       <td className="h-24 w-40 border-b border-r border-[#1f2937] px-4 py-6">
@@ -77,7 +75,13 @@ function MetricCell({ metricKey, company, cd }: { metricKey: string; company: st
     );
   }
 
-  if (cd.status === "running" || cd.status === "ingesting") {
+  // Prefer live grade from streamed result stats, then fall back to pre-computed ranking
+  const liveGrade = cd.result?.stats?.[`grade_${metricKey}`] as Grade | undefined;
+  const rankingGrade = ranking?.grades?.[metricKey as keyof RankingResult["grades"]];
+  const grade = (liveGrade || rankingGrade || null) as Grade | null;
+
+  // Show skeleton only while running AND no grade data is available yet
+  if ((cd.status === "running" || cd.status === "ingesting") && !grade) {
     return (
       <td className="h-24 w-40 border-b border-r border-[#1f2937] px-4 py-6">
         <div className="h-4 w-3/4 animate-pulse rounded bg-[#1f2937]" />
@@ -85,9 +89,15 @@ function MetricCell({ metricKey, company, cd }: { metricKey: string; company: st
     );
   }
 
-  const pct = FILLER[company]?.[metricKey] ?? 0;
-  const { grade, textColor, bgColor } = pctToGrade(pct);
+  if (!grade || grade === "N/A") {
+    return (
+      <td className="h-24 w-44 border-b border-r border-[#1f2937] text-center align-middle">
+        <span className="text-sm font-medium text-gray-600">N/A</span>
+      </td>
+    );
+  }
 
+  const { textColor, bgColor } = gradeToStyle(grade);
   return (
     <td className={clsx("h-24 w-44 border-b border-r border-[#1f2937] text-center align-middle text-3xl font-bold", bgColor, textColor)}>
       {grade}
@@ -95,9 +105,9 @@ function MetricCell({ metricKey, company, cd }: { metricKey: string; company: st
   );
 }
 
-// ── Main component ───────────────────────────────────────────────────────────
+// ── Main component ────────────────────────────────────────────────────────────
 
-export default function ComparisonTable({ companies, data, onSelectCompany }: Props) {
+export default function ComparisonTable({ companies, data, rankings, onSelectCompany }: Props) {
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({
     assessment: true,
   });
@@ -123,29 +133,35 @@ export default function ComparisonTable({ companies, data, onSelectCompany }: Pr
 
             {companies.map((company) => {
               const cd = data[company];
-              const avg = companyAvgGrade(company);
-              const meta = COMPANY_META[company];
+              const ranking = rankings[company];
+
+              // Overall grade: live result first, then pre-computed ranking
+              const liveOverall = cd.result?.stats?.grade_overall as Grade | undefined;
+              const overallGrade = (liveOverall || ranking?.overall || null) as Grade | null;
+              const overall = overallGrade ? gradeToStyle(overallGrade) : null;
+
               return (
                 <th key={company} className="w-44 min-w-[176px] border-b border-r border-[#1f2937] px-4 py-5 align-top">
-                  <div className="flex flex-col gap-2">
-                    {/* Flag + name + grade */}
+                  <div className="flex flex-col items-center gap-2">
+                    {/* Flag + name + overall grade */}
                     <div className="flex items-center gap-1.5">
-                      <span className="text-base leading-none">{meta?.flag}</span>
                       <button
                         onClick={() => onSelectCompany(company)}
                         className="text-left text-base font-bold text-white leading-tight hover:text-red-400 transition-colors underline-offset-2 hover:underline"
                       >
                         {company}
                       </button>
-                      <span className={clsx(
-                        "shrink-0 rounded px-1.5 py-0.5 text-xs font-bold",
-                        avg.bgColor, avg.textColor
-                      )}>
-                        {avg.grade}
-                      </span>
+                      {overall && (
+                        <span className={clsx(
+                          "shrink-0 rounded px-1.5 py-0.5 text-xs font-bold",
+                          overall.bgColor, overall.textColor
+                        )}>
+                          {overall.grade}
+                        </span>
+                      )}
                     </div>
 
-                    {/* Agent status (when running) */}
+                    {/* Agent status pips */}
                     {cd.status === "running" && (
                       <div className="flex flex-wrap gap-1">
                         <AgentPip label="Investigator" status={cd.agentStatus.investigator} />
@@ -206,8 +222,8 @@ export default function ComparisonTable({ companies, data, onSelectCompany }: Pr
                       <MetricCell
                         key={company}
                         metricKey={metric.key}
-                        company={company}
                         cd={data[company]}
+                        ranking={rankings[company]}
                       />
                     ))}
                   </tr>

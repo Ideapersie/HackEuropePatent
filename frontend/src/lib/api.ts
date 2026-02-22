@@ -1,4 +1,4 @@
-import type { AnalysisResult, AgentStreamEvent } from "@/types/analysis";
+import type { AnalysisResult, AgentStreamEvent, RankingResult } from "@/types/analysis";
 
 // Vite exposes env vars via import.meta.env
 const BASE = (import.meta.env.VITE_API_URL as string | undefined) || "http://localhost:8000";
@@ -40,6 +40,15 @@ export async function runAnalysis(
     throw new Error(err.detail || "Analysis failed");
   }
   return res.json() as Promise<AnalysisResult>;
+}
+
+export async function fetchRankings(): Promise<Record<string, RankingResult>> {
+  const res = await fetch("/ranked_results.json");
+  if (!res.ok) return {};
+  const data = await res.json();
+  return Object.fromEntries(
+    (data.rankings as RankingResult[]).map((r) => [r.company, r])
+  );
 }
 
 export async function* streamAnalysis(
