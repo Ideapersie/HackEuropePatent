@@ -1,17 +1,18 @@
 import { useState, useCallback } from "react";
-import { Shield, RefreshCw, Play } from "lucide-react";
+import { Shield } from "lucide-react";
 import { streamAnalysis, triggerIngest, fetchStats } from "@/lib/api";
 import type { CompanyData, AgentStatus } from "@/types/analysis";
 import { emptyCompanyData } from "@/types/analysis";
 import ComparisonTable from "@/components/ComparisonTable";
+import CompanyPage from "@/components/CompanyPage";
 
 // Fixed set of 5 companies shown as columns
 const COMPANIES = [
   "Lockheed Martin",
+  "RTX CORP",
   "BAE Systems",
-  "Rheinmetall",
-  "Thales",
-  "Northrop Grumman",
+  "BOEING CO",
+  "SAAB AB",
 ];
 
 type CompanyMap = Record<string, CompanyData>;
@@ -23,6 +24,7 @@ function initState(): CompanyMap {
 export default function App() {
   const [data, setData] = useState<CompanyMap>(initState);
   const [globalBusy, setGlobalBusy] = useState(false);
+  const [selectedCompany, setSelectedCompany] = useState<string | null>(null);
 
   const patch = useCallback(
     (company: string, update: Partial<CompanyData>) =>
@@ -131,6 +133,17 @@ export default function App() {
     (c) => data[c].status === "running" || data[c].status === "ingesting"
   );
 
+  // ── Company detail page ──
+  if (selectedCompany) {
+    return (
+      <CompanyPage
+        company={selectedCompany}
+        cd={data[selectedCompany]}
+        onBack={() => setSelectedCompany(null)}
+      />
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#0a0e1a] flex flex-col">
       {/* ── Navbar ── */}
@@ -148,16 +161,7 @@ export default function App() {
             AI-powered comparison of defense company public claims vs. EPO patent filings
           </p>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handleAnalyzeAll}
-              disabled={anyRunning || globalBusy}
-              className="flex items-center gap-2 rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-red-900/30 transition hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <Play className={`h-3.5 w-3.5 ${globalBusy ? "animate-pulse" : ""}`} />
-              {globalBusy ? "Analyzing all…" : "Analyze all"}
-            </button>
-          </div>
+          <div />
         </div>
       </header>
 
@@ -180,12 +184,11 @@ export default function App() {
       </div>
 
       {/* ── Main table ── */}
-      <main className="flex-1 overflow-x-auto p-6">
+      <main className="flex-1 overflow-x-auto px-24 py-8">
         <ComparisonTable
           companies={COMPANIES}
           data={data}
-          onIngest={handleIngestOne}
-          onAnalyze={handleAnalyzeOne}
+          onSelectCompany={setSelectedCompany}
         />
       </main>
 

@@ -55,18 +55,12 @@ export interface MetricRow {
   key: string;
   label: string;
   description: string;
-  category: "data" | "risk" | "findings";
+  category: "assessment";
 }
 
 export const METRIC_ROWS: MetricRow[] = [
-  // Data coverage
-  { key: "patents_scanned",   label: "Patents scanned",   description: "EPO patent records ingested into the vector store",          category: "data" },
-  { key: "news_filings",      label: "News filings",      description: "Press releases & news items fetched via yfinance",           category: "data" },
-  { key: "products_indexed",  label: "Products indexed",  description: "Product images scraped & embedded via Gemini multimodal",    category: "data" },
-  // Risk assessment
-  { key: "risk_score",        label: "Risk score",        description: "0–100 transparency risk from the AI Synthesizer agent",      category: "risk" },
-  { key: "contradictions",    label: "Contradictions",    description: "Claim-vs-patent discrepancies identified by the AI",         category: "risk" },
-  // Findings
-  { key: "score_drivers",     label: "Score drivers",     description: "Key reasons behind the risk score (top 3 bullets)",         category: "findings" },
-  { key: "top_contradiction", label: "Top finding",       description: "Most significant discrepancy between public claims & patents", category: "findings" },
+  { key: "transparency",    label: "Transparency",                description: "Degree to which military & dual-use capabilities are publicly disclosed",          category: "assessment" },
+  { key: "risk_mitigation", label: "Risk Mitigation",            description: "Human-in-the-loop safeguards in autonomous and AI-guided systems",                  category: "assessment" },
+  { key: "safety",          label: "Safety",                     description: "Adherence to civilian safety standards and international humanitarian law",          category: "assessment" },
+  { key: "cost",            label: "Cost",                       description: "Estimated R&D investment in dual-use and weapons technologies",                      category: "assessment" },
 ];
