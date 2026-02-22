@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     epo_consumer_secret: str = ""
 
     # App
-    cors_origins: list[str] = ["http://localhost:3000"]
+    cors_origins: list[str] = ["http://localhost:3000", "http://localhost:5173", "http://localhost:4173"]
     vector_dimension: int = 768
 
 

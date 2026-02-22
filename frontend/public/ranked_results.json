@@ -6,9 +6,9 @@
         "contradiction": "D",
         "risk_mitigation": "C",
         "safety": "D",
-        "cost": "F"
+        "cost": "D"
       },
-      "overall": "D",
+      "overall": "C",
       "overall_score": 76.7,
       "aggregated_scores": {
         "contradiction_pct": 75.425,
@@ -24,9 +24,9 @@
         "contradiction": "D",
         "risk_mitigation": "B",
         "safety": "D",
-        "cost": "F"
+        "cost": "C"
       },
-      "overall": "D",
+      "overall": "C",
       "overall_score": 75.6,
       "aggregated_scores": {
         "contradiction_pct": 71.98857142857143,
@@ -42,9 +42,9 @@
         "contradiction": "C",
         "risk_mitigation": "B",
         "safety": "C",
-        "cost": "F"
+        "cost": "N/A"
       },
-      "overall": "D",
+      "overall": "C",
       "overall_score": 73.3,
       "aggregated_scores": {
         "contradiction_pct": 69.7,
@@ -78,9 +78,9 @@
         "contradiction": "D",
         "risk_mitigation": "A",
         "safety": "A",
-        "cost": "F"
+        "cost": "N/A"
       },
-      "overall": "C",
+      "overall": "B",
       "overall_score": 62.5,
       "aggregated_scores": {
         "contradiction_pct": 78.41428571428571,
