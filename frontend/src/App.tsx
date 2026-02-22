@@ -144,6 +144,7 @@ export default function App() {
       <CompanyPage
         company={selectedCompany}
         cd={data[selectedCompany]}
+        ranking={rankings[selectedCompany]}
         onBack={() => setSelectedCompany(null)}
       />
     );

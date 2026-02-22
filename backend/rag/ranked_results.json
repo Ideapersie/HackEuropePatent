@@ -16,7 +16,27 @@
         "risk_score": 71.5,
         "avg_unit_cost_usd": 22095000.0
       },
-      "product_count": 4
+      "product_count": 4,
+      "metric_reasons": {
+        "contradiction": [
+          "System detects optical threats like cameras, binoculars, or sniper scopes using advanced sensing. — The reliance on non-imaging sensors fundamentally contradicts the advertised capability to detect advanced optical threats, misleading operators.",
+          "Designed for tactical ISR, targeting, threat warning, and enhancing electro-optical/infrared capabilities. — Obscuring tactical military-grade ISR technology within civilian smart-home patents circumvents defense transparency and proliferation oversight.",
+          "Utilizes AI-driven anomaly detection to predict unseeable image characteristics and reduce scanning frequency. — Marketing highly sophisticated AI prediction while patenting simple conditional IoT triggers creates a massive capability expectations gap."
+        ],
+        "risk_mitigation": [
+          "Patent describes civilian smart-home IoT, contradicting military optical threat claims.",
+          "Public claims tout electro-optical sensors; patent relies exclusively on non-imaging sensors.",
+          "Severe dual-use transparency risk masking military ISR tech as home monitoring."
+        ],
+        "safety": [
+          "Demonstrated autonomous kinetic kill chain",
+          "Dependency on off-board digital twin simulation",
+          "Missile firing executed with minimal commands"
+        ],
+        "cost": [
+          "AH-64 Apache (with Arrowhead sensor system): $4.08M per unit for sensor upgrade"
+        ]
+      }
     },
     {
       "company": "BAE Systems",
@@ -34,7 +54,28 @@
         "risk_score": 73.28571428571429,
         "avg_unit_cost_usd": 26940000.0
       },
-      "product_count": 35
+      "product_count": 35,
+      "metric_reasons": {
+        "contradiction": [
+          "Develops tightly integrated machine learning software for advanced situational awareness and automatic target recognition. — The complete disconnect between lethal autonomous targeting claims and medical patent evidence suggests extreme obfuscation, preventing public oversight of the automated kill chain.",
+          "Focuses on rapid battlespace identification and multi-sensor exploitation for tactical autonomy. — Masking battlespace identification algorithms behind civilian healthcare patents bypasses international arms control transparency mechanisms and ethical reviews for autonomous weapons.",
+          "Provides an innovative suite of machine learning and fusion algorithms called Environmentally Adaptive Geospatial Learning and Exploitation. — Without accurate technical disclosures regarding the geospatial learning algorithms, independent verification of the targeting system's discrimination between combatants and civilians is impossible."
+        ],
+        "risk_mitigation": [
+          "Severe mismatch between military PR and medical patent",
+          "Focuses on autonomous target recognition and tactical autonomy",
+          "No military risk mitigation disclosed in available patents"
+        ],
+        "safety": [
+          "Severe mismatch between military PR and medical patent",
+          "Focuses on autonomous target recognition and tactical autonomy",
+          "No military risk mitigation disclosed in available patents"
+        ],
+        "cost": [
+          "Multi-Sensor Exploitation for Tactical Autonomy (META) Program: $7.8M BAE contract award",
+          "Multi-Sensor Exploitation for Tactical Autonomy (META) program: $7.8 million contract"
+        ]
+      }
     },
     {
       "company": "RTX",
@@ -42,9 +83,9 @@
         "contradiction": "C",
         "risk_mitigation": "B",
         "safety": "C",
-        "cost": "F"
+        "cost": "D"
       },
-      "overall": "D",
+      "overall": "C",
       "overall_score": 73.3,
       "aggregated_scores": {
         "contradiction_pct": 69.7,
@@ -52,7 +93,28 @@
         "risk_score": 66.18181818181819,
         "avg_unit_cost_usd": 28101818.181818184
       },
-      "product_count": 22
+      "product_count": 22,
+      "metric_reasons": {
+        "contradiction": [
+          "ASTARTE enhances airspace operations and deconfliction in highly congested battlespaces. — Repurposing commercial oil and gas drilling management software for military airspace deconfliction could lead to catastrophic operational failures, friendly fire, or mid-air collisions.",
+          "Integrates with various military command and control systems for rapid tactical execution. — Tactical military execution requires extreme precision and minimal latency for human life-safety; industrial oilfield monitoring standards are dangerously inadequate for kinetic warfare.",
+          "Automates real-time operational views and improves decision-making speed. — If the underlying IP lacks provisions for human-readable military operational views, commanders may blindly rely on opaque industrial algorithms during life-or-death combat decisions."
+        ],
+        "risk_mitigation": [
+          "Marketing claims target engagement while patent reveals only image upscaling.",
+          "Super-resolution hallucinates pixels, risking misidentification in targeting systems.",
+          "No evidence of deep learning classification, only basic binary pattern matching."
+        ],
+        "safety": [
+          "PR claims SAR sensor but patent explicitly describes optical video surveillance.",
+          "Target differentiation relies on brittle statistical video anomaly distances.",
+          "Civilian misclassification risk is high due to automated anomaly flagging."
+        ],
+        "cost": [
+          "MS-110 Multispectral Imagery System: $28.14M per unit",
+          "Global ISR Sensors and Software: ~$28.1M per pod (estimated from contract)"
+        ]
+      }
     },
     {
       "company": "Lockheed Martin",
@@ -60,7 +122,7 @@
         "contradiction": "D",
         "risk_mitigation": "B",
         "safety": "C",
-        "cost": "F"
+        "cost": "N/A"
       },
       "overall": "D",
       "overall_score": 73.0,
@@ -70,7 +132,27 @@
         "risk_score": 63.83783783783784,
         "avg_unit_cost_usd": 27378378.37837838
       },
-      "product_count": 37
+      "product_count": 37,
+      "metric_reasons": {
+        "contradiction": [
+          "Open architecture gateway transmits classified targeting data for warfighting integration across domains. — Hiding lethal targeting data transmission capabilities behind civilian oilfield patents circumvents international arms control and humanitarian oversight.",
+          "Features AI-enabled detection and track software paired with various effectors for countering drones. — Automated weapon systems (effectors) pose severe humanitarian risks if their underlying AI tracking mechanisms are completely shielded from public technical review.",
+          "Fuses big data including intelligence and video into a common 3D operational picture. — Without verifiable technical claims regarding intelligence data fusion, the system's susceptibility to algorithmic bias and misidentification in combat cannot be evaluated."
+        ],
+        "risk_mitigation": [
+          "Patent claims cover civilian oilfield pumps, completely omitting military targeting claims.",
+          "No technical evidence supports public claims of AI-enabled Counter-UAS effectors.",
+          "Obfuscation of military AI systems via unrelated commercial patents prevents oversight."
+        ],
+        "safety": [
+          "Co-opting unregistered civilian mobile devices for military surveillance networks.",
+          "Autonomous AI targeting operating with minimal human oversight.",
+          "Offloading surveillance risks onto unwitting civilian populations."
+        ],
+        "cost": [
+          "Sniper Advanced Targeting Pod (ATP): Sustainment averages $1.4M per unit (683 pods)"
+        ]
+      }
     },
     {
       "company": "SAAB",
@@ -78,7 +160,7 @@
         "contradiction": "D",
         "risk_mitigation": "A",
         "safety": "A",
-        "cost": "F"
+        "cost": "D"
       },
       "overall": "C",
       "overall_score": 62.5,
@@ -88,9 +170,27 @@
         "risk_score": 36.42857142857143,
         "avg_unit_cost_usd": 28100000.0
       },
-      "product_count": 7
+      "product_count": 7,
+      "metric_reasons": {
+        "contradiction": [
+          "Designed for safe and efficient aircraft movement and situational awareness at modernized airports. — Repurposing road traffic enforcement technology for critical aviation infrastructure may introduce severe safety and reliability vulnerabilities for civilian flights.",
+          "Integrates advanced surveillance radars and multilateration technologies to manage complex ground traffic. — Misrepresenting sensor modalities obscures the system's potential limitations in low-visibility or adverse weather conditions, threatening airport safety.",
+          "Utilizes automation and advanced algorithms for optimizing ground traffic flow and air traffic prediction. — Applying civilian policing and automated ticketing technology to aviation environments poses unverified operational risks and potential data privacy concerns."
+        ],
+        "risk_mitigation": [
+          "Vast discrepancy between claimed AI-SAR and actual video-based color histogram patents.",
+          "Patents describe building security tech, marketed as advanced maritime combatant differentiation.",
+          "Lack of evidence for autonomous radar tracking; relies on cooperative mobile units."
+        ],
+        "safety": [
+          "Vast discrepancy between claimed AI-SAR and actual video-based color histogram patents.",
+          "Patents describe building security tech, marketed as advanced maritime combatant differentiation.",
+          "Lack of evidence for autonomous radar tracking; relies on cooperative mobile units."
+        ],
+        "cost": []
+      }
     }
   ],
-  "generated_at": "2026-02-22T09:06:54.255004+00:00",
+  "generated_at": "2026-02-22T09:44:46.346445+00:00",
   "total_companies": 5
 }

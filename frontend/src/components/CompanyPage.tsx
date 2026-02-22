@@ -14,7 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import clsx from "clsx";
-import type { CompanyData, Contradiction, AnalysisResult } from "@/types/analysis";
+import type { CompanyData, Contradiction, AnalysisResult, RankingResult, Grade } from "@/types/analysis";
 
 // ── Filler press release data ────────────────────────────────────────────────
 
@@ -67,6 +67,7 @@ const PRESS_RELEASES: Record<string, PressRelease[]> = {
 interface Props {
   company: string;
   cd: CompanyData;
+  ranking: RankingResult | undefined;
   onBack: () => void;
 }
 

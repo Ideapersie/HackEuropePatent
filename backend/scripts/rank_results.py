@@ -144,6 +144,56 @@ def main() -> None:
         avg_cost_usd = _mean(cost_raw) if any(v > 0 for v in cost_raw) else 0.0
         cost_score = _normalise_cost(avg_cost_usd)  # None if no cost data
 
+        # ── Per-metric reasoning from actual product data ─────────────────────
+        # Contradiction: take the top 3 unique contradictions from the highest-pct products
+        sorted_by_contradiction = sorted(product_list, key=lambda p: float(p.get("contradiction_pct", 0)), reverse=True)
+        contradiction_reasons: list[str] = []
+        for p in sorted_by_contradiction:
+            for c in p.get("contradictions", []):
+                reason = f"{c.get('claim', '')} — {c.get('why_it_matters', '')}".strip(" —")
+                if reason and reason not in contradiction_reasons:
+                    contradiction_reasons.append(reason)
+                if len(contradiction_reasons) >= 3:
+                    break
+            if len(contradiction_reasons) >= 3:
+                break
+
+        # Risk mitigation: take score_drivers from highest-risk products (least safe human-in-loop)
+        sorted_by_risk_mit = sorted(product_list, key=lambda p: float(p.get("risk_mitigation", 50)))
+        risk_mit_reasons: list[str] = []
+        for p in sorted_by_risk_mit:
+            for d in p.get("score_drivers", []):
+                if d and d not in risk_mit_reasons:
+                    risk_mit_reasons.append(d)
+                if len(risk_mit_reasons) >= 3:
+                    break
+            if len(risk_mit_reasons) >= 3:
+                break
+
+        # Safety: take score_drivers from products with highest risk_score
+        sorted_by_safety = sorted(product_list, key=lambda p: float(p.get("risk_score", 0)), reverse=True)
+        safety_reasons: list[str] = []
+        for p in sorted_by_safety:
+            for d in p.get("score_drivers", []):
+                if d and d not in safety_reasons:
+                    safety_reasons.append(d)
+                if len(safety_reasons) >= 3:
+                    break
+            if len(safety_reasons) >= 3:
+                break
+
+        # Cost: collect actual cost strings from products that have them
+        cost_reasons: list[str] = []
+        products_with_cost = [
+            p for p in product_list
+            if _parse_unit_cost(p.get("cost_analysis", {}).get("unit_cost", "")) is not None
+        ]
+        products_with_cost.sort(key=lambda p: _parse_unit_cost(p.get("cost_analysis", {}).get("unit_cost", "")), reverse=True)
+        for p in products_with_cost[:3]:
+            unit = p.get("cost_analysis", {}).get("unit_cost", "")
+            name = p.get("product", "Unknown product")
+            cost_reasons.append(f"{name}: {unit}")
+
         company_data.append({
             "company": company,
             "product_count": len(product_list),
@@ -160,6 +210,13 @@ def main() -> None:
                 "risk_mitigation":    _mean(risk_mit_raw),
                 "risk_score":         _mean(safety_vals),
                 "avg_unit_cost_usd":  avg_cost_usd if avg_cost_usd > 0 else None,
+            },
+            # Company-specific reasons behind each metric score
+            "metric_reasons": {
+                "contradiction":   contradiction_reasons,
+                "risk_mitigation": risk_mit_reasons,
+                "safety":          safety_reasons,
+                "cost":            cost_reasons,
             },
         })
         
@@ -185,6 +242,7 @@ def main() -> None:
             "overall_score": overall_score,
             "aggregated_scores": cd["agg_display"],
             "product_count": cd["product_count"],
+            "metric_reasons": cd["metric_reasons"],
         })
 
     # Sort: worst overall score first (highest = worst), then by safety score descending
