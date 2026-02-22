@@ -1,18 +1,18 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Shield } from "lucide-react";
-import { streamAnalysis, triggerIngest, fetchStats } from "@/lib/api";
-import type { CompanyData, AgentStatus } from "@/types/analysis";
+import { streamAnalysis, triggerIngest, fetchStats, fetchRankings } from "@/lib/api";
+import type { CompanyData, AgentStatus, RankingResult } from "@/types/analysis";
 import { emptyCompanyData } from "@/types/analysis";
 import ComparisonTable from "@/components/ComparisonTable";
 import CompanyPage from "@/components/CompanyPage";
 
-// Fixed set of 5 companies shown as columns
+// Fixed set of 5 companies shown as columns — must match keys in ranked_results.json
 const COMPANIES = [
   "Lockheed Martin",
-  "RTX CORP",
+  "RTX",
   "BAE Systems",
-  "BOEING CO",
-  "SAAB AB",
+  "Boeing",
+  "SAAB",
 ];
 
 type CompanyMap = Record<string, CompanyData>;
@@ -25,6 +25,11 @@ export default function App() {
   const [data, setData] = useState<CompanyMap>(initState);
   const [globalBusy, setGlobalBusy] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState<string | null>(null);
+  const [rankings, setRankings] = useState<Record<string, RankingResult>>({});
+
+  useEffect(() => {
+    fetchRankings().then(setRankings).catch(() => {});
+  }, []);
 
   const patch = useCallback(
     (company: string, update: Partial<CompanyData>) =>
@@ -150,7 +155,7 @@ export default function App() {
       <header className="sticky top-0 z-40 border-b border-[#1f2937] bg-[#111827]/95 backdrop-blur-sm">
         <div className="flex items-center justify-between gap-6 px-6 py-3">
           <div className="flex items-center gap-2.5">
-            <Shield className="h-5 w-5 text-red-500" />
+            <Shield className="h-5 w-5  text-red-500" />
             <span className="font-bold tracking-tight text-white">PatentWatch</span>
             <span className="rounded bg-red-500/20 px-2 py-0.5 text-[10px] font-semibold text-red-400 uppercase tracking-wider">
               Beta
@@ -183,11 +188,24 @@ export default function App() {
         ))}
       </div>
 
+      {/* ── Intro ── */}
+      <div className="px-24 pt-10 pb-4">
+        <h1 className="flex items-center text-6xl font-black tracking-tight text-white">
+          Patent<span className="text-red-500">Watch</span>
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-400">
+          We make defence AI understandable by turning technical documents into clear safety signals
+          for everyone. Our goal is to give the public and policymakers a simple, independent view
+          of where AI may be risky.
+        </p>
+      </div>
+
       {/* ── Main table ── */}
-      <main className="flex-1 overflow-x-auto px-24 py-8">
+      <main className="flex-1 overflow-x-auto px-24 py-6">
         <ComparisonTable
           companies={COMPANIES}
           data={data}
+          rankings={rankings}
           onSelectCompany={setSelectedCompany}
         />
       </main>
