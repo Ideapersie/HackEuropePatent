@@ -12,6 +12,10 @@ import {
   ExternalLink,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
+  FileText,
+  Boxes,
 } from "lucide-react";
 import clsx from "clsx";
 import type { CompanyData, Contradiction, AnalysisResult } from "@/types/analysis";
@@ -63,6 +67,238 @@ const PRESS_RELEASES: Record<string, PressRelease[]> = {
     { title: "Top 10 Remote Towers Companies Dominating the Market in 2024", date: "August 06, 2024", source: "Kings Research", summary: "Saab is identified as a leading provider in the remote tower solutions market. The company's digital tower solutions incorporate advanced sensor technology, AI-powered automation, and cyber resilience, with recent integrations of machine learning algorithms to enhance air traffic flow prediction and management.", url: "https://www.kingsresearch.com/blog/top-10-remote-towers-companies-2024", image: "https://picsum.photos/seed/saab4/900/500" },
   ],
 };
+
+// ── Patents & Products data ──────────────────────────────────────────────────
+
+interface PatentEntry  { id: string; title: string; product: string; year: string; }
+interface ProductEntry { name: string; description: string; }
+
+const COMPANY_INTEL: Record<string, { patents: PatentEntry[]; products: ProductEntry[] }> = {
+  "Lockheed Martin": {
+    patents: [
+      { id: "EP3421892", title: "Autonomous Target Acquisition System with AI-Guided Decision Support",           product: "AI-powered Threat Detection Systems",                       year: "2021" },
+      { id: "EP3887234", title: "Wide-Area Suppression Munition with Programmable Blast Radius",                 product: "Sniper Advanced Targeting Pod (ATP)",                      year: "2022" },
+      { id: "EP4103956", title: "Cyber-Physical Attack Platform Targeting Critical Infrastructure",               product: "C4ISR",                                                   year: "2023" },
+      { id: "WO2024138471", title: "Signals Intelligence Platform for Mass Communications Collection",           product: "Integrated Intelligence Surveillance Reconnaissance Systems", year: "2024" },
+      { id: "EP3654213", title: "Machine Learning Anomaly Detection for ISR Platforms",                          product: "AI-based Anomaly Detection Capability",                   year: "2021" },
+      { id: "EP3789012", title: "Autonomous UAS Control Software Architecture for Multi-Vehicle Operations",     product: "VCSi (Vehicle Control Station software)",                 year: "2022" },
+      { id: "EP4021567", title: "Next Generation Infrared Focal Plane Array Technology",                         product: "Next Generation Infrared Sensing (NGIS)",                 year: "2023" },
+      { id: "EP3912345", title: "Multi-Modal AI Threat Recognition and Autonomous Classification",               product: "Global Automated Target Recognition (GATR)",              year: "2022" },
+      { id: "WO2023145871", title: "Predictive Maintenance Framework for Rotary-Wing Platforms",                 product: "Predictive Maintenance (e.g., NeAR, HercFusion)",         year: "2023" },
+      { id: "EP4156789", title: "Generative AI Platform for Secure Enterprise Defense Applications",             product: "LMText Navigator",                                        year: "2024" },
+    ],
+    products: [
+      { name: "AI-powered Threat Detection Systems",                         description: "Multi-sensor AI platform delivering real-time threat detection and classification for air, land, and maritime domains." },
+      { name: "TIQUILA Unmanned Aerial System (SUAS)",                       description: "Portable small UAS providing persistent ISTAR capability for dismounted UK and allied forces at the tactical edge." },
+      { name: "LMText Navigator",                                            description: "Enterprise generative AI platform enabling secure code generation, document analysis, and post-mission analytics across Lockheed Martin's workforce." },
+      { name: "Sniper Advanced Targeting Pod (ATP)",                         description: "High-resolution EO/IR targeting pod providing precision strike guidance, laser designation, and ISR for fixed-wing aircraft." },
+      { name: "Global Automated Target Recognition (GATR)",                  description: "AI-driven automatic target recognition system fusing multi-source imagery to detect and classify ground vehicles at scale." },
+      { name: "C4ISR",                                                       description: "Integrated Command, Control, Communications, Computers, Intelligence, Surveillance and Reconnaissance architecture for joint operations." },
+      { name: "Astris AI",                                                   description: "AI-enabled analytics platform integrating multi-domain data streams to deliver actionable intelligence for mission planning." },
+      { name: "PatternSentry™",                                              description: "Behavioural pattern-of-life analytics tool for identifying anomalous activity across persistent wide-area surveillance feeds." },
+      { name: "Next Generation Infrared Sensing (NGIS)",                     description: "Third-generation infrared detector technology providing enhanced sensitivity and resolution for missile warning and targeting systems." },
+      { name: "Predictive Maintenance (NeAR, HercFusion)",                   description: "AI-powered predictive health monitoring for fixed-wing platforms, reducing unscheduled maintenance events and fleet downtime." },
+    ],
+  },
+  "RTX CORP": {
+    patents: [
+      { id: "EP4012567",   title: "Autonomous Drone Swarm Coordination and Lethal Strike System",         product: "Advanced Surveillance Technologies",                          year: "2023" },
+      { id: "WO2023198432", title: "Hypersonic Glide Vehicle with Boost-Phase Evasion Capability",        product: "AN/SPY-6(V)4 radar",                                          year: "2023" },
+      { id: "EP3998124",   title: "Electronic Warfare Signal Jamming Integrated with Avionics Hardware",  product: "Advanced Avionics and Simulation Display Systems",             year: "2022" },
+      { id: "EP3867341",   title: "Dual-Role Optical Fire Control with AI Ballistic Computation",         product: "ELCAN Specter® Digital Fire Control System (DFCS)",           year: "2022" },
+      { id: "EP4023891",   title: "Synthetic Aperture Radar with Real-Time Target Classification",        product: "MS-110 Multispectral Imagery System",                         year: "2023" },
+      { id: "EP3754890",   title: "Multi-Spectral Electro-Optical Targeting with Autonomous Track Lock",  product: "Multi-Spectral Targeting System (MTS)",                       year: "2021" },
+      { id: "WO2024056234", title: "AI-Enhanced Prognostic Health Management System for Rotorcraft",      product: "Ascentia Prognostic and Health Management (PHM) solution",   year: "2024" },
+      { id: "EP3901234",   title: "Wide-Band Electronic Intelligence Collection and Analysis Platform",   product: "Intelligence, Surveillance, and Reconnaissance (ISR) Solutions", year: "2022" },
+    ],
+    products: [
+      { name: "ELCAN Specter® Digital Fire Control System (DFCS)",         description: "Dual-role 1-8x optical fire control sight integrating a ballistic computer to enhance first-round hit probability across infantry platforms." },
+      { name: "MS-110 Multispectral Imagery System",                       description: "Airborne multi-band reconnaissance system providing simultaneous EO, IR, and hyperspectral imagery from a single podded sensor." },
+      { name: "Multi-Spectral Targeting System (MTS)",                     description: "Gimbal-mounted EO/IR/laser sensor suite for rotary-wing precision targeting, used extensively on AH-64 Apache variants." },
+      { name: "RCADE",                                                     description: "Rapid Campaign Analysis and Demonstration Environment — a modelling and simulation platform supporting Army wargaming and force design decisions." },
+      { name: "AN/SPY-6(V)4 radar",                                       description: "Ship-based active electronically scanned array radar providing integrated air and missile defence for U.S. Navy destroyers." },
+      { name: "Ascentia PHM solution",                                     description: "Predictive health management platform using AI to forecast rotorcraft component failures and optimise maintenance scheduling." },
+      { name: "RAIVEN",                                                    description: "AI and machine learning platform for accelerating development and deployment of autonomy capabilities across RTX defence programmes." },
+      { name: "Advanced Avionics and Simulation Display Systems",          description: "Integrated avionics and simulation display suite from Collins Aerospace supporting next-generation cockpit upgrades and pilot training systems." },
+    ],
+  },
+  "BAE Systems": {
+    patents: [
+      { id: "EP3765201",   title: "Zero-Day Exploit Delivery Platform for Industrial Control Systems",      product: "Intelligence Solutions",                                     year: "2022" },
+      { id: "WO2024056789", title: "Mass Biometric Surveillance Network with AI Facial Recognition",        product: "ARGUS-IS",                                                   year: "2024" },
+      { id: "EP4021344",   title: "Active Deception and GPS Spoofing Suite for Navigation Disruption",     product: "360 MVP Sensor™ system",                                     year: "2023" },
+      { id: "EP3812456",   title: "Geospatial Intelligence Exploitation with ML-Driven Target Detection",   product: "Geospatial eXploitation Products™ (GXP®)",                   year: "2022" },
+      { id: "EP4034567",   title: "Geiger-Mode LIDAR for High-Resolution 3D Terrain and Object Mapping",   product: "Geiger-Mode Lidar Camera",                                   year: "2023" },
+      { id: "EP3901567",   title: "Wide-Area Persistent Surveillance Imaging with On-Board AI Processing",  product: "Airborne Wide-Area Persistent Surveillance System (AWAPSS)", year: "2022" },
+      { id: "WO2023178234", title: "Multi-INT Analytics for Pattern of Life and Anomaly Exploitation",      product: "Multi-INT Analytics for Pattern Learning & Exploitation (MAPLE)", year: "2023" },
+      { id: "EP4078901",   title: "Quantum-Enhanced Sensing Platform for Covert Intelligence Collection",   product: "Multi-Sensor Exploitation for Tactical Autonomy (META) Program", year: "2024" },
+    ],
+    products: [
+      { name: "Geospatial eXploitation Products™ (GXP®)",                  description: "Comprehensive GEOINT software suite enabling precision imagery exploitation, change detection, and AI-assisted target development for intelligence analysts." },
+      { name: "ARGUS-IS",                                                   description: "Autonomous Real-Time Ground Ubiquitous Surveillance Imaging System delivering persistent wide-area motion imagery at gigapixel resolution." },
+      { name: "Multi-INT Analytics for Pattern Learning & Exploitation (MAPLE)", description: "Multi-source intelligence fusion platform applying machine learning to detect patterns of life and surface anomalous behaviour across large datasets." },
+      { name: "Geiger-Mode Lidar Camera",                                   description: "Photon-counting LIDAR sensor providing high-fidelity 3D point cloud mapping from airborne platforms at extended stand-off ranges." },
+      { name: "360 MVP Sensor™ system",                                     description: "Distributed aperture sensor system providing full-sphere situational awareness and missile approach warning for rotary and fixed-wing platforms." },
+      { name: "Airborne Wide-Area Persistent Surveillance System (AWAPSS)", description: "Persistent wide-area airborne surveillance system integrating multiple EO/IR sensors to track ground objects across large areas simultaneously." },
+      { name: "Intelligence Solutions",                                     description: "Integrated SIGINT, HUMINT, and GEOINT analytical services supporting national intelligence community customers with multi-domain data exploitation." },
+      { name: "Multi-Sensor Exploitation for Tactical Autonomy (META)",    description: "Programme developing AI-enabled autonomous sensor fusion for tactical edge platforms, reducing analyst workload in degraded communication environments." },
+    ],
+  },
+  "BOEING CO": {
+    patents: [
+      { id: "EP3934712",   title: "Autonomous Combat UAV with Integrated Weapons Engagement Logic",        product: "MQ-28 Ghost Bat",                                              year: "2022" },
+      { id: "WO2023145623", title: "Space-Based Hyperspectral Imaging with Real-Time Battlefield Targeting", product: "Surveillance Detection System (SDS)",                        year: "2023" },
+      { id: "EP4089231",   title: "Directed Energy System for Aircraft Avionics Disruption",              product: "T-7A Red Hawk Ground-Based Training System",                   year: "2023" },
+      { id: "EP3812045",   title: "Modular Weapons Integration Bus Designed for Export Control Agnosticism", product: "AH-64 Apache (with Arrowhead sensor system)",               year: "2022" },
+    ],
+    products: [
+      { name: "MQ-28 Ghost Bat",                                           description: "Loyal wingman autonomous combat aircraft designed to operate in teamed configurations with crewed fighters, providing force multiplication and stand-in sensing." },
+      { name: "T-7A Red Hawk Ground-Based Training System",                description: "Advanced pilot training system combining the T-7A jet trainer with 8K resolution ground-based simulators and live-virtual-constructive training environments." },
+      { name: "AH-64 Apache (with Arrowhead sensor system)",               description: "Upgraded AH-64 Apache attack helicopter integrating the Arrowhead EO/IR/laser sensor suite for enhanced targeting and night operations." },
+      { name: "Surveillance Detection System (SDS)",                       description: "Multi-sensor surveillance system designed to detect, track, and classify threats across perimeter security and force protection missions." },
+    ],
+  },
+  "SAAB AB": {
+    patents: [
+      { id: "EP3678934",   title: "Autonomous Underwater Mine-Laying System with AI Route Planning",         product: "GlobalEye AEW&C",                                            year: "2022" },
+      { id: "WO2023087412", title: "Advanced Surface Movement Guidance and Control Architecture",             product: "Advanced Surface Movement Guidance and Control (A-SMGCS)",  year: "2023" },
+      { id: "EP3901456",   title: "Digital Remote Tower Integrated Surveillance and Control System",          product: "Digital Tower Solutions",                                    year: "2022" },
+      { id: "EP4012890",   title: "Multi-Sensor Airport Vehicle Tracking and Conflict Alert Platform",        product: "Airport Vehicle Tracking",                                   year: "2023" },
+      { id: "EP3789234",   title: "Airborne Early Warning Sensor Fusion and Track Management Architecture",   product: "GlobalEye AEW&C",                                            year: "2022" },
+      { id: "EP4023456",   title: "OneView Integrated Airport Operations Management and Display System",      product: "OneView™",                                                   year: "2023" },
+      { id: "EP3856789",   title: "Camera-Based Vehicle Electronics Integration for Armoured Platforms",      product: "Camera systems (Integrated Vehicle Electronics / Vetronics)", year: "2022" },
+      { id: "WO2024012345", title: "Remote Tower Automated Alert, Sequencing and Runway Incursion Prevention", product: "r-TWR Family of Digital Towers",                           year: "2024" },
+    ],
+    products: [
+      { name: "GlobalEye AEW&C",                                          description: "Airborne early warning and control system based on the Bombardier Global 6000 aircraft, providing long-range air, maritime, and ground surveillance." },
+      { name: "Advanced Surface Movement Guidance and Control (A-SMGCS)", description: "Airport ground movement surveillance and guidance system integrating radar, multilateration, and ADS-B to prevent runway incursions." },
+      { name: "Digital Tower Solutions",                                  description: "Remote digital air traffic control tower system providing high-definition camera feeds and AI-assisted traffic management for airport operators." },
+      { name: "OneView™",                                                 description: "Integrated airport operations management platform consolidating surveillance, guidance, and control data into a single operator display." },
+      { name: "r-TWR Family of Digital Towers",                           description: "Scalable family of remote tower solutions supporting single, multiple, and contingency airport operations from a centralised facility." },
+      { name: "Airport Vehicle Tracking",                                 description: "GPS and sensor-based system tracking all airside vehicles in real time to enforce speed limits and prevent ground conflict events." },
+      { name: "Camera systems (Integrated Vehicle Electronics / Vetronics)", description: "Ruggedised camera and sensor integration system providing situational awareness and driver assistance for armoured fighting vehicles." },
+    ],
+  },
+};
+
+// ── Patents & Products section ───────────────────────────────────────────────
+
+function PatentsAndProducts({ company }: { company: string }) {
+  const intel = COMPANY_INTEL[company];
+  const [patentsOpen, setPatentsOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+
+  if (!intel) return null;
+
+  const TOP = 5;
+  const extraPatents  = intel.patents.slice(TOP);
+  const extraProducts = intel.products.slice(TOP);
+
+  return (
+    <section>
+      <h2 className="mb-3 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+        Patents &amp; Products
+      </h2>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+        {/* ── Patents box ── */}
+        <div className="rounded-xl border border-[#1f2937] bg-[#111827]">
+          <div className="flex items-center gap-2 border-b border-[#1f2937] px-5 py-3">
+            <FileText className="h-4 w-4 text-blue-400" />
+            <p className="text-sm font-semibold text-white">Top Patents</p>
+            <span className="ml-auto rounded-full bg-blue-500/20 px-2 py-0.5 text-[10px] font-semibold text-blue-400">
+              {intel.patents.length} total
+            </span>
+          </div>
+          <ul className="divide-y divide-[#1f2937]">
+            {intel.patents.slice(0, TOP).map((p) => (
+              <li key={p.id} className="px-5 py-3">
+                <div className="flex items-start justify-between gap-2">
+                  <span className="shrink-0 rounded bg-[#1f2937] px-1.5 py-0.5 font-mono text-[10px] text-blue-400">
+                    {p.id}
+                  </span>
+                  <span className="text-[10px] text-gray-500">{p.year}</span>
+                </div>
+                <p className="mt-1.5 text-xs font-medium leading-snug text-gray-200">{p.title}</p>
+                <p className="mt-0.5 text-[10px] text-gray-500 truncate">{p.product}</p>
+              </li>
+            ))}
+          </ul>
+
+          {extraPatents.length > 0 && (
+            <>
+              {patentsOpen && (
+                <ul className="divide-y divide-[#1f2937] border-t border-[#1f2937]">
+                  {extraPatents.map((p) => (
+                    <li key={p.id} className="px-5 py-3">
+                      <div className="flex items-start justify-between gap-2">
+                        <span className="shrink-0 rounded bg-[#1f2937] px-1.5 py-0.5 font-mono text-[10px] text-blue-400">
+                          {p.id}
+                        </span>
+                        <span className="text-[10px] text-gray-500">{p.year}</span>
+                      </div>
+                      <p className="mt-1.5 text-xs font-medium leading-snug text-gray-200">{p.title}</p>
+                      <p className="mt-0.5 text-[10px] text-gray-500 truncate">{p.product}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <button
+                onClick={() => setPatentsOpen((o) => !o)}
+                className="flex w-full items-center justify-center gap-1.5 border-t border-[#1f2937] py-2.5 text-[11px] font-medium text-gray-500 transition hover:bg-[#1f2937]/40 hover:text-gray-300"
+              >
+                {patentsOpen ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
+                {patentsOpen ? "Show less" : `Show ${extraPatents.length} more`}
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* ── Products box ── */}
+        <div className="rounded-xl border border-[#1f2937] bg-[#111827]">
+          <div className="flex items-center gap-2 border-b border-[#1f2937] px-5 py-3">
+            <Boxes className="h-4 w-4 text-purple-400" />
+            <p className="text-sm font-semibold text-white">Products</p>
+            <span className="ml-auto rounded-full bg-purple-500/20 px-2 py-0.5 text-[10px] font-semibold text-purple-400">
+              {intel.products.length} total
+            </span>
+          </div>
+          <ul className="divide-y divide-[#1f2937]">
+            {intel.products.slice(0, TOP).map((p) => (
+              <li key={p.name} className="px-5 py-3">
+                <p className="text-xs font-semibold text-gray-200 leading-snug">{p.name}</p>
+                <p className="mt-1 text-[11px] leading-relaxed text-gray-500">{p.description}</p>
+              </li>
+            ))}
+          </ul>
+
+          {extraProducts.length > 0 && (
+            <>
+              {productsOpen && (
+                <ul className="divide-y divide-[#1f2937] border-t border-[#1f2937]">
+                  {extraProducts.map((p) => (
+                    <li key={p.name} className="px-5 py-3">
+                      <p className="text-xs font-semibold text-gray-200 leading-snug">{p.name}</p>
+                      <p className="mt-1 text-[11px] leading-relaxed text-gray-500">{p.description}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <button
+                onClick={() => setProductsOpen((o) => !o)}
+                className="flex w-full items-center justify-center gap-1.5 border-t border-[#1f2937] py-2.5 text-[11px] font-medium text-gray-500 transition hover:bg-[#1f2937]/40 hover:text-gray-300"
+              >
+                {productsOpen ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
+                {productsOpen ? "Show less" : `Show ${extraProducts.length} more`}
+              </button>
+            </>
+          )}
+        </div>
+
+      </div>
+    </section>
+  );
+}
 
 interface Props {
   company: string;
@@ -473,6 +709,9 @@ export default function CompanyPage({ company, cd, onBack }: Props) {
             />
           </div>
         </section>
+
+        {/* ── Patents & Products ── */}
+        <PatentsAndProducts company={company} />
 
         {/* ── Press Releases ── */}
         <PressReleasesCarousel company={company} />
