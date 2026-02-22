@@ -1,279 +1,268 @@
 """
-LangGraph agent node implementations.
+Single-agent product analysis.
 
-Each node is a pure async function that takes an AnalysisState and returns
-a partial state dict (merged by LangGraph into the full state).
+Reads directly from backend/rag/matched_data.json — each entry pairs a patent
+with its top-3 most relevant press releases (pre-computed by cosine similarity).
+Each patent entry is expected to have a "product" field (added manually).
+
+Public API:
+  analyze_product(company, product, entries) -> dict
+  _load_matched_all(json_key) -> list[dict]
+  _group_by_product(entries) -> dict[str, list[dict]]
 """
 import json
 import logging
+import os
 import re
-from typing import Any
 
 import google.generativeai as genai
 
 from backend.core.config import get_settings
-from backend.agents.state import AnalysisState, Contradiction
-from backend.rag.embeddings import embed_text
-from backend.rag.vector_store import get_chroma, similarity_search
+from backend.rag.pipeline import PATENT_JSON_COMPANY_MAP
 
 logger = logging.getLogger(__name__)
 _settings = get_settings()
 genai.configure(api_key=_settings.google_api_key)
+
+# Reverse map: canonical agent name → JSON company key in matched_data.json
+_REVERSE_COMPANY_MAP: dict[str, str] = {v: k for k, v in PATENT_JSON_COMPANY_MAP.items()}
+
+# Path to pre-computed matched data — resolved relative to this file
+_MATCHED_DATA_PATH = os.path.join(os.path.dirname(__file__), "../rag/matched_data.json")
+_matched_cache: dict | None = None
 
 
 def _get_model() -> genai.GenerativeModel:
     return genai.GenerativeModel(_settings.gemini_model)
 
 
-def _format_context(chunks: list[dict]) -> str:
-    parts = []
-    for i, c in enumerate(chunks[:8], 1):
-        meta = c.get("metadata") or {}
+def _ensure_cache() -> dict:
+    global _matched_cache
+    if _matched_cache is None:
+        try:
+            with open(_MATCHED_DATA_PATH, encoding="utf-8") as f:
+                _matched_cache = json.load(f)
+        except FileNotFoundError:
+            logger.warning(
+                "matched_data.json not found at %s — run run_pipeline.py first.",
+                _MATCHED_DATA_PATH,
+            )
+            _matched_cache = {}
+    return _matched_cache
+
+
+def _load_matched_all(json_key: str) -> list[dict]:
+    """
+    Load all matched entries for a raw JSON company key (e.g. 'LOCKHEED CORP').
+    Used by run_analysis.py to iterate over companies without name translation.
+    """
+    return _ensure_cache().get(json_key, [])
+
+
+def _load_matched(company_name: str) -> list[dict]:
+    """
+    Load matched entries by canonical company name (e.g. 'Lockheed Martin').
+    Translates via _REVERSE_COMPANY_MAP before looking up in the cache.
+    """
+    json_key = _REVERSE_COMPANY_MAP.get(company_name, company_name)
+    return _load_matched_all(json_key)
+
+
+def _group_by_product(entries: list[dict]) -> dict[str, list[dict]]:
+    """
+    Group matched entries by the 'product' field on the patent object.
+    Entries without a product field are collected under 'Unknown'.
+    """
+    groups: dict[str, list[dict]] = {}
+    for entry in entries:
+        p = entry["patent"]
+        # Use manually set "product" first, then fall back to enriched matched_product_name
+        product = p.get("product") or p.get("matched_product_name") or "Unknown"
+        groups.setdefault(product, []).append(entry)
+    return groups
+
+
+def _build_news_context(entries: list[dict], max_articles: int = 8) -> str:
+    """
+    Collect unique press releases from top_press_releases across all matched entries.
+    Returns a formatted string of the most relevant articles.
+    """
+    parts: list[str] = []
+    seen: set[str] = set()
+    for entry in entries:
+        for pr in entry.get("top_press_releases", []):
+            url = pr.get("url", pr.get("title", ""))
+            if url in seen:
+                continue
+            seen.add(url)
+            parts.append(
+                f"[{pr.get('date', '')[:10]}] {pr.get('title', '')}\n"
+                f"Source: {pr.get('source', '')}  |  Relevance: {pr.get('similarity', 0):.3f}\n"
+                f"{pr.get('summary', '')[:600]}"
+            )
+            if len(parts) >= max_articles:
+                return "\n\n".join(parts)
+    return "\n\n".join(parts)
+
+
+def _build_patent_context(entries: list[dict], max_patents: int = 10) -> str:
+    """
+    Format patent entries (abstract + claims preview) for the analysis prompt.
+    Prioritises patents that have full claims text.
+    """
+    sorted_entries = sorted(
+        entries, key=lambda e: bool(e["patent"].get("claims")), reverse=True
+    )
+    parts: list[str] = []
+    for i, entry in enumerate(sorted_entries[:max_patents], 1):
+        p = entry["patent"]
+        claims_preview = ""
+        if p.get("claims"):
+            claims_preview = " ".join(p["claims"])[:600]
+
+        product_line = ""
+        if p.get("matched_product_name"):
+            product_line = (
+                f"Matched product: {p['matched_product_name']}\n"
+                f"Product description: {p.get('matched_product_description', '')[:300]}\n"
+            )
+
+        desc_preview = ""
+        if p.get("description"):
+            desc_preview = " ".join(p["description"][:5])[:400]
+
         parts.append(
-            f"[Source {i}] ({c.get('source_type', 'unknown')}) "
-            f"{meta.get('title', '')} — {c.get('content', '')[:600]}"
+            f"[Patent {i}] {p['doc_id']} (published {p.get('date', 'unknown')})\n"
+            f"{product_line}"
+            f"Abstract: {p.get('abstract', '')[:400]}\n"
+            f"Description excerpt: {desc_preview if desc_preview else '(none)'}\n"
+            f"Claims: {claims_preview if claims_preview else '(abstract only)'}"
         )
     return "\n\n".join(parts)
 
 
-# ---------------------------------------------------------------------------
-# Retriever helper (shared by all nodes)
-# ---------------------------------------------------------------------------
-
-async def _retrieve(
+async def analyze_product(
     company: str,
-    query: str,
-    source_types: list[str],
-    top_k: int = 8,
-) -> list[dict]:
-    chroma = get_chroma()
-    query_emb = await embed_text(query)
-    return await similarity_search(
-        chroma, query_emb, company, source_types=source_types, top_k=top_k
-    )
-
-
-# ---------------------------------------------------------------------------
-# Node 1 – Investigator
-# ---------------------------------------------------------------------------
-
-async def investigator_node(state: AnalysisState) -> dict:
+    product: str,
+    entries: list[dict],
+) -> dict:
     """
-    Retrieves news/press-release chunks and product images,
-    then uses Gemini to extract the company's public ethical claims.
+    Given matched patent+PR entries for one named product, produce a structured
+    risk analysis in a single Gemini call.
+
+    Returns a dict with keys:
+      product, company, contradiction_pct, risk_score, score_drivers,
+      contradictions, cost_analysis, human_in_loop_pct, risk_mitigation
+    On error returns a dict with an 'error' key and safe defaults.
     """
-    company = state["company_name"]
-    query = state["user_query"]
+    news_text = _build_news_context(entries)
+    patent_text = _build_patent_context(entries)
+    patent_ids = [e["patent"]["doc_id"] for e in entries[:10]]
 
-    try:
-        news_ctx = await _retrieve(company, query, ["news"], top_k=8)
-        img_ctx = await _retrieve(company, query, ["product_image"], top_k=5)
+    if not news_text:
+        news_text = "(No press release data available for this product)"
+    if not patent_text:
+        patent_text = "(No patent data available for this product)"
 
-        context_text = _format_context(news_ctx + img_ctx)
-
-        prompt = f"""You are an Investigator agent specializing in corporate ethics and defense industry PR.
+    prompt = f"""You are a defense industry analyst producing a structured transparency risk report.
 
 Company: {company}
-User Query: {query}
+Product: {product}
 
-== Press Releases & News Context ==
-{context_text}
+== Press Releases (matched to patents by semantic relevance) ==
+{news_text}
 
-Task:
-1. Extract every explicit or implicit ethical, environmental, and humanitarian claim the company makes in these materials.
-2. Identify the marketing language used to describe their defense products (e.g., "precision", "protecting lives", "defensive systems").
-3. List named products and their stated purpose.
+== Patent Evidence ==
+{patent_text}
 
-Return your findings as plain text with clear bullet points. Be exhaustive."""
-
-        model = _get_model()
-        response = model.generate_content(prompt)
-        public_claims = response.text
-
-        return {
-            "news_context": news_ctx,
-            "product_images": img_ctx,
-            "public_claims": public_claims,
-            "investigator_status": "done",
-        }
-
-    except Exception as exc:
-        logger.error("Investigator node error: %s", exc)
-        return {
-            "investigator_status": "error",
-            "error": str(exc),
-        }
-
-
-# ---------------------------------------------------------------------------
-# Node 2 – Forensic
-# ---------------------------------------------------------------------------
-
-async def forensic_node(state: AnalysisState) -> dict:
-    """
-    Retrieves patent chunks and analyzes actual technical capabilities
-    against known dual-use weapon system patterns.
-    """
-    company = state["company_name"]
-    query = state["user_query"]
-    public_claims = state.get("public_claims", "")
-
-    try:
-        patent_ctx = await _retrieve(company, query, ["patent"], top_k=10)
-        context_text = _format_context(patent_ctx)
-
-        prompt = f"""You are a Forensic Analyst specializing in defense technology patents and dual-use risk assessment.
-
-Company: {company}
-Public Claims Summary:
-{public_claims[:1000]}
-
-== Patent Context ==
-{context_text}
-
-Task:
-1. Identify the actual technical capabilities described in these patents (autonomous targeting, AI-guided weapons, surveillance, electronic warfare, etc.).
-2. Classify any dual-use potential: could civilian technology claims mask military kill-chain relevance?
-3. Identify IPC codes and explain their military significance.
-4. Note specific technical capabilities that contradict or undermine the company's public ethical claims.
-
-Return a structured analysis with:
-- Technical Capabilities (bullet list)
-- Dual-Use Risks (bullet list)
-- Key Patent Evidence (brief quotes or paraphrases from claims)"""
-
-        model = _get_model()
-        response = model.generate_content(prompt)
-        full_text = response.text
-
-        # Split into capabilities and risks sections
-        capabilities = full_text
-        risks = ""
-        if "Dual-Use Risks" in full_text:
-            parts = full_text.split("Dual-Use Risks", 1)
-            capabilities = parts[0]
-            risks = "Dual-Use Risks" + parts[1]
-
-        return {
-            "patent_context": patent_ctx,
-            "technical_capabilities": capabilities,
-            "dual_use_risks": risks,
-            "forensic_status": "done",
-        }
-
-    except Exception as exc:
-        logger.error("Forensic node error: %s", exc)
-        return {
-            "forensic_status": "error",
-            "error": str(exc),
-        }
-
-
-# ---------------------------------------------------------------------------
-# Node 3 – Synthesizer
-# ---------------------------------------------------------------------------
-
-async def synthesizer_node(state: AnalysisState) -> dict:
-    """
-    Compares Investigator and Forensic findings, produces the final
-    structured JSON payload: risk_score, score_drivers, products, contradictions.
-    """
-    company = state["company_name"]
-    public_claims = state.get("public_claims", "")
-    technical_capabilities = state.get("technical_capabilities", "")
-    dual_use_risks = state.get("dual_use_risks", "")
-    patent_ctx = state.get("patent_context", [])
-    img_ctx = state.get("product_images", [])
-
-    # Collect product image URLs
-    product_image_urls = [
-        r["image_url"] for r in img_ctx if r.get("image_url")
-    ]
-
-    # Build source references
-    patent_sources = list({
-        r.get("metadata", {}).get("patent_id", "") or r.get("image_url", "")
-        for r in patent_ctx
-        if r.get("metadata", {}).get("patent_id") or r.get("image_url")
-    })[:5]
-
-    prompt = f"""You are a Synthesizer agent producing a corporate transparency risk report.
-
-Company: {company}
-
-== Public Claims (from press releases & marketing) ==
-{public_claims[:2000]}
-
-== Actual Technical Capabilities (from patent analysis) ==
-{technical_capabilities[:2000]}
-
-== Dual-Use Risks Identified ==
-{dual_use_risks[:1000]}
-
-Task:
-Produce a structured JSON object with EXACTLY this schema:
+Task: Analyse the gap between public marketing claims and actual patent-evidenced capabilities.
+Produce a JSON object with EXACTLY this schema (no markdown fences, no extra keys):
 
 {{
-  "risk_score": <integer 0-100>,
+  "product": "{product}",
+  "company": "{company}",
+  "contradiction_pct": <float 0-100: % of public claims contradicted or undermined by patent evidence>,
+  "risk_score": <int 0-100: 0=fully transparent civilian, 100=severe contradiction + autonomous kill chain>,
   "score_drivers": [
-    "<bullet 1: key reason for score, max 15 words>",
-    "<bullet 2: key reason for score, max 15 words>",
-    "<bullet 3: key reason for score, max 15 words>"
+    "<reason 1, max 15 words>",
+    "<reason 2, max 15 words>",
+    "<reason 3, max 15 words>"
   ],
   "contradictions": [
     {{
-      "claim": "<exact or paraphrased public claim>",
+      "claim": "<exact or paraphrased public claim from press releases>",
       "evidence": "<patent or technical evidence that contradicts it>",
-      "why_it_matters": "<humanitarian or ethical significance>",
-      "sources": ["<patent ID or URL>"]
+      "why_it_matters": "<humanitarian or ethical significance, 1-2 sentences>",
+      "sources": ["<patent ID from available list>"]
     }}
-  ]
+  ],
+  "cost_analysis": {{
+    "unit_cost": "<e.g. '$2.1M per unit' or 'not disclosed'>",
+    "programme_cost": "<e.g. '$14B programme' or 'not disclosed'>",
+    "source": "<press release title or date, or 'estimated'>"
+  }},
+  "human_in_loop_pct": <float 0-50: 50=always human decision required, 0=fully autonomous kill chain>,
+  "risk_mitigation_pct": <float 0-50: 50=always has a risk mitagated circumstance for prevention, 0=no backup risk mitigation plans at all>"
 }}
 
 Rules:
-- risk_score: 0=fully transparent/civilian, 100=severe contradiction/high dual-use risk
-- Include 3-7 contradictions
-- Be specific, cite patent IDs when possible
-- Output ONLY valid JSON, no markdown fences, no preamble
+- contradiction_pct: contradictions found ÷ total claims extracted × 100
+- Include 3–7 contradictions, prioritise the most serious humanitarian implications
+- human_in_loop_pct: base on specific patent language (e.g. "autonomous", "operator approval", "without human intervention")
+- risk_mitigation: grounded in actual patent text, not aspirational marketing language
+- Output ONLY valid JSON — no markdown, no preamble, no explanation
 
-Patent source IDs available: {patent_sources}"""
+Available patent IDs for source citations: {patent_ids}"""
 
+    raw = ""
     try:
         model = _get_model()
         response = model.generate_content(prompt)
         raw = response.text.strip()
 
-        # Strip markdown fences if present
+        # Strip markdown fences if the model adds them anyway
         raw = re.sub(r"^```(?:json)?\s*", "", raw)
         raw = re.sub(r"\s*```$", "", raw)
 
         payload = json.loads(raw)
 
-        risk_score = int(payload.get("risk_score", 50))
-        score_drivers = payload.get("score_drivers", [])[:3]
-        contradictions: list[Contradiction] = payload.get("contradictions", [])
-
         return {
-            "risk_score": risk_score,
-            "score_drivers": score_drivers,
-            "products": product_image_urls,
-            "contradictions": contradictions,
-            "synthesizer_status": "done",
+            "product": payload.get("product", product),
+            "company": payload.get("company", company),
+            "contradiction_pct": float(payload.get("contradiction_pct", 0)),
+            "risk_score": int(payload.get("risk_score", 50)),
+            "score_drivers": payload.get("score_drivers", [])[:3],
+            "contradictions": payload.get("contradictions", []),
+            "cost_analysis": payload.get("cost_analysis", {}),
+            "risk_mitigation": float(payload.get("human_in_loop_pct", 30)) + float(payload.get("risk_mitigation_pct", 30)),
         }
 
     except json.JSONDecodeError as exc:
-        logger.error("Synthesizer JSON parse error: %s | raw: %s", exc, raw[:500])
+        logger.error(
+            "analyze_product JSON parse error for %s/%s: %s | raw: %.500s",
+            company, product, exc, raw,
+        )
         return {
+            "product": product,
+            "company": company,
+            "contradiction_pct": 0.0,
             "risk_score": 50,
             "score_drivers": ["Analysis completed with parsing errors"],
-            "products": product_image_urls,
             "contradictions": [],
-            "synthesizer_status": "error",
+            "cost_analysis": {},
+            "risk_mitigation": 50.0,
             "error": f"JSON parse error: {exc}",
         }
     except Exception as exc:
-        logger.error("Synthesizer node error: %s", exc)
+        logger.error("analyze_product error for %s/%s: %s", company, product, exc)
         return {
-            "synthesizer_status": "error",
+            "product": product,
+            "company": company,
+            "contradiction_pct": 0.0,
+            "risk_score": 50,
+            "score_drivers": [],
+            "contradictions": [],
+            "cost_analysis": {},
+            "risk_mitigation": 50.0,
             "error": str(exc),
         }

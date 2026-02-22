@@ -3,16 +3,38 @@ End-to-end ingestion pipeline.
 Orchestrates fetching → chunking → embedding → storing for a given company.
 """
 import asyncio
+import json
 import logging
+import os
 from typing import Optional
 
 from backend.core.config import get_settings
 from backend.ingestion.yfinance_client import fetch_company_news, fetch_company_info
 from backend.ingestion.epo_client import get_epo_client, PatentRecord
 from backend.ingestion.web_scraper import scrape_company_products
-from backend.rag.chunker import chunk_patent, chunk_news_item, Chunk
+from backend.rag.chunker import chunk_patent, chunk_news_item, chunk_patent_json, chunk_press_release, Chunk
 from backend.rag.embeddings import embed_text, embed_image_url
 from backend.rag.vector_store import get_chroma, bulk_upsert_documents, get_ingestion_stats
+
+# Maps JSON company keys → canonical names used by agents
+PATENT_JSON_COMPANY_MAP: dict[str, str] = {
+    "LOCKHEED CORP": "Lockheed Martin",
+    "RTX CORP": "RTX",
+    "BAE Systems": "BAE Systems",
+    "BOEING CO": "Boeing",
+    "SAAB AB": "SAAB",
+}
+
+# Keywords for detecting which company a press release belongs to (case-insensitive)
+PRESS_RELEASE_COMPANY_KEYWORDS: dict[str, list[str]] = {
+    "Lockheed Martin": ["lockheed"],
+    "Boeing": ["boeing"],
+    "BAE Systems": ["bae systems"],
+    "RTX": ["rtx", "raytheon"],
+    "SAAB": ["saab"],
+    "Northrop Grumman": ["northrop grumman", "northrop"],
+    "Airbus": ["airbus"],
+}
 
 logger = logging.getLogger(__name__)
 _settings = get_settings()
@@ -84,3 +106,85 @@ async def ingest_company(company_name: str) -> dict:
     logger.info("[pipeline] Inserted %d records for %s", count, company_name)
 
     return await get_ingestion_stats(chroma, company_name)
+
+
+async def ingest_patents_from_json(json_path: str | None = None) -> dict:
+    """
+    Load patent_results.json, chunk each record optimally (header + per-claim + description
+    sections), embed, and upsert to ChromaDB.  Returns per-company chunk counts.
+    """
+    path = json_path or os.path.join(os.path.dirname(__file__), "patent_results.json")
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+
+    chroma = get_chroma()
+    all_stats: dict[str, int] = {}
+
+    for json_company, patents in data.items():
+        canonical = PATENT_JSON_COMPANY_MAP.get(json_company, json_company)
+        records_to_insert: list[dict] = []
+
+        for patent in patents:
+            chunks = chunk_patent_json(patent, canonical)
+            if not chunks:
+                continue
+            embeddings = await asyncio.gather(*[embed_text(c.text) for c in chunks])
+            for chunk, emb in zip(chunks, embeddings):
+                records_to_insert.append({
+                    "company": canonical,
+                    "source_type": "patent",
+                    "content": chunk.text,
+                    "embedding": emb,
+                    "metadata": chunk.metadata,
+                    "image_url": None,
+                })
+
+        count = await bulk_upsert_documents(chroma, records_to_insert)
+        logger.info("[json-ingest] Patents: %s → %d chunks from %d records",
+                    canonical, count, len(patents))
+        all_stats[canonical] = count
+
+    return all_stats
+
+
+async def ingest_press_releases_from_json(json_path: str | None = None) -> dict:
+    """
+    Load press_releases.json, detect company from content keywords, chunk each article,
+    embed, and upsert to ChromaDB.  Returns per-company chunk counts.
+    One article can be assigned to multiple companies if it mentions more than one.
+    """
+    path = json_path or os.path.join(os.path.dirname(__file__), "press_releases.json")
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+
+    chroma = get_chroma()
+    company_records: dict[str, list[dict]] = {co: [] for co in PRESS_RELEASE_COMPANY_KEYWORDS}
+
+    for record in data:
+        search_text = (record.get("title", "") + " " + record.get("content", "")).lower()
+        for company, keywords in PRESS_RELEASE_COMPANY_KEYWORDS.items():
+            if not any(kw in search_text for kw in keywords):
+                continue
+            chunks = chunk_press_release(record, company)
+            if not chunks:
+                continue
+            embeddings = await asyncio.gather(*[embed_text(c.text) for c in chunks])
+            for chunk, emb in zip(chunks, embeddings):
+                company_records[company].append({
+                    "company": company,
+                    "source_type": "news",
+                    "content": chunk.text,
+                    "embedding": emb,
+                    "metadata": chunk.metadata,
+                    "image_url": None,
+                })
+
+    all_stats: dict[str, int] = {}
+    for company, records in company_records.items():
+        if not records:
+            continue
+        count = await bulk_upsert_documents(chroma, records)
+        logger.info("[json-ingest] News: %s → %d chunks", company, count)
+        all_stats[company] = count
+
+    return all_stats

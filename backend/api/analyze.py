@@ -1,23 +1,28 @@
 """
 FastAPI routes for the analysis and ingestion endpoints.
 """
-import asyncio
 import json
 import logging
+import os
 from typing import AsyncGenerator
 
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
-from backend.agents.graph import compiled_graph
-from backend.agents.state import initial_state
 from backend.ingestion.yfinance_client import fetch_company_news, TICKER_MAP
-from backend.rag.pipeline import ingest_company
+from backend.rag.pipeline import ingest_company, ingest_patents_from_json, ingest_press_releases_from_json
 from backend.rag.vector_store import get_chroma, get_ingestion_stats
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api", tags=["analysis"])
+
+_ANALYSIS_RESULTS_PATH = os.path.join(
+    os.path.dirname(__file__), "../rag/analysis_results.json"
+)
+_RANKED_RESULTS_PATH = os.path.join(
+    os.path.dirname(__file__), "../rag/ranked_results.json"
+)
 
 
 # ---------------------------------------------------------------------------
@@ -25,7 +30,7 @@ router = APIRouter(prefix="/api", tags=["analysis"])
 # ---------------------------------------------------------------------------
 
 class AnalyzeRequest(BaseModel):
-    company_name: str = Field(..., example="Lockheed Martin")
+    company_name: str = Field(default="", example="Lockheed Martin")
     user_query: str = Field(
         default="",
         example="Analyze ethical contradictions between public claims and patent filings",
@@ -50,6 +55,107 @@ class NewsItemResponse(BaseModel):
     ticker: str
     company_name: str
     source_type: str
+
+
+# ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
+
+def _load_rankings_map() -> dict[str, dict]:
+    """
+    Load ranked_results.json and return a dict keyed by company name.
+    Returns {} silently if the file does not exist yet.
+    """
+    try:
+        with open(_RANKED_RESULTS_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+        return {r["company"]: r for r in data.get("rankings", [])}
+    except FileNotFoundError:
+        return {}
+    except Exception:
+        return {}
+
+
+def _reshape_company(company: str, products: dict, ranking: dict | None) -> dict:
+    """
+    Flatten per-product analysis into one AnalysisResult-shaped dict that matches
+    the frontend's existing TypeScript interface exactly:
+
+      { risk_score, score_drivers, products, contradictions, stats,
+        investigator_status, forensic_status, synthesizer_status }
+
+    stats carries both numeric aggregates (contradiction_pct, risk_mitigation,
+    product_count, avg_unit_cost_usd) and A→F grade strings (grade_overall,
+    grade_contradiction, grade_safety, grade_risk_mitigation, grade_cost).
+    """
+    product_list = list(products.values())
+    if not product_list:
+        return {
+            "risk_score": 0,
+            "score_drivers": [],
+            "products": [],
+            "contradictions": [],
+            "stats": {},
+            "investigator_status": "done",
+            "forensic_status": "done",
+            "synthesizer_status": "done",
+        }
+
+    # ── risk_score: mean across all products ──────────────────────────────────
+    risk_score = round(
+        sum(float(p.get("risk_score", 50)) for p in product_list) / len(product_list)
+    )
+
+    # ── score_drivers: from the highest-risk product ──────────────────────────
+    top_product = max(product_list, key=lambda p: float(p.get("risk_score", 0)))
+    score_drivers = top_product.get("score_drivers", [])[:3]
+
+    # ── contradictions: flatten + deduplicate by claim prefix ─────────────────
+    seen_claims: set[str] = set()
+    contradictions: list[dict] = []
+    for p in product_list:
+        for c in p.get("contradictions", []):
+            key = c.get("claim", "")[:80]
+            if key not in seen_claims:
+                seen_claims.add(key)
+                contradictions.append(c)
+
+    # ── aggregate numeric metrics ─────────────────────────────────────────────
+    contradiction_pct = (
+        sum(float(p.get("contradiction_pct", 0)) for p in product_list) / len(product_list)
+    )
+    risk_mitigation = (
+        sum(float(p.get("risk_mitigation", 50)) for p in product_list) / len(product_list)
+    )
+
+    stats: dict = {
+        "contradiction_pct": round(contradiction_pct, 1),
+        "risk_mitigation":   round(risk_mitigation, 1),
+        "product_count":     len(product_list),
+    }
+
+    # ── attach A→F grades from ranked_results if available ───────────────────
+    if ranking:
+        grades = ranking.get("grades", {})
+        overall = ranking.get("overall", "")
+        stats["grade_overall"]         = overall
+        stats["grade_contradiction"]   = grades.get("contradiction", "")
+        stats["grade_safety"]          = grades.get("safety", "")
+        stats["grade_risk_mitigation"] = grades.get("risk_mitigation", "")
+        stats["grade_cost"]            = grades.get("cost", "")
+        agg = ranking.get("aggregated_scores", {})
+        stats["avg_unit_cost_usd"]     = agg.get("avg_unit_cost_usd") or 0
+
+    return {
+        "risk_score":          risk_score,
+        "score_drivers":       score_drivers,
+        "products":            list(products.keys()),
+        "contradictions":      contradictions,
+        "stats":               stats,
+        "investigator_status": "done",
+        "forensic_status":     "done",
+        "synthesizer_status":  "done",
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -107,7 +213,7 @@ async def get_stats(company_name: str):
 async def ingest(req: IngestRequest):
     """
     Trigger full ingestion pipeline for a company.
-    Fetches news, patents, and product images, embeds them, and stores in Supabase.
+    Fetches news, patents, and product images, embeds them, and stores in ChromaDB.
     """
     try:
         stats = await ingest_company(req.company_name)
@@ -117,63 +223,139 @@ async def ingest(req: IngestRequest):
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+@router.post("/ingest-json")
+async def ingest_json():
+    """
+    Ingest patent_results.json and press_releases.json from the rag/ directory into ChromaDB.
+    Patents are chunked per individual claim and description section.
+    Press releases are company-detected by keyword and chunked as full articles.
+    """
+    try:
+        patent_stats = await ingest_patents_from_json()
+        news_stats = await ingest_press_releases_from_json()
+        return {"status": "ok", "patents": patent_stats, "news": news_stats}
+    except Exception as exc:
+        logger.error("JSON ingestion error: %s", exc)
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 @router.post("/analyze")
 async def analyze(req: AnalyzeRequest):
     """
-    Run the full LangGraph multi-agent pipeline and return the final state.
-    Non-streaming version – waits for all agents to complete.
+    Return pre-computed product analysis reshaped into the frontend AnalysisResult format.
+
+    If company_name is provided, returns a single AnalysisResult for that company
+    (products aggregated: mean risk_score, flattened contradictions, grade strings in stats).
+    If company_name is empty, returns all companies as { results: { company: AnalysisResult } }.
+
+    Run `python -m backend.scripts.run_analysis` to (re)generate analysis_results.json.
+    Run `python -m backend.scripts.rank_results` to (re)generate ranked_results.json (grades).
     """
-    state = initial_state(req.company_name, req.user_query)
     try:
-        final_state = await compiled_graph.ainvoke(state)
-        return {
-            "risk_score": final_state["risk_score"],
-            "score_drivers": final_state["score_drivers"],
-            "products": final_state["products"],
-            "contradictions": final_state["contradictions"],
-            "stats": final_state.get("stats", {}),
-            "investigator_status": final_state["investigator_status"],
-            "forensic_status": final_state["forensic_status"],
-            "synthesizer_status": final_state["synthesizer_status"],
+        with open(_ANALYSIS_RESULTS_PATH, encoding="utf-8") as f:
+            all_results = json.load(f)
+    except FileNotFoundError:
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                "analysis_results.json not found. "
+                "Run `python -m backend.scripts.run_analysis` first."
+            ),
+        )
+    except json.JSONDecodeError as exc:
+        raise HTTPException(status_code=500, detail=f"analysis_results.json is malformed: {exc}")
+
+    rankings_map = _load_rankings_map()
+
+    if req.company_name:
+        if req.company_name not in all_results:
+            raise HTTPException(
+                status_code=404,
+                detail=f"No results for company '{req.company_name}'. "
+                       f"Available: {list(all_results.keys())}",
+            )
+        products = all_results[req.company_name]
+        ranking = rankings_map.get(req.company_name)
+        return _reshape_company(req.company_name, products, ranking)
+
+    # No company filter — return all companies reshaped
+    return {
+        "results": {
+            company: _reshape_company(company, products, rankings_map.get(company))
+            for company, products in all_results.items()
         }
+    }
+
+
+@router.post("/analyze/run")
+async def run_analysis():
+    """
+    Trigger the full product-by-product analysis loop and write analysis_results.json.
+    This runs synchronously (may take several minutes for all products).
+    For large datasets, prefer running `python -m backend.scripts.run_analysis` directly.
+    """
+    try:
+        from backend.scripts.run_analysis import main as _run_main
+        await _run_main()
+        return {"status": "ok", "message": "analysis_results.json written successfully."}
     except Exception as exc:
-        logger.error("Analysis error: %s", exc)
+        logger.error("run_analysis error: %s", exc)
         raise HTTPException(status_code=500, detail=str(exc))
 
 
 @router.post("/analyze/stream")
 async def analyze_stream(req: AnalyzeRequest):
     """
-    Streaming version of the analysis endpoint.
-    Emits Server-Sent Events (SSE) as each agent completes.
+    Streaming analysis endpoint.
+
+    Emits Server-Sent Events using AgentStreamEvent shape { node, status, data }.
+    - Each product completion: node="synthesizer", data={ products: [<name>] }
+    - Company complete: node="complete", data=<full AnalysisResult for that company>
+    - Error: node="error", message=<str>
+
+    The frontend's streamAnalysis() generator and CompanyData state machinery consume
+    this directly without any changes.
     """
+    from backend.agents.nodes import _load_matched_all, _group_by_product, analyze_product
+    from backend.rag.pipeline import PATENT_JSON_COMPANY_MAP
+
     async def event_generator() -> AsyncGenerator[str, None]:
-        state = initial_state(req.company_name, req.user_query)
+        rankings_map = _load_rankings_map()
 
         try:
-            async for event in compiled_graph.astream(state, stream_mode="updates"):
-                node_name = list(event.keys())[0]
-                node_state = event[node_name]
-                payload = json.dumps({
-                    "node": node_name,
-                    "status": node_state.get(f"{node_name}_status", "done"),
-                    "data": {k: v for k, v in node_state.items() if k != "embedding"},
-                })
-                yield f"data: {payload}\n\n"
+            if req.company_name:
+                reverse = {v: k for k, v in PATENT_JSON_COMPANY_MAP.items()}
+                json_key = reverse.get(req.company_name, req.company_name)
+                company_map = {json_key: req.company_name}
+            else:
+                company_map = PATENT_JSON_COMPANY_MAP
 
-            # Final state
-            final_state = await compiled_graph.ainvoke(initial_state(req.company_name, req.user_query))
-            final_payload = json.dumps({
-                "node": "complete",
-                "status": "done",
-                "data": {
-                    "risk_score": final_state["risk_score"],
-                    "score_drivers": final_state["score_drivers"],
-                    "products": final_state["products"],
-                    "contradictions": final_state["contradictions"],
-                },
-            })
-            yield f"data: {final_payload}\n\n"
+            for json_key, canonical_name in company_map.items():
+                entries = _load_matched_all(json_key)
+                product_groups = _group_by_product(entries)
+                accumulated: dict[str, dict] = {}
+
+                for product, product_entries in product_groups.items():
+                    analysis = await analyze_product(canonical_name, product, product_entries)
+                    accumulated[product] = analysis
+
+                    # Lightweight per-product ping so the frontend sees progress
+                    ping = json.dumps({
+                        "node": "synthesizer",
+                        "status": "done",
+                        "data": {"products": list(accumulated.keys())},
+                    })
+                    yield f"data: {ping}\n\n"
+
+                # Emit the full reshaped company result as the "complete" event
+                ranking = rankings_map.get(canonical_name)
+                reshaped = _reshape_company(canonical_name, accumulated, ranking)
+                final = json.dumps({
+                    "node": "complete",
+                    "status": "done",
+                    "data": reshaped,
+                })
+                yield f"data: {final}\n\n"
 
         except Exception as exc:
             error_payload = json.dumps({"node": "error", "status": "error", "message": str(exc)})
@@ -187,3 +369,43 @@ async def analyze_stream(req: AnalyzeRequest):
             "X-Accel-Buffering": "no",
         },
     )
+
+
+@router.get("/rankings")
+async def get_rankings(company: str = ""):
+    """
+    Return A→F letter grades per company aggregated across all their products.
+
+    Grades are computed for 4 metrics:
+      - contradiction : % of public claims contradicted by patent evidence
+      - risk_mitigation : composite safety/mitigation score (inverted — lower = worse)
+      - safety : overall risk score from patent analysis
+      - cost : average unit cost (higher = worse; 'not disclosed' penalised)
+
+    Grades are relative (percentile-based across all companies in the dataset).
+    overall = the single worst grade across all 4 metrics.
+
+    Optionally filter by company name (case-insensitive substring match).
+
+    Run `python -m backend.scripts.rank_results` to (re)generate ranked_results.json.
+    """
+    try:
+        with open(_RANKED_RESULTS_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                "ranked_results.json not found. "
+                "Run `python -m backend.scripts.rank_results` first."
+            ),
+        )
+    except json.JSONDecodeError as exc:
+        raise HTTPException(status_code=500, detail=f"ranked_results.json is malformed: {exc}")
+
+    if company:
+        data["rankings"] = [
+            r for r in data["rankings"]
+            if company.lower() in r["company"].lower()
+        ]
+    return data

@@ -1,0 +1,96 @@
+{
+  "rankings": [
+    {
+      "company": "Boeing",
+      "grades": {
+        "contradiction": "D",
+        "risk_mitigation": "C",
+        "safety": "D",
+        "cost": "F"
+      },
+      "overall": "D",
+      "overall_score": 76.7,
+      "aggregated_scores": {
+        "contradiction_pct": 75.425,
+        "risk_mitigation": 40.0,
+        "risk_score": 71.5,
+        "avg_unit_cost_usd": 22095000.0
+      },
+      "product_count": 4
+    },
+    {
+      "company": "BAE Systems",
+      "grades": {
+        "contradiction": "D",
+        "risk_mitigation": "B",
+        "safety": "D",
+        "cost": "F"
+      },
+      "overall": "D",
+      "overall_score": 75.6,
+      "aggregated_scores": {
+        "contradiction_pct": 71.98857142857143,
+        "risk_mitigation": 42.714285714285715,
+        "risk_score": 73.28571428571429,
+        "avg_unit_cost_usd": 26940000.0
+      },
+      "product_count": 35
+    },
+    {
+      "company": "RTX",
+      "grades": {
+        "contradiction": "C",
+        "risk_mitigation": "B",
+        "safety": "C",
+        "cost": "F"
+      },
+      "overall": "D",
+      "overall_score": 73.3,
+      "aggregated_scores": {
+        "contradiction_pct": 69.7,
+        "risk_mitigation": 42.5,
+        "risk_score": 66.18181818181819,
+        "avg_unit_cost_usd": 28101818.181818184
+      },
+      "product_count": 22
+    },
+    {
+      "company": "Lockheed Martin",
+      "grades": {
+        "contradiction": "D",
+        "risk_mitigation": "B",
+        "safety": "C",
+        "cost": "F"
+      },
+      "overall": "D",
+      "overall_score": 73.0,
+      "aggregated_scores": {
+        "contradiction_pct": 72.39729729729729,
+        "risk_mitigation": 44.054054054054056,
+        "risk_score": 63.83783783783784,
+        "avg_unit_cost_usd": 27378378.37837838
+      },
+      "product_count": 37
+    },
+    {
+      "company": "SAAB",
+      "grades": {
+        "contradiction": "D",
+        "risk_mitigation": "A",
+        "safety": "A",
+        "cost": "F"
+      },
+      "overall": "C",
+      "overall_score": 62.5,
+      "aggregated_scores": {
+        "contradiction_pct": 78.41428571428571,
+        "risk_mitigation": 64.71428571428571,
+        "risk_score": 36.42857142857143,
+        "avg_unit_cost_usd": 28100000.0
+      },
+      "product_count": 7
+    }
+  ],
+  "generated_at": "2026-02-22T08:50:06.693472+00:00",
+  "total_companies": 5
+}

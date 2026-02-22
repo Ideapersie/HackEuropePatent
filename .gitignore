@@ -26,6 +26,9 @@ frontend/node_modules/
 # ChromaDB local vector store
 backend/data/
 
+# Generated pipeline artifacts
+backend/rag/matched_data.json
+
 # OS
 .DS_Store
 Thumbs.db
