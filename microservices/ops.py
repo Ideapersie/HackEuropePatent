@@ -1,12 +1,14 @@
+import os
 import requests
 import base64
 import xml.etree.ElementTree as ET
 
-public_key = "JjdHDCaVZO09eeJDwV0vZ25bgd7fmcvj2RqplB1f3CQGfKhh"
-secret_key = "D3bOi7SAAhpJJyfamMArmerFsFYG"
+public_key = os.environ["EPO_CONSUMER_KEY"]
+secret_key = os.environ["EPO_CONSUMER_SECRET"]
 
 
-access_token = "xAlK17aLQckVpaDlbeG9jWA2gO8e"
+# Short-lived OPS bearer token; get one by running test.py with the consumer key/secret set.
+access_token = os.environ["EPO_ACCESS_TOKEN"]
 
 ns = "{http://www.epo.org/exchange}"
 ns_ft = "{http://www.epo.org/fulltext}"

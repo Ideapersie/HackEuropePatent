@@ -1,8 +1,9 @@
+import os
 import requests
 import base64
 
-public_key = "WCy9x82YtWH4d4t4B9q3mMBcN0fPCgPGiPCGM6uUFJ9zXcv7"
-secret_key = "fowLZm2Bu0XHRLxoOfSdYQLfn4SVPAkTWF4djJE6hwDYg4tM9EgAD29stYhwM03c"
+public_key = os.environ["EPO_CONSUMER_KEY"]
+secret_key = os.environ["EPO_CONSUMER_SECRET"]
 
 credentials = f"{public_key}:{secret_key}"
 encoded = base64.b64encode(credentials.encode("utf-8")).decode("utf-8")
@@ -21,4 +22,3 @@ x= requests.post(url, headers=headers, data=data)
 print(x.status_code)
 print(x.text)
 
-#   "access_token": "v5EJWcil1GggCAmiTE7RoYAuRyX",
