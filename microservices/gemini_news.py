@@ -1,3 +1,4 @@
+import os
 import json
 import requests
 from google import genai
@@ -11,7 +12,7 @@ def resolve_url(redirect_url):
     except Exception:
         return redirect_url
 
-client = genai.Client(api_key="AIzaSyBNqD6wiFlwlocPyd0itHqiaDlQjE-JjzU")
+client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 
 ARTICLES_PER_PRODUCT = 3
 

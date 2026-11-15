@@ -1,50 +1,26 @@
-# PatentWatch — AI Corporate Transparency Tool
+# PatentWatch: AI Corporate Transparency Tool
 
-Analyzes a defense company's public ethical claims against their actual European Patent Office (EPO) filings using a **multimodal RAG pipeline** and **LangGraph multi-agent orchestration**.
+Built at HackEurope (February 2026) by a team from King's AI Society.
+
+Defence companies describe their products in the language of protection and precision. Their patent filings describe what the products actually do. PatentWatch puts the two side by side: it ingests a company's press releases and product pages, retrieves its European Patent Office filings with multimodal RAG, and runs a three-agent LangGraph pipeline that scores how far the public claims diverge from the patented capabilities, citing the specific patent behind each contradiction.
+
+**Stack:** FastAPI, LangGraph, Gemini (text and multimodal embeddings), Supabase pgvector, EPO Open Patent Services, Vite + React + Tailwind. Backend deploys on Railway (`railway.toml`), frontend on Vercel (`vercel.json`).
 
 ## Architecture
 
 ```
-monorepo/
-├── backend/                 # FastAPI (Python)
-│   ├── api/
-│   │   └── analyze.py       # REST + SSE endpoints
-│   ├── ingestion/
-│   │   ├── yfinance_client.py   # News & press releases
-│   │   ├── epo_client.py        # EPO patent data
-│   │   └── web_scraper.py       # Product images
-│   ├── rag/
-│   │   ├── embeddings.py        # Gemini multimodal embeddings
-│   │   ├── chunker.py           # Text chunking
-│   │   ├── vector_store.py      # Supabase pgvector CRUD
-│   │   └── pipeline.py          # End-to-end ingestion
-│   ├── agents/
-│   │   ├── state.py             # LangGraph shared state
-│   │   ├── nodes.py             # Investigator / Forensic / Synthesizer
-│   │   └── graph.py             # LangGraph state machine
-│   ├── core/
-│   │   └── config.py            # Pydantic settings
-│   ├── scripts/
-│   │   └── setup_supabase.sql   # DB schema + pgvector setup
-│   ├── main.py                  # FastAPI app entry point
-│   └── requirements.txt
-└── frontend/                # Next.js 14 (App Router)
-    └── src/
-        ├── app/
-        │   ├── layout.tsx
-        │   └── page.tsx         # Main dashboard
-        ├── components/
-        │   ├── Header.tsx
-        │   ├── StatsBar.tsx
-        │   ├── AgentStatusPanel.tsx
-        │   ├── RiskScore.tsx
-        │   ├── ScoreDrivers.tsx
-        │   ├── ProductGrid.tsx
-        │   └── ContradictionsTable.tsx
-        ├── lib/
-        │   └── api.ts           # API client with SSE streaming
-        └── types/
-            └── analysis.ts      # TypeScript interfaces
+backend/                    FastAPI app
+  api/analyze.py            REST + SSE endpoints
+  ingestion/                yfinance news, EPO OPS client, product-page scraper
+  rag/                      chunking, Gemini embeddings, pgvector store, ingestion pipeline
+  agents/                   LangGraph state, Investigator / Forensic / Synthesizer nodes, graph
+  core/config.py            Pydantic settings
+  scripts/                  Supabase schema, pipeline and analysis runners
+  main.py
+microservices/              offline data prep: EPO patent pull, filtering, Gemini enrichment, news scraping
+frontend/                   Vite + React + Tailwind
+  src/components/           CompanyPage, ComparisonTable, ContradictionModal
+  src/lib/api.ts            API client with SSE streaming
 ```
 
 ## Agent Pipeline
@@ -88,7 +64,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open the URL Vite prints (http://localhost:5173 by default).
 
 ## API Keys Required
 
@@ -97,6 +73,8 @@ Open http://localhost:3000
 | GOOGLE_API_KEY | Google AI Studio |
 | SUPABASE_URL + SUPABASE_SERVICE_KEY | Supabase project settings > API |
 | EPO_CONSUMER_KEY + EPO_CONSUMER_SECRET | EPO OPS Developer Portal |
+
+The `microservices/` scripts read `GOOGLE_API_KEY` from the environment as well. No key is committed to this repo; keep yours in `backend/.env`, which is gitignored.
 
 ## API Endpoints
 

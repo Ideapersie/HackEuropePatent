@@ -1,8 +1,9 @@
+import os
 import json
 from google import genai
 from google.genai import types
 
-client = genai.Client(api_key="AIzaSyBNqD6wiFlwlocPyd0itHqiaDlQjE-JjzU")
+client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 
 COMPANY_URLS = {
     "LOCKHEED CORP": "https://www.lockheedmartin.com/en-us/capabilities.html",
